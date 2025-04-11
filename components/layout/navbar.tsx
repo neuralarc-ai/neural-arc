@@ -14,6 +14,7 @@ import {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   // Track window width for responsive behavior
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function Navbar() {
   const isMobileScreen = windowWidth <= 768;
   
   return (
-    <nav className="relative w-full max-w-[1920px] mx-auto px-8 py-10">
+    <nav className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:py-10 py-5">
       {/* Top bar */}
       <div className="flex justify-between items-center mb-4">
         <Image
@@ -49,7 +50,7 @@ export default function Navbar() {
           alt="Neural Paths"
           width={100}
           height={100}
-          className="object-contain h-auto w-10 lg:w-20"
+          className="object-contain h-auto w-20"
         />
 
         <div className="flex gap-4 items-center">
@@ -170,11 +171,17 @@ export default function Navbar() {
 
           {/* Menu Toggle - Mobile (<769px) */}
           {isMobileScreen && (
-            <DropdownMenu>
+            <DropdownMenu onOpenChange={(open) => setIsMobileMenuOpen(open)}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#C1BBB4] rounded-full">
-                  <span className="block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full" />
-                  <span className="block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full" />
+                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full">
+                  <span className={cn(
+                    "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
+                    isMobileMenuOpen ? "rotate-45 translate-y-[6.5px]" : ""
+                  )} />
+                  <span className={cn(
+                    "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
+                    isMobileMenuOpen ? "-rotate-45 -translate-y-[2.5px]" : ""
+                  )} />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -187,9 +194,9 @@ export default function Navbar() {
               >
                 <div className="grid grid-cols-2 gap-8">
                   {/* Left Section - Navigation Links */}
-                  <div className="flex flex-col gap-6">
-                    {["Home", "About Us", "Contact US", "Use Cases"].map((item) => (
-                      <span key={item} className="text-sm md:text-[18px] text-[#2F2C28] cursor-pointer">
+                  <div className="flex flex-col gap-6 mt-2">
+                    {["Home", "About Us", "Contact Us", "Use Cases"].map((item) => (
+                      <span key={item} className="text-sm md:text-lg text-[#2F2C28] cursor-pointer">
                         {item}
                       </span>
                     ))}
@@ -200,7 +207,7 @@ export default function Navbar() {
 
                   {/* Right Section - Products */}
                   <div>
-                    <h2 className="text-[24px] font-medium text-[#14141459] mb-6">Products</h2>
+                    <h2 className="md:text-[24px] text-base font-semibold text-[#000000] mb-6">Products</h2>
                     <div className="flex flex-col gap-6">
                       {[
                         { name: "Rovyk", icon: "/icons/rovyk.svg" },
@@ -212,11 +219,11 @@ export default function Navbar() {
                           <Image
                             src={product.icon}
                             alt={product.name}
-                            width={32}
-                            height={32}
+                            width={28}
+                            height={28}
                             className="object-contain"
                           />
-                          <span className="text-[18px] text-[#2F2C28]">{product.name}</span>
+                          <span className="text-sm md:text-lg text-[#000000]">{product.name}</span>
                         </div>
                       ))}
                     </div>
@@ -224,18 +231,18 @@ export default function Navbar() {
                 </div>
 
                 {/* Bottom Section - Ampersand */}
-                <div className="bg-[#2F2C28] text-white rounded-[16px] p-6 mt-8 flex flex-col gap-4">
+                <div className="bg-[#1D1D1D] text-white md:w-full w-[286px] rounded-[16px] p-4 mt-8 flex flex-col gap-4">
                   <Image
                     src="/icons/ampersand-logo.svg"
                     alt="Ampersand Logo"
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                     className="object-contain"
                   />
-                  <p className="text-sm leading-normal">
+                  <p className="text-sm leading-normal ">
                     Ampersand transforms bold visions into impactful growth through innovation and strategic collaboration.
                   </p>
-                  <Button className="bg-white text-black text-base rounded-full py-4 w-full">
+                  <Button className="bg-white text-black text-base rounded-full py-6 w-full">
                     Visit Website
                   </Button>
                 </div>
