@@ -4,7 +4,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <>
-      <div className="relative w-full max-h-[1300px] px-8 py-6 mx-auto rounded-[32px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 grain-hero overflow-hidden">
+      <div className="relative w-full max-h-[1300px] px-8 py-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 grain-hero overflow-hidden">
         {/* Top Left Illustration */}
         <div className="absolute top-[60px] lg:-top-20 xl:top-[60px] hidden xl:block -ml-8">
           <Image
@@ -27,7 +27,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="xl:mt-37 lg:mt-20 md:mt-10">
+        <div className="xl:mt-37 lg:mt-20 mt-10">
           <h1 className="text-3xl lg:text-7xl font-semibold text-white md:max-w-3xl mx-auto text-center text-shadow-[0_0_40px_rgba(255,255,255,0.35)] leading-tight">
             The{" "}
             <span className="cognitive-engine-gradient">Cognitive Engine</span>{" "}
@@ -84,11 +84,11 @@ const Hero = () => {
 
       {/* Products Overview Section */}
       <div className="relative mx-auto xl:-mt-[250px] -mt-[180px] max-w-[1664px] z-50">
-        <div className="bg-white rounded-[24px] p-8">
+        <div className="bg-white rounded-[8px] lg:rounded-[24px] p-8">
           {/* Products Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 relative">
             {/* Kashew */}
-            <div className="flex flex-col gap-8 p-10">
+            <div className="flex flex-col gap-4 lg:gap-8 xl:p-10 p-8">
               <Image
                 src="/icons/kashew.svg"
                 alt="Kashew"
@@ -96,12 +96,12 @@ const Hero = () => {
                 height={80}
                 className="w-20 h-20 object-contain"
               />
-                <h3 className="text-[40px] font-semibold text-[#0C0C0C]">
+                <h3 className="text-[32px] lg:text-[40px] font-semibold text-[#0C0C0C]">
                   Kashew
                 </h3>
               <div>
                 <p className="text-2xl text-[#343434] mb-4 font-semibold">AI for Invoicing</p>
-                <p className="text-lg text-[#343434]">
+                <p className="text-sm lg:text-lg text-[#343434]">
                   Kashew generates professional invoices instantly with AI
                   precision, streamlining your billing process effortlessly.
                 </p>
@@ -109,7 +109,7 @@ const Hero = () => {
             </div>
 
             {/* Lawbit */}
-            <div className="flex flex-col gap-8 p-10 lg:border-l lg:border-[#0000000A]">
+            <div className="flex flex-col gap-4 lg:gap-8 xl:p-10 p-8 lg:border-l lg:border-[#0000000A]">
               <Image
                 src="/icons/lawbit.svg"
                 alt="Lawbit"
@@ -117,14 +117,14 @@ const Hero = () => {
                 height={80}
                 className="w-20 h-20 object-contain"
               />
-                <h3 className="text-[40px] font-semibold text-[#0C0C0C]">
+                <h3 className="text-[32px] lg:text-[40px] font-semibold text-[#0C0C0C]">
                   Lawbit
                 </h3>
               <div>
                 <p className="text-2xl text-[#343434] mb-4 font-semibold">
                   AI for Legal Intelligence
                 </p>
-                <p className="text-lg text-[#343434]">
+                <p className="text-sm lg:text-lg text-[#343434]">
                   LawBit simplifies contract creation and analysis with
                   AI-powered accuracy. Effortlessly draft, review, and optimize
                   legal documents in seconds.
@@ -133,7 +133,7 @@ const Hero = () => {
             </div>
 
             {/* Rovyk */}
-            <div className="flex flex-col gap-8 p-10 xl:border-l xl:border-[#0000000A]">
+            <div className="flex flex-col gap-4 lg:gap-8 xl:p-10 p-8 xl:border-l xl:border-[#0000000A]">
               <Image
                 src="/icons/rovyk.svg"
                 alt="Rovyk"
@@ -141,14 +141,14 @@ const Hero = () => {
                 height={80}
                 className="w-20 h-20 object-contain"
               />
-              <h3 className="text-[40px] font-semibold text-[#0C0C0C]">
+              <h3 className="text-[32px] lg:text-[40px] font-semibold text-[#0C0C0C]">
                 Rovyk
               </h3>
               <div>
                 <p className="text-2xl text-[#343434] mb-4 font-semibold">
                   AI Powerhouse
                 </p>
-                <p className="text-lg text-[#343434]">
+                <p className="text-sm lg:text-lg text-[#343434]">
                   Rovyk lets you seamlessly switch between top AI models—all in
                   one place, effortlessly, making your workflow smoother and
                   more efficient.
@@ -157,7 +157,7 @@ const Hero = () => {
             </div>
 
             {/* Spider */}
-            <div className="flex flex-col gap-8 p-10 lg:border-l lg:border-[#0000000A]">
+            <div className="flex flex-col gap-4 lg:gap-8 xl:p-10 p-8 lg:border-l lg:border-[#0000000A]">
               <Image
                 src="/icons/spider.svg"
                 alt="Spider"
@@ -165,7 +165,7 @@ const Hero = () => {
                 height={80}
                 className="w-20 h-20 object-contain"
               />
-                <h3 className="text-[40px] font-semibold text-[#0C0C0C]">
+                <h3 className="text-[32px] lg:text-[40px] font-semibold text-[#0C0C0C]">
                   Spider
                 </h3>
               <div>
