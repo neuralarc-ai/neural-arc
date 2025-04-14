@@ -120,3 +120,69 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Grain texture utility */
+.grain-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/grain/grain.svg'); /* Put this in /public */
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.7;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.grain-navbar {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-navbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/grain/navbar-grain.svg'); /* Put this in /public */
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.7;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 10;
+}
+.grain-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/grain/hero-grain.svg'); /* Put this in /public */
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.5;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.cognitive-engine-gradient {
+  background: linear-gradient(-155deg, #5E5E5E 10%, #54736C 50%, #978163 90%, #AFB7A6 95.31%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bottom-text-gradient {
+  background: linear-gradient(-165deg, #5E5E5E, #54736C 30%, #978163 45%, #AFB7A6 65%);
+}
+
