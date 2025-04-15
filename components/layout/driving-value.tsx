@@ -45,7 +45,7 @@ const DrivingValue = () => {
   ];
 
   return (
-    <div className="relative mx-auto max-w-[1664px] lg:px-8 px-2 2xl:px-0 py-20 grain-hero">
+    <div className="relative mx-auto max-w-[1664px] lg:px-8 px-2 2xl:px-0 lg:py-20 py-10 grain-hero">
       <h2 className="text-3xl lg:text-[60px] text-center font-semibold lg:mb-20 tracking-tighter">
         Driving Value Across Industries
       </h2>
@@ -53,7 +53,7 @@ const DrivingValue = () => {
       {/* Desktop Layout (Above md) */}
       <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between">
         {/* Left Column */}
-        <div className="flex flex-col gap-16 lg:w-1/6">
+        <div className="flex flex-col gap-8 lg:w-1/6">
           {leftValues.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div className={`text-[40px] xl:text-[64px] font-semibold pl-4 ${item.borderColor} border-l-3`}>
@@ -79,7 +79,7 @@ const DrivingValue = () => {
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col gap-16 lg:w-1/6 items-start 2xl:pl-18">
+        <div className="flex flex-col gap-8 lg:w-1/6 items-start 2xl:pl-18">
           {rightValues.map((item, index) => (
             <div key={index} className="flex flex-col gap-4 items-start">
               <div className={`text-[40px] xl:text-[64px] font-semibold pl-4 ${item.borderColor} border-l-3`}>
