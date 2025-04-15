@@ -47,25 +47,25 @@ export default function Navbar() {
       {/* Top bar */}
       <div className="flex justify-between items-center mb-4">
         <div className="grain-texture">
-          <Image
-            src="/icons/neural-paths-logo.svg"
-            alt="Neural Paths"
-            width={100}
-            height={100}
+        <Image
+          src="/icons/neural-paths-logo.svg"
+          alt="Neural Paths"
+          width={100}
+          height={100}
             className="object-contain h-auto w-20"
             priority
-          />
+        />
         </div>
 
         <div className="flex gap-4 items-center">
           {/* Menu Toggle - Desktop (>1800px) */}
           {isLargeScreen && (
-            <button
-              onClick={() => setIsOpen(!isOpen)}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture"
-            >
-              <span
-                className={cn(
+          >
+            <span
+              className={cn(
                   "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
                   isOpen ? "rotate-45 translate-y-[6.5px]" : ""
                 )}
@@ -243,15 +243,15 @@ export default function Navbar() {
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
                       isMobileMenuOpen ? "rotate-45 translate-y-[6.5px]" : ""
-                    )}
-                  />
-                  <span
-                    className={cn(
+              )}
+            />
+            <span
+              className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
                       isMobileMenuOpen ? "-rotate-45 -translate-y-[2.5px]" : ""
-                    )}
-                  />
-                </button>
+              )}
+            />
+          </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
@@ -354,8 +354,8 @@ export default function Navbar() {
 
           {!isMobileScreen && (
             <Button className="bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture">
-              Sign In
-            </Button>
+            Sign In
+          </Button>
           )}
         </div>
       </div>
@@ -462,16 +462,16 @@ export default function Navbar() {
               <div className="bg-[#2F2C28] text-white rounded-[16px] p-12 flex flex-col justify-between max-w-[460px] h-full">
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
-                    <Image
-                      src="/icons/ampersand-logo.svg"
-                      alt="Ampersand Logo"
+                  <Image
+                    src="/icons/ampersand-logo.svg"
+                    alt="Ampersand Logo"
                       width={80}
                       height={80}
-                      className="object-contain"
-                    />
+                    className="object-contain"
+                  />
                     <Button className="bg-white text-black text-base rounded-full px-8 py-6 cursor-pointer hover:bg-white">
-                      Visit Website
-                    </Button>
+                    Visit Website
+                  </Button>
                   </div>
                   <p className="text-base">
                     At Ampersand, we turn bold visions into tangible outcomes. Through innovative solutions and strategic collaboration, we empower startups and businesses to grow with purpose and clarity.
