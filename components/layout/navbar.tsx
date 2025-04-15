@@ -47,25 +47,25 @@ export default function Navbar() {
       {/* Top bar */}
       <div className="flex justify-between items-center mb-4">
         <div className="grain-texture">
-        <Image
-          src="/icons/neural-paths-logo.svg"
-          alt="Neural Paths"
-          width={100}
-          height={100}
+          <Image
+            src="/icons/neural-paths-logo.svg"
+            alt="Neural Paths"
+            width={100}
+            height={100}
             className="object-contain h-auto w-20"
             priority
-        />
+          />
         </div>
 
         <div className="flex gap-4 items-center">
           {/* Menu Toggle - Desktop (>1800px) */}
           {isLargeScreen && (
-          <button
-            onClick={() => setIsOpen(!isOpen)}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture"
-          >
-            <span
-              className={cn(
+            >
+              <span
+                className={cn(
                   "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
                   isOpen ? "rotate-45 translate-y-[6.5px]" : ""
                 )}
@@ -187,28 +187,47 @@ export default function Navbar() {
 
                   <div className="flex gap-8">
                     {/* Neural Nexus Section */}
-                    <div className="flex flex-col h-full">
-                      <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">Platform</h2>
-                      <div className="bg-[#F8F8F8] p-6 rounded-[16px] min-w-[388px]">
-                        <h2 className="text-[24px] font-semibold text-[#5B5B5B] mb-2">Neural Nexus</h2>
-                        <p className="text-[#000000] text-base mb-4">
-                          Unlock real-time, tailored AI insights with Neural Nexus—cutting through complexity to reveal what others miss.
-                        </p>
-                        <Button className="bg-[#2F2C28] text-white rounded-full px-10 py-6 text-base flex items-center gap-2">
-                          Read Use Cases
-                          <Image 
-                            src="/icons/arrow.svg"
-                            alt="arrow"
-                            width={24}
-                            height={24}
-                            className="w-6 h-6 object-contain"
-                          />
-                        </Button>
+                    <div className="flex flex-col h-full relative">
+                      <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">
+                        Platform
+                      </h2>
+
+                      <div className="relative bg-[#493E32] p-6 rounded-[16px] min-w-[388px] overflow-hidden">
+                        {/* Background Image */}
+                        <Image
+                          src="/icons/navbar-circle.svg"
+                          alt="background circle"
+                          width={200}
+                          height={200}
+                          className="absolute bottom-0 right-0 z-0 pointer-events-none select-none"
+                        />
+
+                        {/* Foreground Content */}
+                        <div className="relative z-10">
+                          <h2 className="text-[24px] font-semibold text-[#84725E] mb-2">
+                            Neural Nexus
+                          </h2>
+                          <p className="text-[#DCDCDC] text-base mb-4">
+                            Unlock real-time, tailored AI insights with Neural
+                            Nexus—cutting through complexity to reveal what
+                            others miss.
+                          </p>
+                          <Button className="bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2">
+                            Read Use Cases
+                            <Image
+                              src="/icons/arrow-navbar.svg"
+                              alt="arrow"
+                              width={24}
+                              height={24}
+                              className="w-8 h-6 object-contain"
+                            />
+                          </Button>
+                        </div>
                       </div>
                     </div>
 
                     {/* Bottom Section */}
-                    <div className="bg-[#2F2C28] text-white rounded-2xl p-10 flex flex-col gap-8 max-w-[460px]">
+                    <div className="bg-[#EBEBEB] text-white rounded-2xl p-10 flex flex-col gap-8 max-w-[460px]">
                       <div className="flex justify-between items-center">
                         <Image
                           src="/icons/ampersand-logo.svg"
@@ -217,15 +236,15 @@ export default function Navbar() {
                           height={80}
                           className="object-contain w-20 h-auto"
                         />
-                        <Button className="bg-white text-black text-lg rounded-full px-10 py-6">
+                        <Button className="bg-[#575757] text-white text-lg rounded-full px-10 py-6">
                           Visit Website
                         </Button>
                       </div>
-                      <p className="text-base leading-relaxed">
-                        At Ampersand, we turn bold visions into tangible outcomes.
-                        Through innovative solutions and strategic collaboration,
-                        we empower startups and businesses to grow with purpose
-                        and clarity.
+                      <p className="text-base leading-relaxed text-[#575757]">
+                        At Ampersand, we turn bold visions into tangible
+                        outcomes. Through innovative solutions and strategic
+                        collaboration, we empower startups and businesses to
+                        grow with purpose and clarity.
                       </p>
                     </div>
                   </div>
@@ -243,15 +262,15 @@ export default function Navbar() {
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
                       isMobileMenuOpen ? "rotate-45 translate-y-[6.5px]" : ""
-              )}
-            />
-            <span
-              className={cn(
+                    )}
+                  />
+                  <span
+                    className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
                       isMobileMenuOpen ? "-rotate-45 -translate-y-[2.5px]" : ""
-              )}
-            />
-          </button>
+                    )}
+                  />
+                </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
@@ -311,34 +330,20 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {/* Bottom Section - Ampersand */}
-                <div className="bg-[#1D1D1D] text-white md:w-full w-[286px] rounded-[16px] p-4 mt-8 flex flex-col gap-4">
-                  <Image
-                    src="/icons/ampersand-logo.svg"
-                    alt="Ampersand Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain w-10 h-auto"
-                  />
-                  <p className="text-sm leading-normal ">
-                    Ampersand transforms bold visions into impactful growth
-                    through innovation and strategic collaboration.
-                  </p>
-                  <Button className="bg-white text-black text-base rounded-full py-6 w-full">
-                    Visit Website
-                  </Button>
-                </div>
-
                 {/* Neural Nexus Section */}
                 <div className="mt-4">
-                  <div className="bg-[#F8F8F8] p-4 rounded-[16px] md:w-full w-[286px]">
-                    <h2 className="text-[18px] font-semibold text-[#2F2C28] mb-2">Neural Nexus</h2>
-                    <p className="text-[#000000] text-sm mb-4">
-                      Unlock real-time, tailored AI insights with Neural Nexus—cutting through complexity to reveal what others miss.
+                  <div className="bg-[#493E32] p-4 rounded-[16px] md:w-full w-[286px]">
+                    <h2 className="text-[18px] font-semibold text-white mb-2">
+                      Neural Nexus
+                    </h2>
+                    <p className="text-white text-sm mb-4">
+                      Unlock real-time, tailored AI insights with Neural
+                      Nexus—cutting through complexity to reveal what others
+                      miss.
                     </p>
-                    <Button className="bg-[#2F2C28] text-white rounded-full px-4 py-8 text-sm flex items-center gap-2 w-full">
+                    <Button className="bg-white text-[#493E32] rounded-full px-4 py-8 text-sm flex items-center gap-2 w-full">
                       Read Use Cases
-                      <Image 
+                      <Image
                         src="/icons/arrow.svg"
                         alt="arrow"
                         width={20}
@@ -348,14 +353,32 @@ export default function Navbar() {
                     </Button>
                   </div>
                 </div>
+
+                {/* Bottom Section - Ampersand */}
+                <div className="bg-[#EBEBEB] text-[#575757] md:w-full w-[286px] rounded-[16px] p-4 mt-8 flex flex-col gap-4">
+                  <Image
+                    src="/icons/ampersand-logo.svg"
+                    alt="Ampersand Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain w-10 h-auto"
+                  />
+                  <p className="text-sm leading-normal text-[#575757]">
+                    Ampersand transforms bold visions into impactful growth
+                    through innovation and strategic collaboration.
+                  </p>
+                  <Button className="bg-[#575757] text-white text-base rounded-full py-6 w-full">
+                    Visit Website
+                  </Button>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
           )}
 
           {!isMobileScreen && (
             <Button className="bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture">
-            Sign In
-          </Button>
+              Sign In
+            </Button>
           )}
         </div>
       </div>
@@ -367,32 +390,53 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 335, opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ 
+            transition={{
               duration: 0.35,
               ease: [0.4, 0, 0.2, 1],
               height: {
                 duration: 0.35,
-                ease: [0.4, 0, 0.2, 1]
+                ease: [0.4, 0, 0.2, 1],
               },
               opacity: {
                 duration: 0.25,
-                ease: [0.4, 0, 0.2, 1]
-              }
+                ease: [0.4, 0, 0.2, 1],
+              },
             }}
-            className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px]"
+            className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] grain-navbar"
           >
             <div className="flex justify-between items-start h-full gap-4">
               {/* Products Section */}
               <div className="mr-6">
-                <h2 className="text-[40px] font-semibold text-[#14141459] mb-6">Products</h2>
+                <h2 className="text-[40px] font-semibold text-[#14141459] mb-6">
+                  Products
+                </h2>
                 <div className="grid grid-cols-2 gap-x-8 gap-y-12">
                   {[
-                    { name: "Rovyk", sub: "AI Powerhouse", icon: "/icons/rovyk.svg" },
-                    { name: "Lawbit", sub: "AI for Legal Intelligence", icon: "/icons/lawbit.svg" },
-                    { name: "Spider", sub: "AI Pitch Deck Analyzer", icon: "/icons/spider.svg" },
-                    { name: "Kashew", sub: "AI for Invoicing", icon: "/icons/kashew.svg" },
+                    {
+                      name: "Rovyk",
+                      sub: "AI Powerhouse",
+                      icon: "/icons/rovyk.svg",
+                    },
+                    {
+                      name: "Lawbit",
+                      sub: "AI for Legal Intelligence",
+                      icon: "/icons/lawbit.svg",
+                    },
+                    {
+                      name: "Spider",
+                      sub: "AI Pitch Deck Analyzer",
+                      icon: "/icons/spider.svg",
+                    },
+                    {
+                      name: "Kashew",
+                      sub: "AI for Invoicing",
+                      icon: "/icons/kashew.svg",
+                    },
                   ].map((product) => (
-                    <div key={product.name} className="flex items-center gap-4 cursor-pointer">
+                    <div
+                      key={product.name}
+                      className="flex items-center gap-4 cursor-pointer"
+                    >
                       <Image
                         src={product.icon}
                         alt={product.name}
@@ -401,7 +445,9 @@ export default function Navbar() {
                         className="w-auto h-10 object-contain"
                       />
                       <div>
-                        <p className="text-[24px] font-semibold text-[#2F2C28]">{product.name}</p>
+                        <p className="text-[24px] font-semibold text-[#2F2C28]">
+                          {product.name}
+                        </p>
                         <p className="text-lg text-[#7B746B]">{product.sub}</p>
                       </div>
                     </div>
@@ -438,43 +484,65 @@ export default function Navbar() {
               </div>
 
               {/* Neural Nexus Section */}
-              <div>
-                <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">Platform</h2>
-                <div className="bg-[#F8F8F8] p-6 rounded-[16px] max-w-[441px] h-full">
-                  <h2 className="text-[24px] font-semibold text-[#5B5B5B] mb-1">Neural Nexus</h2>
-                  <p className="text-[#000000] text-base mb-4">
-                    Unlock real-time, tailored AI insights with Neural Nexus—cutting through complexity to reveal what others miss.
-                  </p>
-                  <Button className="bg-[#2F2C28] text-white rounded-full px-6 py-6 text-base flex items-center gap-2 cursor-pointer">
-                    Read Use Cases
-                    <Image 
-                      src="/icons/arrow.svg"
-                      alt="arrow"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 object-contain"
-                    />
-                  </Button>
+              <div className="relative">
+                <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">
+                  Platform
+                </h2>
+
+                <div className="relative bg-[#493E32] p-6 rounded-[16px] max-w-[441px] h-full overflow-hidden">
+                  {/* Background Image */}
+                  <Image
+                    src="/icons/navbar-circle.svg"
+                    alt="background circle"
+                    width={250}
+                    height={250}
+                    className="absolute bottom-0 right-0 z-0 pointer-events-none select-none"
+                  />
+
+                  {/* Foreground Content */}
+                  <div className="relative z-10">
+                    <h2 className="text-[24px] font-semibold text-[#84725E] mb-1">
+                      Neural Nexus
+                    </h2>
+                    <p className="text-white text-base mb-4 max-w-[90%]">
+                      Unlock real-time, tailored AI insights with Neural
+                      Nexus—cutting through complexity to reveal what others
+                      miss.
+                    </p>
+                    <Button className="bg-[#FAF9F6] text-[#55493D] rounded-full px-6 py-6 text-base flex items-center gap-2 cursor-pointer">
+                      Read Use Cases
+                      <Image
+                        src="/icons/arrow-navbar.svg"
+                        alt="arrow"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6 object-contain"
+                      />
+                    </Button>
+                  </div>
                 </div>
               </div>
 
               {/* Ampersand Section */}
-              <div className="bg-[#2F2C28] text-white rounded-[16px] p-12 flex flex-col justify-between max-w-[460px] h-full">
+              <div className="bg-[#EBEBEB] text-[#575757] rounded-[16px] p-12 flex flex-col justify-between max-w-[460px] h-full">
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
-                  <Image
-                    src="/icons/ampersand-logo.svg"
-                    alt="Ampersand Logo"
+                    <Image
+                      src="/icons/ampersand-logo.svg"
+                      alt="Ampersand Logo"
                       width={80}
                       height={80}
-                    className="object-contain"
-                  />
-                    <Button className="bg-white text-black text-base rounded-full px-8 py-6 cursor-pointer hover:bg-white">
-                    Visit Website
-                  </Button>
+                      className="object-contain"
+                    />
+                    <Button className="bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:bg-white">
+                      Visit Website
+                    </Button>
                   </div>
-                  <p className="text-base">
-                    At Ampersand, we turn bold visions into tangible outcomes. Through innovative solutions and strategic collaboration, we empower startups and businesses to grow with purpose and clarity.
+                  <p className="text-base text-[#575757]">
+                    At Ampersand, we turn bold visions into tangible outcomes.
+                    Through innovative solutions and strategic collaboration, we
+                    empower startups and businesses to grow with purpose and
+                    clarity.
                   </p>
                 </div>
               </div>
