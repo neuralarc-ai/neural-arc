@@ -74,7 +74,7 @@ const DrivingValue = () => {
             alt="Driving Value Illustration"
             width={870}
             height={870}
-            className="w-auto h-auto"
+            className="w-full h-full"
           />
         </div>
 

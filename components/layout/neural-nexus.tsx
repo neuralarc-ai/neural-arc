@@ -53,13 +53,13 @@ const NeuralNexus = () => {
         </div>
 
         {/* Right Illustration */}
-        <div className="hidden lg:flex items-center justify-center">
+        <div className="hidden lg:flex items-center justify-center w-1/2">
           <Image
             src="/images/illustrations/neural-nexus.png"
             alt="Neural Nexus Analytics Dashboard"
             width={800}
             height={800}
-            className="w-full h-auto object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
       </div>
