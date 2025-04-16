@@ -10,12 +10,15 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMediumMenuOpen, setIsMediumMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Track window width for responsive behavior
   useEffect(() => {
@@ -34,6 +37,13 @@ export default function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Close menus when pathname changes
+  useEffect(() => {
+    setIsOpen(false);
+    setIsMobileMenuOpen(false);
+    setIsMediumMenuOpen(false);
+  }, [pathname]);
 
   // Check if we're in the medium screen range
   const isMediumScreen = windowWidth >= 769 && windowWidth < 1800;
@@ -62,7 +72,7 @@ export default function Navbar() {
           {isLargeScreen && (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture"
+              className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out"
             >
               <span
                 className={cn(
@@ -83,7 +93,7 @@ export default function Navbar() {
           {isMediumScreen && (
             <DropdownMenu onOpenChange={(open) => setIsMediumMenuOpen(open)}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture">
+                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out">
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -118,21 +128,25 @@ export default function Navbar() {
                             name: "Rovyk",
                             sub: "AI Powerhouse",
                             icon: "/icons/rovyk.svg",
+                            href: "https://rovyk.com"
                           },
                           {
                             name: "Lawbit",
                             sub: "AI for Legal Intelligence",
                             icon: "/icons/lawbit.svg",
+                            href: "https://lawbit.ai"
                           },
                           {
                             name: "Spider",
                             sub: "AI Pitch Deck Analyzer",
                             icon: "/icons/spider.svg",
+                            href: "#"
                           },
                           {
                             name: "Kashew",
                             sub: "AI for Invoicing",
                             icon: "/icons/kashew.svg",
+                            href: "#"
                           },
                         ].map((product) => (
                           <div
@@ -147,12 +161,14 @@ export default function Navbar() {
                               className="w-auto h-12 object-contain"
                             />
                             <div>
-                              <p className="text-xl font-semibold text-[#2F2C28]">
-                                {product.name}
-                              </p>
-                              <p className="text-base text-[#666666]">
-                                {product.sub}
-                              </p>
+                              <Link href={product.href} target="_blank">        
+                                <p className="text-xl font-semibold text-[#2F2C28]">
+                                  {product.name}
+                                </p>
+                                <p className="text-base text-[#666666]">
+                                  {product.sub}
+                                </p>
+                              </Link>
                             </div>
                           </div>
                         ))}
@@ -160,15 +176,15 @@ export default function Navbar() {
                     </div>
 
                     {/* Navigation Links */}
-                    <div className="bg-[#F8F8F8] px-8 py-12 rounded-2xl h-fit flex flex-col gap-8 min-w-[300px]">
+                    <div className="bg-[#F8F8F8] px-8 py-6 rounded-2xl h-fit flex flex-col gap-8 min-w-[300px] ">
                       {[
-                        { name: "Home", icon: "/icons/home.svg" },
-                        { name: "About Us", icon: "/icons/about.svg" },
-                        { name: "Contact", icon: "/icons/contact.svg" },
+                        { name: "Home", icon: "/icons/home.svg", href: "/" },
+                        { name: "About Us", icon: "/icons/about.svg", href: "/about" },
+                        { name: "Contact", icon: "/icons/contact.svg", href: "/contact" },
                       ].map((item) => (
                         <div
                           key={item.name}
-                          className="flex items-center gap-4"
+                          className="flex items-center gap-2 hover:bg-[#5454541A] duration-300 transition-all ease-in-out p-3 rounded-md"
                         >
                           <Image
                             src={item.icon}
@@ -177,9 +193,11 @@ export default function Navbar() {
                             height={32}
                             className="w-auto h-10 object-contain aspect-[4/3] group-hover:grayscale-0 group-hover:brightness-0 transition-all duration-300"
                           />
-                          <span className="text-xl text-[#2F2C28]">
-                            {item.name}
-                          </span>
+                          <Link href={item.href}>
+                            <span className="text-xl text-[#2F2C28]">
+                              {item.name}
+                            </span>
+                          </Link>
                         </div>
                       ))}
                     </div>
@@ -212,7 +230,7 @@ export default function Navbar() {
                             Nexus—cutting through complexity to reveal what
                             others miss.
                           </p>
-                          <Button className="bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2">
+                          <Button className="bg-[#FAF9F6] hover:bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                             Read Use Cases
                             <Image
                               src="/icons/arrow-navbar.svg"
@@ -236,7 +254,7 @@ export default function Navbar() {
                           height={80}
                           className="object-contain w-20 h-auto"
                         />
-                        <Button className="bg-[#575757] text-white text-lg rounded-full px-10 py-6">
+                        <Button className="bg-[#575757] hover:bg-[#575757] text-white text-lg rounded-full px-10 py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                           Visit Website
                         </Button>
                       </div>
@@ -257,7 +275,7 @@ export default function Navbar() {
           {isMobileScreen && (
             <DropdownMenu onOpenChange={(open) => setIsMobileMenuOpen(open)}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full">
+                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out">
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -283,17 +301,17 @@ export default function Navbar() {
                 <div className="grid grid-cols-2 gap-8">
                   {/* Left Section - Navigation Links */}
                   <div className="flex flex-col gap-6 mt-2">
-                    {["Home", "About Us", "Contact Us", "Use Cases"].map(
+                    {["Home", "About Us", "Contact"].map(
                       (item) => (
                         <span
                           key={item}
-                          className="text-sm md:text-lg text-[#2F2C28] cursor-pointer"
+                          className="text-sm md:text-lg text-[#2F2C28] cursor-pointer "
                         >
                           {item}
                         </span>
                       )
                     )}
-                    <Button className="bg-[#2F2C28] rounded-full py-5 px-8 text-base w-fit grain-texture">
+                    <Button className="bg-[#2F2C28] rounded-full py-5 px-8 text-base w-fit grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out cursor-pointer duration-300 transition-all">
                       Sign In
                     </Button>
                   </div>
@@ -305,10 +323,10 @@ export default function Navbar() {
                     </h2>
                     <div className="flex flex-col gap-6">
                       {[
-                        { name: "Rovyk", icon: "/icons/rovyk.svg" },
-                        { name: "Lawbit", icon: "/icons/lawbit.svg" },
-                        { name: "Spider", icon: "/icons/spider.svg" },
-                        { name: "kashew", icon: "/icons/kashew.svg" },
+                        { name: "Rovyk", icon: "/icons/rovyk.svg", href: "https://rovyk.com" },
+                        { name: "Lawbit", icon: "/icons/lawbit.svg", href: "https://lawbit.ai" },
+                        { name: "Spider", icon: "/icons/spider.svg", href: "#" },
+                        { name: "kashew", icon: "/icons/kashew.svg", href: "#" },
                       ].map((product) => (
                         <div
                           key={product.name}
@@ -321,9 +339,11 @@ export default function Navbar() {
                             height={28}
                             className="object-contain"
                           />
+                          <Link href={product.href} target="_blank">
                           <span className="text-sm md:text-lg text-[#000000]">
                             {product.name}
                           </span>
+                          </Link>
                         </div>
                       ))}
                     </div>
@@ -367,7 +387,7 @@ export default function Navbar() {
                     Ampersand transforms bold visions into impactful growth
                     through innovation and strategic collaboration.
                   </p>
-                  <Button className="bg-[#575757] text-white text-base rounded-full py-6 w-full">
+                  <Button className="bg-[#575757] text-white text-base rounded-full py-6 w-full hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                     Visit Website
                   </Button>
                 </div>
@@ -376,7 +396,7 @@ export default function Navbar() {
           )}
 
           {!isMobileScreen && (
-            <Button className="bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture">
+            <Button className="bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
               Sign In
             </Button>
           )}
@@ -461,9 +481,9 @@ export default function Navbar() {
               {/* Navigation Links */}
               <div className="flex flex-col gap-2 mt-12 min-w-[289px] px-10">
                 {[
-                  { name: "Home", icon: "/icons/home.svg" },
-                  { name: "About Us", icon: "/icons/about.svg" },
-                  { name: "Contact", icon: "/icons/contact.svg" },
+                  { name: "Home", icon: "/icons/home.svg", href: "/" },
+                  { name: "About Us", icon: "/icons/about.svg", href: "/about" },
+                  { name: "Contact", icon: "/icons/contact.svg", href: "/contact" },
                 ].map((item) => (
                   <div
                     key={item.name}
@@ -476,9 +496,11 @@ export default function Navbar() {
                       height={100}
                       className="w-auto h-9 object-contain aspect-[4/3] group-hover:grayscale-0 group-hover:brightness-0 transition-all duration-300"
                     />
-                    <span className="text-[#5B5B5B] group-hover:text-[#2F2C28] transition-colors text-[24px] font-semibold">
-                      {item.name}
-                    </span>
+                    <Link href={item.href}>
+                      <span className="text-[#5B5B5B] group-hover:text-[#2F2C28] transition-colors text-[24px] font-semibold">
+                        {item.name}
+                      </span>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -509,7 +531,7 @@ export default function Navbar() {
                       Nexus—cutting through complexity to reveal what others
                       miss.
                     </p>
-                    <Button className="bg-[#FAF9F6] text-[#55493D] rounded-full px-6 py-6 text-base flex items-center gap-2 cursor-pointer">
+                    <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-6 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                       Read Use Cases
                       <Image
                         src="/icons/arrow-navbar.svg"
@@ -534,7 +556,7 @@ export default function Navbar() {
                       height={80}
                       className="object-contain"
                     />
-                    <Button className="bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:bg-white">
+                    <Button className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                       Visit Website
                     </Button>
                   </div>

@@ -104,7 +104,7 @@ const FAQ: React.FC = () => {
                 value={`item-${index + 1}`}
                 className="border-none"
               >
-                <AccordionTrigger className="py-4 text-lg font-medium text-[#232121] hover:no-underline justify-between flex items-center border-b-[#C6C6C640] border-b rounded-none px-0">
+                <AccordionTrigger className="py-4 text-lg font-medium text-[#232121] hover:no-underline justify-between flex items-center border-b-[#C6C6C640] border-b rounded-none px-0 cursor-pointer">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="py-4 text-lg text-[#646464] text-balance">
