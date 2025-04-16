@@ -11,6 +11,7 @@ const ContactHero = () => {
           alt="Contact Hero Background"
           width={1000}
           height={1000}
+          priority
           className="w-full h-auto object-contain opacity-90 -translate-y-10 translate-x-12"
         />
       </div>
