@@ -16,7 +16,7 @@ const ContactHero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 zl:h-[610px]">
+      <div className="relative z-10 xl:h-[610px]">
         <h1 className="text-4xl lg:text-5xl xl:text-7xl font-semibold text-[#55493D] mb-12 tracking-tighter">
           Step Into the Neural Flow
         </h1>
