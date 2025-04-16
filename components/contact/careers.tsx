@@ -29,7 +29,7 @@ const Careers = () => {
               careers@neuralpaths.ai
             </a>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex flex-row flex-shrink-0 items-center gap-6">
             <Link 
               href="/careers"
               className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
