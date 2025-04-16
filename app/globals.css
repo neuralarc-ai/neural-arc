@@ -124,7 +124,7 @@
 /* Grain texture utility */
 .grain-texture {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .grain-texture::after {

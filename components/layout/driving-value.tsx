@@ -46,7 +46,7 @@ const DrivingValue = () => {
 
   return (
     <div className="relative mx-auto max-w-[1664px] lg:px-8 px-2 2xl:px-0 lg:py-20 py-10 grain-hero">
-      <h2 className="text-3xl lg:text-[60px] text-center font-semibold lg:mb-20 tracking-tighter">
+      <h2 className="text-3xl lg:text-[60px] text-center font-semibold tracking-tighter">
         Driving Value Across Industries
       </h2>
 
@@ -110,7 +110,7 @@ const DrivingValue = () => {
         {/* Values Grid */}
         <div className="grid grid-cols-2 gap-8 w-full">
           {/* Left Column */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 md:pl-18">
             {leftValues.map((item, index) => (
               <div key={index} className="flex flex-col gap-4">
                 <div className={`text-[32px] font-semibold pl-4 ${item.borderColor} border-l-3`}>
