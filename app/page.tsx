@@ -3,6 +3,7 @@ import DrivingValue from "@/components/layout/driving-value";
 import NeuralNexus from "@/components/layout/neural-nexus";
 import DNA from "@/components/layout/dna";
 import Testimonials from "@/components/layout/testimonials";
+import FAQ from "@/components/layout/faq";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <DrivingValue />
       <DNA />
       <Testimonials />
+      <FAQ />
     </main>
   );
 }

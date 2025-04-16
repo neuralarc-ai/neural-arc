@@ -52,28 +52,28 @@ const Testimonials: React.FC = () => {
       id: 1,
       rating: 4,
       quote:
-        "LawBit generated contracts in minutes that used to take our legal team days. It's been a total game changer for scaling fast without bottlenecks...",
+        "Rovyk streamlined our entire AI workflow. No more switching between platforms or paying for separate tools—everything we need is built in, easy to use, and far more affordable. It’s like having a complete AI toolkit in one place.",
       name: "Nina R.",
     },
     {
       id: 2,
       rating: 3,
       quote:
-        "Rovyk streamlined our entire AI workflow. No more switching between platforms or paying for separate tools...",
+        "LawBit generated contracts in minutes that used to take our legal team days. It’s been a total game changer for scaling fast without bottlenecks. We’ve cut legal overhead and accelerated our deal flow—without compromising quality.",
       name: "Tanya P.",
     },
     {
       id: 3,
       rating: 4,
       quote:
-        "Kashew took us from Excel chaos to real-time financial clarity. We're now saving over 20 hours a month...",
+        "Kashew took us from Excel chaos to real-time financial clarity. We’re now saving over 20 hours a month on manual tracking—and finally making decisions with up-to-date insights",
       name: "David K.",
     },
     {
       id: 4,
       rating: 4,
       quote:
-        "We plugged Spider into our investor outreach and matched with 3 VCs in just a week. The deck scoring system is scary accurate...",
+        "We plugged Spider into our investor outreach and matched with 3 VCs in just a week. The deck scoring system is scary accurate—it gave us clear, actionable feedback that actually moved the needle. It felt like having a seasoned pitch coach and warm intro engine rolled into one.",
       name: "Josh T.",
     },
   ];
