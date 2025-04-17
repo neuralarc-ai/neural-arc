@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ContactHero = () => {
   return (
@@ -25,7 +26,10 @@ const ContactHero = () => {
           Whether you are curious about our products, or dreaming of joining the
           Neural Paths team — we are here to connect.
         </p>
-        <button className="flex items-center gap-4 bg-[#2F2C28] text-white px-10 py-4 rounded-full w-fit transition-all hover:bg-[#2F2C28] hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out">
+        <Link 
+          href="/contact#contact-form"
+          className="flex items-center gap-4 bg-[#2F2C28] text-white px-10 py-4 rounded-full w-fit transition-all hover:bg-[#2F2C28] hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
+        >
           Get In Touch
           <svg
             width="16"
@@ -42,7 +46,7 @@ const ContactHero = () => {
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </Link>
       </div>
 
       {/* Contact Cards */}
