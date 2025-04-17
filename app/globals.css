@@ -124,7 +124,7 @@
 /* Grain texture utility */
 .grain-texture {
   position: relative;
-  overflow: clip;
+  overflow: visible;
 }
 
 .grain-texture::after {
@@ -134,7 +134,7 @@
   background-image: url('/images/grain/grain.svg'); /* Put this in /public */
   background-repeat: repeat;
   background-size: auto;
-  opacity: 0.7;
+  opacity: 0.8;
   mix-blend-mode: soft-light;
   pointer-events: none;
   z-index: 10;

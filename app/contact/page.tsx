@@ -4,7 +4,7 @@ import Careers from '@/components/contact/careers'
 import ContactForm from '@/components/contact/contact-form'
 const Contact = () => {
   return (
-    <main className='max-w-[1920px] mx-auto md:px-8 px-4'>
+    <main className='max-w-[1920px] mx-auto md:px-8 px-4 grain-texture'>
         <ContactHero />
         <Careers />
         <ContactForm />

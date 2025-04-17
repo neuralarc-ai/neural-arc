@@ -114,7 +114,8 @@ const ContactForm = () => {
                     value={formData[steps[currentStep].field as keyof FormData]}
                     onChange={handleInputChange}
                     placeholder={steps[currentStep].placeholder}
-                    className="w-full bg-transparent border-b-2 border-white/20 px-4 py-4 text-2xl text-white placeholder-white/50 placeholder:text-5xl focus:outline-none focus:border-white/40 transition-colors resize-none min-h-[120px]"
+                    className="w-full bg-transparent border-b-2 border-white/20 px-4 py-4 -mb-2 text-white placeholder-white/50 placeholder:text-5xl text-5xl focus:outline-none focus:border-white/40 transition-colors resize-none h-[72px] text-center"
+                    rows={1}
                   />
                 ) : (
                   <input
@@ -122,7 +123,7 @@ const ContactForm = () => {
                     value={formData[steps[currentStep].field as keyof FormData]}
                     onChange={handleInputChange}
                     placeholder={steps[currentStep].placeholder}
-                    className="w-full bg-transparent border-b-2 border-white/20 px-4 py-4 text-2xl text-white placeholder-white/50 placeholder:text-5xl focus:outline-none focus:border-white/40 transition-colors text-center"
+                    className="w-full bg-transparent border-b-2 border-white/20 px-4 py-4 text-white placeholder-white/50 placeholder:text-5xl text-5xl focus:outline-none focus:border-white/40 transition-colors text-center h-[72px]"
                   />
                 )}
                 {/* Progress Indicators */}
