@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fustat.className}>
+      <body className={`${fustat.className} bg-[#F8F7F3]`}>
         <Navbar />
         {children}
       </body>

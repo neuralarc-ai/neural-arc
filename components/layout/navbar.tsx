@@ -130,25 +130,25 @@ export default function Navbar() {
                             name: "Rovyk",
                             sub: "AI Powerhouse",
                             icon: "/icons/rovyk.svg",
-                            href: "https://rovyk.com"
+                            href: "https://rovyk.com",
                           },
                           {
                             name: "Lawbit",
                             sub: "AI for Legal Intelligence",
                             icon: "/icons/lawbit.svg",
-                            href: "https://lawbit.ai"
+                            href: "https://lawbit.ai",
                           },
                           {
                             name: "Spider",
                             sub: "AI Pitch Deck Analyzer",
                             icon: "/icons/spider.svg",
-                            href: "#"
+                            href: "#",
                           },
                           {
                             name: "Kashew",
                             sub: "AI for Invoicing",
                             icon: "/icons/kashew.svg",
-                            href: "#"
+                            href: "#",
                           },
                         ].map((product) => (
                           <div
@@ -163,7 +163,7 @@ export default function Navbar() {
                               className="w-auto h-12 object-contain"
                             />
                             <div>
-                              <Link href={product.href} target="_blank">        
+                              <Link href={product.href} target="_blank">
                                 <p className="text-xl font-semibold text-[#2F2C28]">
                                   {product.name}
                                 </p>
@@ -181,8 +181,16 @@ export default function Navbar() {
                     <div className="bg-[#F8F8F8] px-8 py-6 rounded-2xl h-fit flex flex-col gap-8 min-w-[300px] ">
                       {[
                         { name: "Home", icon: "/icons/home.svg", href: "/" },
-                        { name: "About Us", icon: "/icons/about.svg", href: "/about" },
-                        { name: "Contact", icon: "/icons/contact.svg", href: "/contact" },
+                        {
+                          name: "About Us",
+                          icon: "/icons/about.svg",
+                          href: "/about",
+                        },
+                        {
+                          name: "Contact",
+                          icon: "/icons/contact.svg",
+                          href: "/contact",
+                        },
                       ].map((item) => (
                         <div
                           key={item.name}
@@ -303,16 +311,14 @@ export default function Navbar() {
                 <div className="grid grid-cols-2 gap-8">
                   {/* Left Section - Navigation Links */}
                   <div className="flex flex-col gap-6 mt-2">
-                    {["Home", "About Us", "Contact"].map(
-                      (item) => (
-                        <span
-                          key={item}
-                          className="text-sm md:text-lg text-[#2F2C28] cursor-pointer "
-                        >
-                          {item}
-                        </span>
-                      )
-                    )}
+                    {["Home", "About Us", "Contact"].map((item) => (
+                      <span
+                        key={item}
+                        className="text-sm md:text-lg text-[#2F2C28] cursor-pointer "
+                      >
+                        {item}
+                      </span>
+                    ))}
                     <Button className="bg-[#2F2C28] rounded-full py-5 px-8 text-base w-fit grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out cursor-pointer duration-300 transition-all">
                       Sign In
                     </Button>
@@ -325,10 +331,26 @@ export default function Navbar() {
                     </h2>
                     <div className="flex flex-col gap-6">
                       {[
-                        { name: "Rovyk", icon: "/icons/rovyk.svg", href: "https://rovyk.com" },
-                        { name: "Lawbit", icon: "/icons/lawbit.svg", href: "https://lawbit.ai" },
-                        { name: "Spider", icon: "/icons/spider.svg", href: "#" },
-                        { name: "kashew", icon: "/icons/kashew.svg", href: "#" },
+                        {
+                          name: "Rovyk",
+                          icon: "/icons/rovyk.svg",
+                          href: "https://rovyk.com",
+                        },
+                        {
+                          name: "Lawbit",
+                          icon: "/icons/lawbit.svg",
+                          href: "https://lawbit.ai",
+                        },
+                        {
+                          name: "Spider",
+                          icon: "/icons/spider.svg",
+                          href: "#",
+                        },
+                        {
+                          name: "kashew",
+                          icon: "/icons/kashew.svg",
+                          href: "#",
+                        },
                       ].map((product) => (
                         <div
                           key={product.name}
@@ -342,9 +364,9 @@ export default function Navbar() {
                             className="object-contain"
                           />
                           <Link href={product.href} target="_blank">
-                          <span className="text-sm md:text-lg text-[#000000]">
-                            {product.name}
-                          </span>
+                            <span className="text-sm md:text-lg text-[#000000]">
+                              {product.name}
+                            </span>
                           </Link>
                         </div>
                       ))}
@@ -410,7 +432,7 @@ export default function Navbar() {
         {isOpen && isLargeScreen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 335, opacity: 1 }}
+            animate={{ height: 677, opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{
               duration: 0.35,
@@ -426,148 +448,196 @@ export default function Navbar() {
             }}
             className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] grain-navbar"
           >
-            <div className="flex justify-between items-start h-full gap-4">
-              {/* Products Section */}
-              <div className="mr-6">
-                <h2 className="text-[40px] font-semibold text-[#14141459] mb-6">
-                  Products
-                </h2>
-                <div className="grid grid-cols-2 gap-x-8 gap-y-12">
-                  {[
-                    {
-                      name: "Rovyk",
-                      sub: "AI Powerhouse",
-                      icon: "/icons/rovyk.svg",
-                    },
-                    {
-                      name: "Lawbit",
-                      sub: "AI for Legal Intelligence",
-                      icon: "/icons/lawbit.svg",
-                    },
-                    {
-                      name: "Spider",
-                      sub: "AI Pitch Deck Analyzer",
-                      icon: "/icons/spider.svg",
-                    },
-                    {
-                      name: "Kashew",
-                      sub: "AI for Invoicing",
-                      icon: "/icons/kashew.svg",
-                    },
-                  ].map((product) => (
-                    <div
-                      key={product.name}
-                      className="flex items-center gap-4 cursor-pointer"
-                    >
-                      <Image
-                        src={product.icon}
-                        alt={product.name}
-                        width={48}
-                        height={48}
-                        className="w-auto h-10 object-contain"
-                      />
-                      <div>
-                        <p className="text-[24px] font-semibold text-[#2F2C28]">
-                          {product.name}
-                        </p>
-                        <p className="text-lg text-[#7B746B]">{product.sub}</p>
+            <div className="flex flex-col h-full gap-8 mt-4">
+              {/* Top Grid Section */}
+              <div className="flex justify-between gap-8">
+                {/* Products Section */}
+                <div className="flex-1 h-[320px] flex flex-col justify-between">
+                  <h2 className="text-[40px] font-semibold text-[#14141459]">
+                    Products
+                  </h2>
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-12 mb-8">
+                    {[
+                      {
+                        name: "Rovyk",
+                        sub: "AI Powerhouse",
+                        icon: "/icons/rovyk.svg",
+                        href: "https://rovyk.com",
+                      },
+                      {
+                        name: "Lawbit",
+                        sub: "AI for Legal Intelligence",
+                        icon: "/icons/lawbit.svg",
+                        href: "https://lawbit.ai",
+                      },
+                      {
+                        name: "Spider",
+                        sub: "AI Pitch Deck Analyzer",
+                        icon: "/icons/spider.svg",
+                        href: "#",
+                      },
+                      {
+                        name: "Kashew",
+                        sub: "AI for Invoicing",
+                        icon: "/icons/kashew.svg",
+                        href: "#",
+                      },
+                    ].map((product) => (
+                      <div
+                        key={product.name}
+                        className="flex items-center gap-4"
+                      >
+                        <Image
+                          src={product.icon}
+                          alt={product.name}
+                          width={48}
+                          height={48}
+                          className="w-auto h-10 object-contain"
+                        />
+                        <div>
+                          <Link href={product.href} target="_blank">
+                            <p className="text-[24px] font-semibold text-[#2F2C28]">
+                              {product.name}
+                            </p>
+                            <p className="text-lg text-[#7B746B]">
+                              {product.sub}
+                            </p>
+                          </Link>
+                        </div>
                       </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Separator Line */}
+                <div className="w-[2px] h-[295px] bg-[#0000000D] self-center"></div>
+
+                {/* Company Section */}
+                <div className="flex-1 h-[320px] flex flex-col justify-between">
+                  <h2 className="text-[40px] font-semibold text-[#14141459]">
+                    Company
+                  </h2>
+                  <div className="grid grid-cols-2 gap-x-16 gap-y-6 h-[252px] mb-4">
+                    {/* Left Grid */}
+                    <div className="flex flex-col gap-4 justify-end">
+                      {[
+                        { name: "Company", href: "/company" },
+                        { name: "Vacancies", href: "/careers" },
+                        { name: "Contact", href: "/contact" },
+                      ].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group flex items-center gap-6 p-3 rounded-md hover:bg-[#5454541A] transition-all duration-300 hover:translate-x-2"
+                        >
+                          <Image
+                            src="/icons/navbar-arrow.svg"
+                            alt=""
+                            width={34}
+                            height={24}
+                            className="opacity-50 group-hover:opacity-100 transition-opacity duration-300 ease-in-out w-auto h-auto"
+                          />
+                          <span className="text-[24px] text-[#2F2C28] font-semibold">
+                            {item.name}
+                          </span>
+                        </Link>
+                      ))}
                     </div>
-                  ))}
+                    {/* Right Grid */}
+                    <div className="flex flex-col gap-4 justify-end">
+                      {[
+                        { name: "Team", href: "/team" },
+                        { name: "Philosophy", href: "/philosophy" },
+                        { name: "Join Us", href: "/careers" },
+                      ].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group flex items-center gap-6 p-3 rounded-md hover:bg-[#5454541A] transition-all duration-300 hover:translate-x-2"
+                        >
+                          <Image
+                            src="/icons/navbar-arrow.svg"
+                            alt=""
+                            width={34}
+                            height={24}
+                            className="opacity-50 group-hover:opacity-100 transition-opacity duration-300 ease-in-out w-auto h-auto"
+                          />
+                          <span className="text-[24px] text-[#2F2C28] font-semibold">
+                            {item.name}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Ampersand Section */}
+                <div className="bg-[#EBEBEB] text-[#575757] rounded-[16px] p-12 flex flex-col justify-between max-w-[460px] h-[320px]">
+                  <div className="flex flex-col gap-8 justify-between h-full">
+                    <div className="flex justify-between items-center">
+                      <Image
+                        src="/icons/ampersand-logo.svg"
+                        alt="Ampersand Logo"
+                        width={80}
+                        height={80}
+                        className="object-contain"
+                      />
+                      <Button className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
+                        Visit Website
+                      </Button>
+                    </div>
+                    <p className="text-lg text-[#575757]">
+                      At Ampersand, we turn bold visions into tangible outcomes.
+                      Through innovative solutions and strategic collaboration,
+                      we empower startups and businesses to grow with purpose
+                      and clarity.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Separator Line */}
-              <div className="w-[2px] h-[222px] bg-[#0000000D] mt-12"></div>
-
-              {/* Navigation Links */}
-              <div className="flex flex-col gap-2 mt-12 min-w-[289px] px-10">
-                {[
-                  { name: "Home", icon: "/icons/home.svg", href: "/" },
-                  { name: "About Us", icon: "/icons/about.svg", href: "/about" },
-                  { name: "Contact", icon: "/icons/contact.svg", href: "/contact" },
-                ].map((item) => (
-                  <div
-                    key={item.name}
-                    className="group flex items-center gap-4 p-4 rounded-[8px] hover:bg-[#5454541A] transition-colors duration-300 cursor-pointer min-w-[200px]"
-                  >
-                    <Image
-                      src={item.icon}
-                      alt={item.name}
-                      width={100}
-                      height={100}
-                      className="w-auto h-9 object-contain aspect-[4/3] group-hover:grayscale-0 group-hover:brightness-0 transition-all duration-300"
-                    />
-                    <Link href={item.href}>
-                      <span className="text-[#5B5B5B] group-hover:text-[#2F2C28] transition-colors text-[24px] font-semibold">
-                        {item.name}
-                      </span>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-
-              {/* Neural Nexus Section */}
-              <div className="relative">
-                <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">
-                  Platform
-                </h2>
-
-                <div className="relative bg-[#493E32] p-6 rounded-[16px] max-w-[441px] h-full overflow-hidden">
+              {/* Neural Nexus Section - Full Width */}
+              <div className="w-full">
+                <div className="relative bg-[#493E32] p-8 rounded-[16px] w-full overflow-hidden h-[252px] flex items-center">
                   {/* Background Image */}
                   <Image
                     src="/icons/navbar-circle.svg"
                     alt="background circle"
-                    width={250}
-                    height={250}
+                    width={350}
+                    height={450}
                     className="absolute bottom-0 right-0 z-0 pointer-events-none select-none"
                   />
 
                   {/* Foreground Content */}
-                  <div className="relative z-10">
-                    <h2 className="text-[24px] font-semibold text-[#84725E] mb-1">
-                      Neural Nexus
-                    </h2>
-                    <p className="text-white text-base mb-4 max-w-[90%]">
-                      Unlock real-time, tailored AI insights with Neural
-                      Nexus—cutting through complexity to reveal what others
-                      miss.
-                    </p>
-                    <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-6 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
-                      Read Use Cases
-                      <Image
-                        src="/icons/arrow-navbar.svg"
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                        className="w-6 h-6 object-contain"
-                      />
-                    </Button>
+                  <div className="relative z-10 flex flex-row items-center gap-8">
+                    <div className="flex flex-col gap-4">
+                      <h2 className="text-[92px] font-semibold text-[#C0B3A6]">
+                        Neural Nexus
+                      </h2>
+                      <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 w-fit">
+                        Read Use Cases
+                        <Image
+                          src="/icons/arrow-navbar.svg"
+                          alt="arrow"
+                          width={24}
+                          height={24}
+                          className="w-6 h-6 object-contain"
+                        />
+                      </Button>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-white text-lg max-w-[707px]">
+                        ​Neural Nexus is an enterprise-grade AI analytics
+                        platform that rapidly transforms raw data into
+                        actionable insights, enabling businesses to make
+                        informed decisions swiftly. Leveraging advanced neural
+                        processing, it delivers predictive analytics, decision
+                        intelligence, and operational excellence, all within a
+                        user-friendly interface designed for teams without
+                        dedicated data expertise.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Ampersand Section */}
-              <div className="bg-[#EBEBEB] text-[#575757] rounded-[16px] p-12 flex flex-col justify-between max-w-[460px] h-full">
-                <div className="flex flex-col gap-8">
-                  <div className="flex justify-between items-center">
-                    <Image
-                      src="/icons/ampersand-logo.svg"
-                      alt="Ampersand Logo"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                    <Button className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
-                      Visit Website
-                    </Button>
-                  </div>
-                  <p className="text-base text-[#575757]">
-                    At Ampersand, we turn bold visions into tangible outcomes.
-                    Through innovative solutions and strategic collaboration, we
-                    empower startups and businesses to grow with purpose and
-                    clarity.
-                  </p>
                 </div>
               </div>
             </div>
