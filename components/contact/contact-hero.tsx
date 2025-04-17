@@ -1,10 +1,11 @@
+'use client'
+
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 const ContactHero = () => {
   return (
-    <section className="relative mx-auto px-4 md:px-8 2xl:px-20">
+    <section className="relative mx-auto">
       {/* Background Image */}
       <div className="absolute top-0 right-0 xl:w-8/12 w-7/12 h-full pointer-events-none -z-10">
         <Image
@@ -26,8 +27,13 @@ const ContactHero = () => {
           Whether you are curious about our products, or dreaming of joining the
           Neural Paths team — we are here to connect.
         </p>
-        <Link 
-          href="/contact#contact-form"
+        <button 
+          onClick={() => {
+            const formElement = document.getElementById('contact-form');
+            if (formElement) {
+              formElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
           className="flex items-center gap-4 bg-[#2F2C28] text-white px-10 py-4 rounded-full w-fit transition-all hover:bg-[#2F2C28] hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
         >
           Get In Touch
@@ -46,7 +52,7 @@ const ContactHero = () => {
               strokeLinejoin="round"
             />
           </svg>
-        </Link>
+        </button>
       </div>
 
       {/* Contact Cards */}

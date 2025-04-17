@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Careers = () => {
   return (
     <section className="relative mt-10">
-      <div className="bg-[#F3F3F3] rounded-4xl px-4 md:px-8 xl:px-20 py-16 xl:py-10 max-w-[1700px] mx-auto">
+      <div className="bg-[#F3F3F3] rounded-4xl px-4 md:px-8 xl:px-20 py-16 xl:py-10  mx-auto">
         {/* Main Content */}
         <div className="flex flex-col items-center text-center mb-10">
           <h2 className="text-4xl lg:text-5xl xl:text-[64px] font-semibold text-[#373737] mb-4 tracking-tighter">

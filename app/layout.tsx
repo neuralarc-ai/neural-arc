@@ -19,10 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${fustat.className} antialiased bg-[#F8F7F3]`}
-      >
+    <html lang="en">
+      <body className={fustat.className}>
         <Navbar />
         {children}
       </body>

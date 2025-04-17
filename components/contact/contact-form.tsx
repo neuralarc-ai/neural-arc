@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { z } from 'zod'
 
@@ -42,6 +42,8 @@ const ContactForm = () => {
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
+  const [isInitialRender, setIsInitialRender] = useState(true);
 
   const steps = [
     {
@@ -60,6 +62,13 @@ const ContactForm = () => {
       type: "textarea"
     }
   ];
+
+  useEffect(() => {
+    if (inputRef.current && !isInitialRender) {
+      inputRef.current.focus();
+    }
+    setIsInitialRender(false);
+  }, [currentStep, isInitialRender]);
 
   const validateField = (field: keyof FormData, value: FormData[keyof FormData]) => {
     try {
@@ -82,6 +91,13 @@ const ContactForm = () => {
     // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: undefined }));
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleNext();
     }
   };
 
@@ -136,10 +152,9 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="relative w-full max-w-[1726px] mx-auto px-4 py-16">
-      <div id="contact-form" className="relative bg-[url('/images/contact/contact-form-bg.png')] bg-cover bg-center rounded-4xl px-4 md:px-8 xl:px-20 py-16 overflow-hidden min-h-[1100px] flex items-center">
-        {/* Form Content */}
-        <div className="relative z-10 max-w-[1527px] mx-auto h-[843px]">
+    <section className="relative w-full mx-auto py-16">
+      <div className="relative bg-[url('/images/contact/contact-form-bg.png')] bg-cover bg-center rounded-4xl px-4 md:px-8 xl:px-20 py-16 overflow-hidden min-h-[1100px] flex items-center">
+        <div id="contact-form" className="relative z-10 max-w-[1527px] mx-auto h-[843px]">
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center h-full text-center">
               <h2 className="text-4xl lg:text-5xl xl:text-7xl font-semibold text-white mb-4 tracking-tighter">
@@ -166,8 +181,10 @@ const ContactForm = () => {
                 <div className="relative w-full mt-32">
                   {steps[currentStep].type === 'textarea' ? (
                     <textarea
+                      ref={inputRef as React.RefObject<HTMLTextAreaElement>}
                       value={formData[steps[currentStep].field as keyof FormData] as string}
                       onChange={handleInputChange}
+                      onKeyDown={handleKeyDown}
                       placeholder={errors[steps[currentStep].field as keyof FormData] || steps[currentStep].placeholder}
                       className={`w-full bg-transparent border-b-2 px-4 py-4 -mb-2 text-white placeholder:text-5xl text-5xl focus:outline-none transition-colors resize-none h-[72px] text-center ${
                         errors[steps[currentStep].field as keyof FormData] 
@@ -178,9 +195,11 @@ const ContactForm = () => {
                     />
                   ) : (
                     <input
+                      ref={inputRef as React.RefObject<HTMLInputElement>}
                       type={steps[currentStep].type}
                       value={formData[steps[currentStep].field as keyof FormData] as string}
                       onChange={handleInputChange}
+                      onKeyDown={handleKeyDown}
                       placeholder={errors[steps[currentStep].field as keyof FormData] || steps[currentStep].placeholder}
                       className={`w-full bg-transparent border-b-2 px-4 py-4 text-white placeholder:text-5xl text-5xl focus:outline-none transition-colors text-center h-[72px] ${
                         errors[steps[currentStep].field as keyof FormData] 
@@ -194,14 +213,20 @@ const ContactForm = () => {
                     {steps.map((_, index) => (
                       <div
                         key={index}
-                        className={`w-7 h-7 rounded-full transition-all duration-300 ${
+                        className={`relative w-7 h-7 rounded-full transition-all duration-300 ${
                           index === currentStep
-                            ? 'bg-white'
+                            ? 'bg-white' // Current step - solid white
                             : index < currentStep
-                            ? 'bg-white/60'
-                            : 'bg-white/20'
+                            ? 'bg-white' // Completed step - white with inner circle
+                            : 'border-2 border-white' // Future step - white border only
                         }`}
-                      />
+                      >
+                        {index < currentStep && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-3 h-3 rounded-full bg-[#1C1C1C]" />
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>

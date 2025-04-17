@@ -57,14 +57,16 @@ export default function Navbar() {
       {/* Top bar */}
       <div className="flex justify-between items-center mb-4">
         <div className="grain-texture">
-          <Image
-            src="/icons/neural-paths-logo.svg"
-            alt="Neural Paths"
-            width={100}
-            height={100}
-            className="object-contain h-auto w-20"
-            priority
-          />
+          <Link href="/" className="block">
+            <Image
+              src="/icons/neural-paths-logo.svg"
+              alt="Neural Paths"
+              width={100}
+              height={100}
+              className="object-contain h-auto w-20"
+              priority
+            />
+          </Link>
         </div>
 
         <div className="flex gap-4 items-center">
