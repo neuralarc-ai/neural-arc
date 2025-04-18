@@ -43,7 +43,6 @@ const ContactForm = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
-  const [isInitialRender, setIsInitialRender] = useState(true);
 
   const steps = [
     {
@@ -64,11 +63,10 @@ const ContactForm = () => {
   ];
 
   useEffect(() => {
-    if (inputRef.current && !isInitialRender) {
+    if (inputRef.current) {
       inputRef.current.focus();
     }
-    setIsInitialRender(false);
-  }, [currentStep, isInitialRender]);
+  }, [currentStep]);
 
   const validateField = (field: keyof FormData, value: FormData[keyof FormData]) => {
     try {

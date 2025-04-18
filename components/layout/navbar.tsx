@@ -521,7 +521,7 @@ export default function Navbar() {
                     {/* Left Grid */}
                     <div className="flex flex-col gap-4 justify-end">
                       {[
-                        { name: "Company", href: "/company" },
+                        { name: "Company", href: "/about" },
                         { name: "Vacancies", href: "/careers" },
                         { name: "Contact", href: "/contact" },
                       ].map((item) => (
@@ -546,8 +546,8 @@ export default function Navbar() {
                     {/* Right Grid */}
                     <div className="flex flex-col gap-4 justify-end">
                       {[
-                        { name: "Team", href: "/team" },
-                        { name: "Philosophy", href: "/philosophy" },
+                        { name: "Team", href: "/about" },
+                        { name: "Philosophy", href: "/about" },
                         { name: "Join Us", href: "/careers" },
                       ].map((item) => (
                         <Link
@@ -605,7 +605,7 @@ export default function Navbar() {
                     alt="background circle"
                     width={350}
                     height={450}
-                    className="absolute bottom-0 right-0 z-0 pointer-events-none select-none"
+                    className="absolute bottom-0 right-0 z-0 pointer-events-none select-none h-full"
                   />
 
                   {/* Foreground Content */}

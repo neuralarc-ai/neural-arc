@@ -38,7 +38,6 @@ const CareersForm = () => {
   const [isOpen, setIsOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
-  const [isInitialRender, setIsInitialRender] = useState(true);
 
   const roles = [
     "Product Designer",
@@ -82,11 +81,10 @@ const CareersForm = () => {
   ];
 
   useEffect(() => {
-    if (inputRef.current && !isInitialRender) {
+    if (inputRef.current) {
       inputRef.current.focus();
     }
-    setIsInitialRender(false);
-  }, [currentStep, isInitialRender]);
+  }, [currentStep]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
