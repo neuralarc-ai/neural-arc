@@ -5,7 +5,7 @@ const DNA = () => {
   return (
     <>
       {/* Desktop & Large Screens */}
-      <section className="hidden lg:flex bg-[url('/images/dna/dna-bg.png')] bg-cover bg-center bg-no-repeat rounded-[24px] lg:max-h-[1054px] overflow-hidden mb-10 grain-hero px-10 items-center justify-center">
+      <section className="hidden lg:flex bg-[url('/images/dna/dna-bg.png')] bg-cover bg-center bg-no-repeat rounded-[24px] lg:max-h-[1054px] overflow-hidden mb-10 px-10 items-center justify-center">
         <div className="z-20 w-1/2">
           <Image
             src="/images/dna/dna-illustration.svg"
@@ -31,7 +31,7 @@ const DNA = () => {
       </section>
 
       {/* Mobile & Tablet Layout */}
-      <section className="lg:hidden bg-[url('/images/dna/dna-bg-mobile.png')] bg-cover bg-center bg-no-repeat rounded-[24px] overflow-hidden mb-10 grain-hero px-4 py-8 flex flex-col items-center gap-6 text-white">
+      <section className="lg:hidden bg-[url('/images/dna/dna-bg-mobile.png')] bg-cover bg-center bg-no-repeat rounded-[24px] overflow-hidden mb-10 px-4 py-8 flex flex-col items-center gap-6 text-white">
         <h2 className="text-3xl font-semibold text-center mt-5">
           Weaving Intelligence Into Business DNA
         </h2>

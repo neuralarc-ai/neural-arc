@@ -84,7 +84,7 @@ const faqs: FAQ[] = [
 const FAQ: React.FC = () => {
 
   return (
-    <section className="max-w-[1538px] mx-auto lg:py-24 py-12 grain-hero">
+    <section className="max-w-[1538px] mx-auto lg:py-24 py-12">
       <div className="flex flex-col lg:flex-row justify-between items-start">
         {/* Left Column: Title */}
         <div className="lg:w-2/7 md:text-6xl text-3xl font-semibold text-[#373737] mb-6 lg:mb-0 tracking-tight text-center lg:text-start">

@@ -45,7 +45,7 @@ const DrivingValue = () => {
   ];
 
   return (
-    <div className="relative mx-auto max-w-[1664px] lg:px-8 px-2 2xl:px-0 lg:py-20 py-10 grain-hero">
+    <div className="relative mx-auto max-w-[1664px] lg:px-8 px-2 2xl:px-0 lg:py-20 py-10">
       <h2 className="text-3xl lg:text-[60px] text-center font-semibold tracking-tighter">
         Driving Value Across Industries
       </h2>

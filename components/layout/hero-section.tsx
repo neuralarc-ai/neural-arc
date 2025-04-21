@@ -4,7 +4,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <>
-      <div className="relative w-full max-h-[499px] md:max-h-[1300px] px-8 py-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 grain-hero overflow-hidden">
+      <div className="relative w-full max-h-[499px] md:max-h-[1300px] px-8 py-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 overflow-hidden">
         {/* Top Left Illustration */}
         <div className="absolute top-[60px] lg:-top-20 xl:top-[60px] hidden xl:block -ml-8">
           <Image
@@ -91,7 +91,7 @@ const Hero = () => {
 
       {/* Products Overview Section */}
       <div className="relative mx-auto xl:-mt-[300px] lg:-mt-[200px] md:-mt-[150px] -mt-[40px] max-w-[1664px] lg:px-8 px-4 2xl:px-0 z-50">
-        <div className="bg-white rounded-[8px] lg:rounded-[24px] p-8 grain-hero">
+        <div className="bg-white rounded-[8px] lg:rounded-[24px] p-8">
           {/* Products Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 relative">
             {/* Lawbit */}
@@ -186,7 +186,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Gradient Text Section */}
-      <div className="relative mx-auto max-w-[1664px] -mt-[40px] z-[5] lg:px-8 px-4 2xl:px-0 grain-navbar">
+      <div className="relative mx-auto max-w-[1664px] -mt-[40px] z-[5] lg:px-8 px-4 2xl:px-0">
         <div className="bottom-text-gradient xl:rounded-b-[24px] rounded-b-[8px] pt-16 pb-4 mx-auto flex items-center justify-center">
           <p className="text-sm lg:text-lg text-center text-white px-4">
             Neural tools with significant impact, designed for individual

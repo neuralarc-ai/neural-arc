@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const NeuralNexus = () => {
   return (
-    <div className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 lg:mt-20 mt-10 grain-hero">
+    <div className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 lg:mt-20 mt-10">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
         {/* Left Content */}
         <div className="flex flex-col gap-6">

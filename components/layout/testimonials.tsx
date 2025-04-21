@@ -119,7 +119,7 @@ const Testimonials: React.FC = () => {
   }, [slider]);
 
   return (
-    <div className="w-full mx-auto lg:px-4 relative grain-hero translate-x-8 lg:translate-x-0">
+    <div className="w-full mx-auto lg:px-4 relative translate-x-8 lg:translate-x-0">
       {/* Mobile Layout: Image and Carousel */}
       {isMobile ? (
         <>
