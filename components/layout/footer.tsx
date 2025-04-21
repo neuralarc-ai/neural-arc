@@ -14,12 +14,12 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Image
                   src="/icons/neural-paths-footer.svg"
-                  alt="NeuralARC"
+                  alt="NeuralArc"
                   width={66}
                   height={66}
                   className="w-auto h-8"
                 />
-                <span className="text-white text-[30px] font-semibold">NeuralARC</span>
+                <span className="text-white text-[30px] font-semibold">NeuralArc</span>
                 <div className="h-8 w-[1px] bg-[#FFFFFF1A] mx-2"></div>
                 <p className="text-[#64594E] text-lg">Where data meets neural intelligence</p>
               </div>
@@ -97,9 +97,9 @@ const Footer = () => {
             {/* Neural Nexus Column */}
             <div className="flex flex-col h-full justify-between">
               <div className="flex flex-col gap-4">
-                <h2 className="text-[#C0B3A6] font-semibold text-2xl">NeuralNOD</h2>
+                <h2 className="text-[#C0B3A6] font-semibold text-2xl">NeuralNod</h2>
                 <p className="text-[#868686] text-sm">
-                  Unlock real-time, tailored AI insights with NeuralNOD
+                  Unlock real-time, tailored AI insights with NeuralNod
                 </p>
               </div>
               <Link href="#" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
@@ -147,7 +147,7 @@ const Footer = () => {
           <p className="text-[#B4B0AA] mb-4 md:mb-0">Copyright 2025. All rights reserved.</p>
 
           {/* Right - Brand */}
-          <p className="text-[#988C7D]">A thing by <span className="font-semibold text-[#F1EEE9] tracking-widest">NEURALARC</span></p>
+          <p className="text-[#988C7D]">A thing by <span className="font-semibold text-[22px] text-[#F1EEE9]">NeuralArc</span></p>
         </div>
       </div>
     </footer>

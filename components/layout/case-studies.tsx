@@ -106,13 +106,13 @@ const CaseStudies = () => {
           <TabsList className="flex gap-2 mb-12 bg-[#D9D8D8] px-2 py-8 rounded-full">
             <TabsTrigger 
               value="startups"
-              className="px-8 py-6 cursor-pointer rounded-full text-2xl font-bold data-[state=active]:bg-[#2F2C28] data-[state=active]:text-white text-[#252525] transition-all duration-300"
+              className="px-8 py-6 cursor-pointer rounded-full text-2xl font-semibold data-[state=active]:bg-[#2F2C28] data-[state=active]:text-white text-[#252525] transition-all duration-300"
             >
               Startups
             </TabsTrigger>
             <TabsTrigger 
               value="enterprises"
-              className="px-8 py-6 cursor-pointer rounded-full text-2xl font-bold data-[state=active]:bg-[#2F2C28] data-[state=active]:text-white text-[#252525] transition-all duration-300"
+              className="px-8 py-6 cursor-pointer rounded-full text-2xl font-semibold data-[state=active]:bg-[#2F2C28] data-[state=active]:text-white text-[#252525] transition-all duration-300"
             >
               Enterprises
             </TabsTrigger>
@@ -193,7 +193,7 @@ const CaseStudies = () => {
                       <div className="w-full h-[1px] bg-[#71717133]"></div>
                     </div>
                     <div className="flex flex-row items-center w-full">
-                      <p className={`text-[40px] leading-none font-semibold w-1/2 ${
+                      <p className={`text-[40px] leading-none font-semibold w-2/3 ${
                         index === 0 ? 'text-[#BBAA97]' : 
                         index === 1 ? 'text-[#9B846A]' : 
                         'text-[#787878]'
@@ -285,7 +285,7 @@ const CaseStudies = () => {
                       <div className="w-full h-[1px] bg-[#71717133]"></div>
                     </div>
                     <div className="flex flex-row items-end w-full mt-auto">
-                      <p className={`leading-none font-semibold w-1/2 ${
+                      <p className={`leading-none font-semibold w-2/3 ${
                         index === 0 ? 'text-[#BBAA97] text-[32px]' : 
                         index === 1 ? 'text-[#787878] text-[54px]' : 
                         'text-[#9B846A] text-[40px]'

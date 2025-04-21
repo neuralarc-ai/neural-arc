@@ -71,12 +71,11 @@ const ContactHero = () => {
           </div>
           <div className="2xl:px-24 2xl:pt-16 xl:p-12 lg:p-8 md:p-6 flex-1 relative">
             <Image
-              src="/images/contact/product.svg"
-              alt="NeuralARC Product Support Illustration"
-              width={276}
-              height={276}
-              className="2xl:mb-15 mb-10"
-              priority
+              src="/images/illustrations/product-support.svg"
+              alt="NeuralArc Product Support Illustration"
+              width={400}
+              height={400}
+              className="w-auto h-auto object-contain"
             />
             <h2 className="text-2xl 2xl:text-6xl lg:text-4xl font-semibold text-[#343434]/70 mb-4 tracking-tight">
               Product & Platform Support
@@ -96,8 +95,8 @@ const ContactHero = () => {
                 </p>
                 <a
                   href="mailto:product@neuralarc.ai"
-                  className="2xl:text-2xl lg:text-sm text-[#2F2C28] font-semibold"
-                  aria-label="Contact NeuralARC Product Support Team"
+                  className="text-[#2F2C28] text-lg font-semibold hover:text-[#2F2C28] hover:underline transition-all duration-300"
+                  aria-label="Contact NeuralArc Product Support Team"
                 >
                   product@neuralarc.ai
                 </a>
@@ -145,8 +144,8 @@ const ContactHero = () => {
                 </p>
                 <a
                   href="mailto:product@neuralarc.ai"
-                  className="2xl:text-2xl lg:text-sm text-[#2F2C28] font-semibold"
-                  aria-label="Contact NeuralARC General Inquiries Team"
+                  className="text-[#2F2C28] text-lg font-semibold hover:text-[#2F2C28] hover:underline transition-all duration-300"
+                  aria-label="Contact NeuralArc General Inquiries Team"
                 >
                   product@neuralarc.ai
                 </a>

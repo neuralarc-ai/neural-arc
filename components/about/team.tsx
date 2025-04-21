@@ -58,7 +58,7 @@ const Team = () => {
               The Architects of Intelligence
             </h2>
             <p className="text-2xl text-[#BAB6B6] xl:max-w-[500px]">
-              NeuralARC is a team of visionary minds reimagining AI. We create bold, accessible 
+              NeuralArc is a team of visionary minds reimagining AI. We create bold, accessible 
               technology that empowers businesses to unlock intelligent insights quickly and efficiently.
             </p>
           </div>

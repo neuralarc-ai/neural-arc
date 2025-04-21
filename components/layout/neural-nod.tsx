@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-const NeuralNOD = () => {
+const NeuralNod = () => {
   return (
     <div className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 lg:mt-20 mt-10">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
         {/* Left Content */}
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl xl:text-5xl font-semibold tracking-tighter leading-tight text-[#373737] text-pretty text-center lg:text-start">
-            Introducing NeuralNOD - AI Platform
+            Introducing NeuralNod - AI Platform
           </h2>
           <h3 className="text-xl xl:text-3xl text-[#978163] text-center lg:text-start">
             Unlock the potential of neural intelligence
@@ -87,4 +87,4 @@ const NeuralNOD = () => {
   );
 };
 
-export default NeuralNOD;
+export default NeuralNod;

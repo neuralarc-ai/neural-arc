@@ -7,8 +7,8 @@ const Careers = () => {
       <div className="bg-[#F3F3F3] rounded-4xl px-4 md:px-8 xl:px-20 py-16 xl:py-10  mx-auto">
         {/* Main Content */}
         <div className="flex flex-col items-center text-center mb-10">
-          <h2 className="text-4xl lg:text-5xl xl:text-[64px] font-semibold text-[#373737] mb-4 tracking-tighter">
-            Careers at NeuralARC
+          <h2 className="text-2xl 2xl:text-6xl lg:text-4xl font-semibold text-[#343434]/70 mb-4 tracking-tight">
+            Careers at NeuralArc
           </h2>
           <p className="text-xl text-[#6A6A6A]">
             We are not riding the AI wave—we are laying the tracks.
@@ -22,9 +22,9 @@ const Careers = () => {
               We love meeting bold thinkers, contributors, and future teammates.
               Tell us about yourself or inquire about open positions.
             </p>
-            <a 
+            <a
               href="mailto:careers@neuralarc.ai"
-              className="text-2xl text-[#2F2C28] font-semibold hover:text-[#55493D] transition-colors duration-300"
+              className="text-[#2F2C28] text-lg font-semibold hover:text-[#2F2C28] hover:underline transition-all duration-300"
             >
               careers@neuralarc.ai
             </a>

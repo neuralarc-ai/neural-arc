@@ -4,13 +4,13 @@ import Testimonials from "@/components/layout/testimonials";
 import FAQ from "@/components/layout/faq";
 import LLM from "@/components/layout/llm";
 import CaseStudies from "@/components/layout/case-studies";
-import NeuralNOD from "@/components/layout/neural-nod";
+import NeuralNod from "@/components/layout/neural-nod";
 
 export default function Home() {
   return (
     <main className="max-w-[1920px] mx-auto md:px-8 px-4 grain-texture">
       <Hero />
-      <NeuralNOD /> 
+      <NeuralNod /> 
       <LLM />
       <CaseStudies />
       <DNA />

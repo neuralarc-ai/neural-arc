@@ -16,9 +16,9 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: "What is NeuralARC?",
+    question: "What is NeuralArc?",
     answer:
-      "NeuralARC is an AI company making advanced analytics accessible to every business—no data team required. Through our Neural Nexus platform and targeted MicroSaaS tools, we deliver fast, industry-specific insights powered by large language models.",
+      "NeuralArc is an AI company making advanced analytics accessible to every business—no data team required. Through our Neural Nexus platform and targeted MicroSaaS tools, we deliver fast, industry-specific insights powered by large language models.",
   },
   {
     question: "How does Neural Nexus differ from existing analytics platforms?",
@@ -46,32 +46,32 @@ const faqs: FAQ[] = [
       "Our MicroSaaS tools are designed for specific business functions, such as finance, marketing, and sales, to provide targeted insights and solutions.",
   },
   {
-    question: "What does NeuralARC cost?",
+    question: "What does NeuralArc cost?",
     answer:
       "Pricing is tailored based on the size and needs of your business. Contact us for a customized quote.",
   },
   {
-    question: "How does NeuralARC ensure data security and privacy?",
+    question: "How does NeuralArc ensure data security and privacy?",
     answer:
       "We follow industry-standard security practices and comply with GDPR and other privacy regulations to ensure your data is protected.",
   },
   {
     question:
-      "What kind of ROI can I expect from implementing NeuralARC solutions?",
+      "What kind of ROI can I expect from implementing NeuralArc solutions?",
     answer:
       "Our solutions are designed to increase operational efficiency and drive measurable business outcomes, such as time saved, increased sales, and better decision-making.",
   },
   {
     question:
-      "Does NeuralARC require any special hardware or IT infrastructure?",
+      "Does NeuralArc require any special hardware or IT infrastructure?",
     answer:
-      "No, NeuralARC is a cloud-based platform and does not require special hardware or IT infrastructure.",
+      "No, NeuralArc is a cloud-based platform and does not require special hardware or IT infrastructure.",
   },
   {
     question:
-      "How does NeuralARC compare to building an in-house data analytics capability?",
+      "How does NeuralArc compare to building an in-house data analytics capability?",
     answer:
-      "NeuralARC provides a faster, more cost-effective solution, avoiding the need to hire and train a data team.",
+      "NeuralArc provides a faster, more cost-effective solution, avoiding the need to hire and train a data team.",
   },
   {
     question:

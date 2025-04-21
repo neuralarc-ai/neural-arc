@@ -9,7 +9,7 @@ const fustat = Fustat({
 });
 
 export const metadata: Metadata = {
-  title: "NeuralARC",
+  title: "NeuralArc",
   description: "Where data meets neural intelligence",
 };
 
