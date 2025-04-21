@@ -38,13 +38,13 @@ const Hero = () => {
             traditional analytics through neural intelligence.
           </p>
         </div>
-        <div className="w-full mx-auto flex justify-center items-center mt-10 z-50">
+        <div className="w-full mx-auto flex justify-center items-center mt-10 ">
           <Image
             src="/images/hero/hero-illustration.png"
             alt="hero"
             width={500}
             height={1200}
-            className="z-50 xl:w-auto xl:h-auto lg:w-[300px] w-[200px] object-contain hidden sm:block"
+            className="xl:w-auto xl:h-auto lg:w-[300px] w-[200px] object-contain hidden sm:block"
           />
           <Image
             src="/images/hero/hero-illustration-mobile.png"

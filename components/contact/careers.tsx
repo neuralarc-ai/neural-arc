@@ -8,7 +8,7 @@ const Careers = () => {
         {/* Main Content */}
         <div className="flex flex-col items-center text-center mb-10">
           <h2 className="text-4xl lg:text-5xl xl:text-[64px] font-semibold text-[#373737] mb-4 tracking-tighter">
-            Careers at Neural Paths
+            Careers at NeuralARC
           </h2>
           <p className="text-xl text-[#6A6A6A]">
             We are not riding the AI wave—we are laying the tracks.
@@ -23,10 +23,10 @@ const Careers = () => {
               Tell us about yourself or inquire about open positions.
             </p>
             <a 
-              href="mailto:careers@neuralpaths.ai"
+              href="mailto:careers@neuralarc.ai"
               className="text-2xl text-[#2F2C28] font-semibold hover:text-[#55493D] transition-colors duration-300"
             >
-              careers@neuralpaths.ai
+              careers@neuralarc.ai
             </a>
           </div>
           <div className="flex flex-row flex-shrink-0 items-center gap-6">

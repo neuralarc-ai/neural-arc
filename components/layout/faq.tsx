@@ -16,9 +16,9 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: "What is Neural Paths?",
+    question: "What is NeuralARC?",
     answer:
-      "Neural Paths is an AI company making advanced analytics accessible to every business—no data team required. Through our Neural Nexus platform and targeted MicroSaaS tools, we deliver fast, industry-specific insights powered by large language models.",
+      "NeuralARC is an AI company making advanced analytics accessible to every business—no data team required. Through our Neural Nexus platform and targeted MicroSaaS tools, we deliver fast, industry-specific insights powered by large language models.",
   },
   {
     question: "How does Neural Nexus differ from existing analytics platforms?",
@@ -46,32 +46,32 @@ const faqs: FAQ[] = [
       "Our MicroSaaS tools are designed for specific business functions, such as finance, marketing, and sales, to provide targeted insights and solutions.",
   },
   {
-    question: "What does Neural Paths cost?",
+    question: "What does NeuralARC cost?",
     answer:
       "Pricing is tailored based on the size and needs of your business. Contact us for a customized quote.",
   },
   {
-    question: "How does Neural Paths ensure data security and privacy?",
+    question: "How does NeuralARC ensure data security and privacy?",
     answer:
       "We follow industry-standard security practices and comply with GDPR and other privacy regulations to ensure your data is protected.",
   },
   {
     question:
-      "What kind of ROI can I expect from implementing Neural Paths solutions?",
+      "What kind of ROI can I expect from implementing NeuralARC solutions?",
     answer:
       "Our solutions are designed to increase operational efficiency and drive measurable business outcomes, such as time saved, increased sales, and better decision-making.",
   },
   {
     question:
-      "Does Neural Paths require any special hardware or IT infrastructure?",
+      "Does NeuralARC require any special hardware or IT infrastructure?",
     answer:
-      "No, Neural Paths is a cloud-based platform and does not require special hardware or IT infrastructure.",
+      "No, NeuralARC is a cloud-based platform and does not require special hardware or IT infrastructure.",
   },
   {
     question:
-      "How does Neural Paths compare to building an in-house data analytics capability?",
+      "How does NeuralARC compare to building an in-house data analytics capability?",
     answer:
-      "Neural Paths provides a faster, more cost-effective solution, avoiding the need to hire and train a data team.",
+      "NeuralARC provides a faster, more cost-effective solution, avoiding the need to hire and train a data team.",
   },
   {
     question:

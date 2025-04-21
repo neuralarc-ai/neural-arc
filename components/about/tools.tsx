@@ -110,7 +110,7 @@ const Tools = () => {
       <div className="mt-24 bg-[#E2D7CF] lg:h-[355px] rounded-3xl p-4 lg:p-12 flex flex-col lg:flex-row items-center lg:gap-12">
         <div className="lg:w-1/3 flex flex-col justify-center order-1 lg:order-1">
           <h2 className="text-4xl lg:text-7xl font-semibold text-[#8A7E73] mb-8">
-            Neural Nexus
+            NeuralNOD
           </h2>
           <Link
             href="#"
@@ -140,9 +140,9 @@ const Tools = () => {
 
         <div className="lg:w-2/3 flex items-center order-2 lg:order-3">
           <p className="text-base lg:text-2xl text-[#515151] leading-normal text-balance text-center lg:text-start">
-            Neural Nexus is an enterprise-grade AI analytics platform that empowers businesses
+            NeuralNOD is a powerful platform that helps businesses
             —especially those without dedicated data teams—to make smarter decisions, faster.
-            Built on powerful LLM infrastructure, Neural Nexus transforms raw data into real-time,
+            Built on powerful LLM infrastructure, NeuralNOD transforms raw data into real-time,
             industry-specific insights, reducing the path from data to action from months to days.
           </p>
         </div>

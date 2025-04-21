@@ -8,7 +8,7 @@ const CareersHero = () => {
           Build Smarter. Grow Faster. Think Bold.
         </h2>
         <h1 className="text-7xl font-semibold tracking-tight">
-          Careers at Neural Paths
+          Careers at NeuralARC
         </h1>
         <p className="text-2xl font-semibold max-w-5xl mx-auto">
           We are not just building products—we are building the future of

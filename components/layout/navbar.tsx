@@ -60,7 +60,7 @@ export default function Navbar() {
           <Link href="/" className="block">
             <Image
               src="/icons/neural-paths-logo.svg"
-              alt="Neural Paths"
+              alt="NeuralARC"
               width={100}
               height={100}
               className="object-contain h-auto w-20"
@@ -214,7 +214,7 @@ export default function Navbar() {
                   </div>
 
                   <div className="flex gap-8">
-                    {/* Neural Nexus Section */}
+                    {/* NeuralNOD Section */}
                     <div className="flex flex-col h-full relative">
                       <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">
                         Platform
@@ -233,11 +233,10 @@ export default function Navbar() {
                         {/* Foreground Content */}
                         <div className="relative z-10">
                           <h2 className="text-[24px] font-semibold text-[#84725E] mb-2">
-                            Neural Nexus
+                            NeuralNOD
                           </h2>
                           <p className="text-[#DCDCDC] text-base mb-4">
-                            Unlock real-time, tailored AI insights with Neural
-                            Nexus—cutting through complexity to reveal what
+                            Unlock real-time, tailored AI insights with NeuralNOD—cutting through complexity to reveal what
                             others miss.
                           </p>
                           <Button className="bg-[#FAF9F6] hover:bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
@@ -374,15 +373,14 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {/* Neural Nexus Section */}
+                {/* NeuralNOD Section */}
                 <div className="mt-4">
                   <div className="bg-[#493E32] p-4 rounded-[16px] md:w-full w-[286px]">
                     <h2 className="text-[18px] font-semibold text-white mb-2">
-                      Neural Nexus
+                      NeuralNOD
                     </h2>
                     <p className="text-white text-sm mb-4">
-                      Unlock real-time, tailored AI insights with Neural
-                      Nexus—cutting through complexity to reveal what others
+                      Unlock real-time, tailored AI insights with NeuralNOD—cutting through complexity to reveal what others
                       miss.
                     </p>
                     <Button className="bg-white text-[#493E32] rounded-full px-4 py-8 text-sm flex items-center gap-2 w-full">
@@ -596,7 +594,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Neural Nexus Section - Full Width */}
+              {/* NeuralNOD Section - Full Width */}
               <div className="w-full">
                 <div className="relative bg-[#493E32] p-8 rounded-[16px] w-full overflow-hidden h-[252px] flex items-center">
                   {/* Background Image */}
@@ -612,7 +610,7 @@ export default function Navbar() {
                   <div className="relative z-10 flex flex-row items-center gap-8">
                     <div className="flex flex-col gap-4">
                       <h2 className="text-[92px] font-semibold text-[#C0B3A6]">
-                        Neural Nexus
+                        NeuralNOD
                       </h2>
                       <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 w-fit">
                         Read Use Cases
@@ -627,7 +625,7 @@ export default function Navbar() {
                     </div>
                     <div className="flex-1">
                       <p className="text-white text-lg max-w-[707px]">
-                        ​Neural Nexus is an enterprise-grade AI analytics
+                        ​NeuralNOD is an enterprise-grade AI analytics
                         platform that rapidly transforms raw data into
                         actionable insights, enabling businesses to make
                         informed decisions swiftly. Leveraging advanced neural

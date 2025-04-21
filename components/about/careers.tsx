@@ -7,7 +7,7 @@ const Careers = () => {
       {/* Header */}
       <div className="text-center mb-16">
         <h1 className="text-4xl lg:text-7xl font-semibold text-[#373737] mb-6 tracking-tight">
-          Careers at Neural Paths
+          Careers at NeuralARC
         </h1>
         <p className="text-lg lg:text-2xl font-semibold text-[#55493D] mx-auto px-20 tracking-tight">
           We are building a mission-driven team to transform how businesses harness and apply AI. If you are curious, ambitious, and passionate about creating intelligent systems that solve real-world challenges, we would love to connect
@@ -21,7 +21,7 @@ const Careers = () => {
             Introduce yourself
           </h2>
           <p className="text-lg lg:text-3xl">
-            careers@neuralpaths.ai
+            careers@neuralarc.ai
           </p>
         </div>
         <Link

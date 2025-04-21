@@ -148,7 +148,7 @@ const CaseStudies = () => {
               </div>
 
               {/* Service Business Case */}
-              <div className="bg-[#F0F0F0] p-8 rounded-[16px] relative flex flex-col justify-between min-h-[425px]">
+              <div className="bg-[#F0F0F0] py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[425px]">
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#AEACA9] text-[54px] font-semibold tracking-tighter leading-none">Service Business</p>
@@ -174,7 +174,7 @@ const CaseStudies = () => {
               {/* Other Cases - 3 Column Grid */}
               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
                 {startupCases.slice(1, 4).map((caseStudy, index) => (
-                  <div key={index} className={`p-8 rounded-[16px] relative flex flex-col justify-between min-h-[403px] ${
+                  <div key={index} className={`py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px] ${
                     index === 0 ? 'bg-[#E3D9CF]' : 
                     index === 1 ? 'bg-[#B7A694]' : 
                     'bg-[#939090]'
@@ -211,7 +211,7 @@ const CaseStudies = () => {
               </div>
 
               {/* Global Supply Chain - Full Width */}
-              <div className="md:col-span-2 bg-[#CFD4C9] p-8 rounded-[16px]">
+              <div className="md:col-span-2 bg-[#CFD4C9] py-8 px-10 rounded-[16px]">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[930px] tracking-tight">{startupCases[4].description}</p>
@@ -239,7 +239,7 @@ const CaseStudies = () => {
           <TabsContent value="enterprises" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Telecom Provider - Large Card */}
-              <div className="md:col-span-2 bg-[#F0F0F0] p-8 rounded-[16px]">
+              <div className="md:col-span-2 bg-[#F0F0F0] py-8 px-10 rounded-[16px]">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[960px] tracking-tight">{enterpriseCases[0].description}</p>
@@ -266,7 +266,7 @@ const CaseStudies = () => {
               {/* Middle Three Cards */}
               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
                 {enterpriseCases.slice(1, 4).map((caseStudy, index) => (
-                  <div key={index} className={`p-8 rounded-[16px] relative flex flex-col justify-between min-h-[403px] ${
+                  <div key={index} className={`py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px] ${
                     index === 0 ? 'bg-[#E3D9CF]' : 
                     index === 1 ? 'bg-[#939090]' : 
                     'bg-[#B7A694]'
@@ -303,48 +303,50 @@ const CaseStudies = () => {
               </div>
 
               {/* Bottom Two Cards */}
-              <div className="bg-[#CFD4C9] p-8 rounded-[16px] relative flex flex-col justify-between min-h-[425px]">
-                <div className="flex flex-col gap-8">
+              <div className="bg-[#CFD4C9] py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px]">
+                <div className="flex flex-col gap-8 h-full">
                   <div className="flex justify-between items-center">
-                    <p className="text-[#A2A89C] text-[54px] font-semibold tracking-tighter leading-none">Global Financial<br />Services</p>
+                    <p className="text-[#080507] text-xl max-w-[496px] text-[28px] tracking-tight">{enterpriseCases[4].description}</p>
                     <Link href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                  <p className="text-[#080507] text-xl">{enterpriseCases[4].description}</p>
                   <div className="w-full h-[1px] bg-[#71717133]"></div>
-                </div>
-                <div className="grid grid-cols-2 justify-between">
-                  <div>
-                    <p className="text-[40px] font-semibold text-[#55493D]">+38%</p>
-                    <p className="text-xl text-[#AEACA9]">disruptions predicted<br />in advance</p>
-                  </div>
-                  <div>
-                    <p className="text-[40px] font-semibold text-[#55493D]">24%</p>
-                    <p className="text-xl text-[#AEACA9]">Reduction in<br />Customer Churn</p>
+                  <div className="flex justify-between items-end mt-auto">
+                    <div className="grid grid-cols-2 gap-16">
+                      <div className="flex flex-col">
+                        <p className="text-[40px] font-semibold text-[#55493D]">+38%</p>
+                        <p className="text-xl text-[#55493D] text-nowrap">disruptions predicted <br /> in advance</p>
+                      </div>
+                      <div className="flex flex-col">
+                        <p className="text-[40px] font-semibold text-[#55493D]">24%</p>
+                        <p className="text-xl text-[#55493D]">Reduction in Customer Churn</p>
+                      </div>
+                    </div>
+                    <p className="text-[#A2A89C] text-[54px] min-w-[370px] font-semibold tracking-tighter leading-none text-right">Global Financial<br />Services</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-[#F0F0F0] p-8 rounded-[16px] relative flex flex-col justify-between min-h-[425px]">
+              <div className="bg-[#E3D9CF] py-8 px-10 rounded-[16px] relative flex flex-col justify-between">
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
-                    <p className="text-[#AEACA9] text-[54px] font-semibold tracking-tighter leading-none">Pharmaceutical<br />Enterprise</p>
+                    <p className="text-[#BAA894] text-[54px] font-semibold tracking-tighter leading-none">Pharmaceutical<br />Enterprise</p>
                     <Link href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                   <p className="text-[#080507] text-xl">Pharma faces high-stakes data demands, but rising trial complexity and regulatory shifts challenge even top firms to stay agile and efficient.</p>
-                  <div className="w-full h-[1px] bg-[#71717133]"></div>
+                  <div className="w-full h-[1px] bg-[#71717133] mb-4"></div>
                 </div>
                 <div className="grid grid-cols-2 justify-between">
                   <div>
                     <p className="text-[40px] font-semibold text-[#55493D]">+28%</p>
-                    <p className="text-xl text-[#AEACA9]">Accelerated Clinical<br />Trials</p>
+                    <p className="text-xl text-[#898278]">Accelerated Clinical Trials</p>
                   </div>
                   <div>
                     <p className="text-[40px] font-semibold text-[#55493D]">+34%</p>
-                    <p className="text-xl text-[#AEACA9]">Decision-Making<br />Accuracy</p>
+                    <p className="text-xl text-[#898278]">Decision-Making Accuracy</p>
                   </div>
                 </div>
               </div>

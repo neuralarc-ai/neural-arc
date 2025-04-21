@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-const NeuralNexus = () => {
+const NeuralNOD = () => {
   return (
     <div className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 lg:mt-20 mt-10">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
         {/* Left Content */}
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl xl:text-5xl font-semibold tracking-tighter leading-tight text-[#373737] text-pretty text-center lg:text-start">
-            Introducing Neural Nexus - AI Platform
+            Introducing NeuralNOD - AI Platform
           </h2>
           <h3 className="text-xl xl:text-3xl text-[#978163] text-center lg:text-start">
             Unlock the potential of neural intelligence
@@ -32,24 +32,44 @@ const NeuralNexus = () => {
             million data points per second, we turn complexity into clarity,
             empowering you to anticipate tomorrow&apos;s opportunities.
           </p>
-          <button className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-5 rounded-full w-fit 2xl:mt-10 mt-4 transition-all hover:bg-[#2F2C28] hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out self-center lg:self-start">
-            Join the waitlist
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 8H15M15 8L8 1M15 8L8 15"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+          <div className="flex items-center gap-4">
+            <button className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-5 rounded-full w-fit 2xl:mt-10 mt-4 transition-all hover:bg-[#2F2C28] hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out self-center lg:self-start">
+              Join the waitlist
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 8H15M15 8L8 1M15 8L8 15"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button className="flex items-center gap-2 bg-[#C1BBB4] text-[#2F2C28] px-8 py-5 rounded-full w-fit 2xl:mt-10 mt-4 transition-all hover:bg-[#C1BBB4] hover:shadow-[0_5px_0_0_#9A918C] duration-300 cursor-pointer ease-in-out self-center lg:self-start">
+              Learn More
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 8H15M15 8L8 1M15 8L8 15"
+                  stroke="#2F2C28"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Right Illustration */}
@@ -67,4 +87,4 @@ const NeuralNexus = () => {
   );
 };
 
-export default NeuralNexus;
+export default NeuralNOD;

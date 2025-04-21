@@ -21,7 +21,7 @@ const DNA = () => {
               Weaving Intelligence Into Business DNA
             </h2>
             <p className="2xl:text-2xl xl:text-md lg:text-sm font-light">
-              Neural Paths democratizes business intelligence through Neural Nexus—our platform that transforms raw data into actionable insights without requiring data engineers. While traditional solutions see numbers, we see patterns; where others need months, we deliver in days.
+              NeuralARC democratizes business intelligence through Neural Nexus—our platform that transforms raw data into actionable insights without requiring data engineers. While traditional solutions see numbers, we see patterns; where others need months, we deliver in days.
               <br />
               <br />
               We have also launched five specialized AI MicroSaaS tools that serve as cognitive extensions of your team, automating complex tasks across legal, marketing, finance, and development domains. By making enterprise-grade AI accessible to companies of all sizes, we are ensuring the neural revolution benefits everyone, not just tech giants with unlimited resources.
@@ -48,7 +48,7 @@ const DNA = () => {
 
         <div className="rounded-[16px] p-4 text-white text-sm md:text-base font-light">
           <p>
-            Neural Paths democratizes business intelligence through Neural Nexus—our platform that transforms raw data into actionable insights without requiring data engineers. While traditional solutions see numbers, we see patterns; where others need months, we deliver in days.
+            NeuralARC democratizes business intelligence through Neural Nexus—our platform that transforms raw data into actionable insights without requiring data engineers. While traditional solutions see numbers, we see patterns; where others need months, we deliver in days.
             <br />
             <br />
             We have also launched five specialized AI MicroSaaS tools that serve as cognitive extensions of your team, automating complex tasks across legal, marketing, finance, and development domains. By making enterprise-grade AI accessible to companies of all sizes, we are ensuring the neural revolution benefits everyone, not just tech giants with unlimited resources.

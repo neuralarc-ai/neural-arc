@@ -72,7 +72,7 @@ const ContactHero = () => {
           <div className="2xl:px-24 2xl:pt-16 xl:p-12 lg:p-8 md:p-6 flex-1 relative">
             <Image
               src="/images/contact/product.svg"
-              alt="Neural Paths Product Support Illustration"
+              alt="NeuralARC Product Support Illustration"
               width={276}
               height={276}
               className="2xl:mb-15 mb-10"
@@ -95,11 +95,11 @@ const ContactHero = () => {
                   Email us at:
                 </p>
                 <a
-                  href="mailto:product@neuralpaths.ai"
+                  href="mailto:product@neuralarc.ai"
                   className="2xl:text-2xl lg:text-sm text-[#2F2C28] font-semibold"
-                  aria-label="Contact Neural Paths Product Support Team"
+                  aria-label="Contact NeuralARC Product Support Team"
                 >
-                  product@neuralpaths.ai
+                  product@neuralarc.ai
                 </a>
               </div>
             </div>
@@ -144,11 +144,11 @@ const ContactHero = () => {
                   Email us at:
                 </p>
                 <a
-                  href="mailto:product@neuralpaths.ai"
+                  href="mailto:product@neuralarc.ai"
                   className="2xl:text-2xl lg:text-sm text-[#2F2C28] font-semibold"
-                  aria-label="Contact Neural Paths General Inquiries Team"
+                  aria-label="Contact NeuralARC General Inquiries Team"
                 >
-                  product@neuralpaths.ai
+                  product@neuralarc.ai
                 </a>
               </div>
             </div>
