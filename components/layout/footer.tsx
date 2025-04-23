@@ -73,8 +73,8 @@ const Footer = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-[1024px]">
             {/* Company Column */}
             <div>
-              <h4 className="text-white text-lg mb-4">Company</h4>
-              <ul className="space-y-4">
+              <h4 className="text-white text-2xl mb-6">Company</h4>
+              <ul className="space-y-8">
                 <li><Link href="/about" className="text-[#817F7D] hover:text-white transition-colors">About</Link></li>
                 <li><Link href="/contact" className="text-[#817F7D] hover:text-white transition-colors">Contact Us</Link></li>
                 <li><Link href="/careers" className="text-[#817F7D] hover:text-white transition-colors">Careers</Link></li>
@@ -83,43 +83,77 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Product Column */}
-            <div>
-              <h4 className="text-white text-lg mb-4">Product</h4>
-              <ul className="space-y-4">
-                <li><Link href="https://rovyk.com" target="_blank" className="text-[#817F7D] hover:text-white transition-colors">Rovyk</Link></li>
-                <li><Link href="https://lawbit.ai" target="_blank" className="text-[#817F7D] hover:text-white transition-colors">Lawbit</Link></li>
-                <li><Link href="#" className="text-[#817F7D] hover:text-white transition-colors">Spider</Link></li>
-                <li><Link href="#" className="text-[#817F7D] hover:text-white transition-colors">Kashew</Link></li>
-              </ul>
-            </div>
+            {/* NOD and ORB Section with Bottom Border */}
+            <div className="col-span-2">
+              <div className="grid grid-cols-2 gap-8 mb-8">
+                {/* NOD Column */}
+                <div>
+                  <div>
+                    <h2 className="text-white text-2xl">NOD</h2>
+                    <p className="text-[#817F7D] text-lg">Navigate. Optimize. Disrupt.</p>
+                  </div>
+                  <p className="text-[#817F7D] mt-2 h-[136px]">
+                    Unlock real-time, tailored AI insights with NOD — cutting through complexity to reveal what others miss.
+                  </p>
+                  <Link href="#" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
+                    Read Use Cases
+                    <Image 
+                      src="/icons/arrow.svg" 
+                      alt="arrow" 
+                      width={38} 
+                      height={20}
+                      className="transition-transform duration-300 group-hover:translate-x-1" 
+                    />
+                  </Link>
+                </div>
 
-            {/* Neural Nexus Column */}
-            <div className="flex flex-col h-full justify-between">
-              <div className="flex flex-col gap-4">
-                <h2 className="text-[#C0B3A6] font-semibold text-2xl">NeuralNod</h2>
-                <p className="text-[#868686] text-sm">
-                  Unlock real-time, tailored AI insights with NeuralNod
-                </p>
+                {/* ORB Column */}
+                <div>
+                  <div>
+                    <h2 className="text-white text-2xl">ORB</h2>
+                    <p className="text-[#817F7D] text-lg">Outlast, Reimagine, Build.</p>
+                  </div>
+                  <p className="text-[#817F7D] mt-2 h-[136px]">
+                    AI-driven competitor intelligence—unveiling strategic advantages instantly.
+                  </p>
+                  <Link href="#" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
+                    Read Use Cases
+                    <Image 
+                      src="/icons/arrow.svg" 
+                      alt="arrow" 
+                      width={38} 
+                      height={20}
+                      className="transition-transform duration-300 group-hover:translate-x-1" 
+                    />
+                  </Link>
+                </div>
               </div>
-              <Link href="#" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
-                Read Use Cases
-                <Image 
-                  src="/icons/arrow.svg" 
-                  alt="arrow" 
-                  width={38} 
-                  height={20}
-                  className="transition-transform duration-300 group-hover:translate-x-1" 
-                />
-              </Link>
+
+              {/* Bottom Bordered Section */}
+              <div className="border border-[#FFFFFF1A] rounded-2xl px-4 py-2 flex justify-between items-center">
+                <div className="flex flex-col">
+                  <h3 className="text-white text-xl mb-1">NeuralArc&apos;s</h3>
+                  <p className="text-[#817F7D] text-lg">Micro SaaS Suite</p>
+                </div>
+                <Link href="#" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
+                  Learn More
+                  <Image 
+                    src="/icons/arrow.svg" 
+                    alt="arrow" 
+                    width={38} 
+                    height={20}
+                    className="transition-transform duration-300 group-hover:translate-x-1" 
+                  />
+                </Link>
+              </div>
             </div>
 
             {/* Ampersand Column */}
-            <div className="flex flex-col h-full justify-between">
-              <div>
-                <h4 className="text-white text-lg mb-4">Ampersand</h4>
-                <p className="text-[#817F7D] mb-6 max-w-[280px]">At Ampersand, we turn bold visions into tangible outcomes. Through innovative solutions and strategic collaboration, we empower startups and businesses to grow with purpose and clarity.</p>
-              </div>
+            <div>
+              <h2 className="text-white text-2xl mb-2">Ampersand</h2>
+              <p className="text-[#817F7D] mb-6">
+                At Ampersand, we turn bold visions into tangible outcomes. Through innovative solutions and strategic collaboration, we empower startups and businesses to grow with purpose and clarity.
+              </p>
               <Link href="https://ampvc.com" target="_blank" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
                 Visit Website
                 <Image 
