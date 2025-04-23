@@ -70,7 +70,7 @@ const enterpriseCases: CaseStudy[] = [
   {
     title: "Global Retailer",
     subtitle: "Profit Through Precision",
-    description: "By leveraging Neural Nexus’ Unified Commerce & Supply Chain Intelligence, global retailers can unlock true omnichannel power—enhancing customer experience, efficiency, and long-term growth in a highly competitive market."
+    description: "By leveraging Neural Nexus' Unified Commerce & Supply Chain Intelligence, global retailers can unlock true omnichannel power—enhancing customer experience, efficiency, and long-term growth in a highly competitive market."
   },
   {
     title: "Insurance Corporation",
@@ -93,7 +93,7 @@ const CaseStudies = () => {
       <div className="max-w-[1713px] mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-xl xl:text-4xl text-[#807C65] mb-4">
+          <h3 className="text-xl xl:text-4xl text-[#807C65] font-semibold tracking-tight mb-4">
             From risk reduction to revenue growth
           </h3>
           <h2 className="text-4xl xl:text-6xl font-semibold text-[#373737] mb-8 tracking-tighter">
@@ -126,7 +126,7 @@ const CaseStudies = () => {
                 <div>
                   <p className="text-[#000000] text-3xl mb-8">{startupCases[0].description}</p>
                   <div className="w-full h-[1px] bg-[#71717133] mb-8"></div>
-                  <Link href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                  <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                     Read story <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -152,7 +152,7 @@ const CaseStudies = () => {
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#AEACA9] text-[54px] font-semibold tracking-tighter leading-none">Service Business</p>
-                    <Link href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -202,7 +202,7 @@ const CaseStudies = () => {
                          index === 1 ? 'Healthcare' : 
                          'Channel\nRetail'}
                       </p>
-                      <Link href="#" className="inline-flex items-center gap-2 px-6 py-4 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 w-1/2 justify-center">
+                      <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -215,7 +215,7 @@ const CaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[930px] tracking-tight">{startupCases[4].description}</p>
-                    <Link href="#" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-4 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -243,7 +243,7 @@ const CaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[960px] tracking-tight">{enterpriseCases[0].description}</p>
-                    <Link href="#" className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -294,7 +294,7 @@ const CaseStudies = () => {
                          index === 1 ? 'Global\nRetailer' : 
                          'Insurance\nCorporation'}
                       </p>
-                      <Link href="#" className="inline-flex items-center gap-2 px-6 py-4 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 w-1/2 justify-center">
+                      <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -307,7 +307,7 @@ const CaseStudies = () => {
                 <div className="flex flex-col gap-8 h-full">
                   <div className="flex justify-between items-center">
                     <p className="text-[#080507] text-xl max-w-[496px] text-[28px] tracking-tight">{enterpriseCases[4].description}</p>
-                    <Link href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -332,7 +332,7 @@ const CaseStudies = () => {
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#BAA894] text-[54px] font-semibold tracking-tighter leading-none">Pharmaceutical<br />Enterprise</p>
-                    <Link href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

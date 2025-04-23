@@ -55,7 +55,7 @@ export default function Navbar() {
   return (
     <nav className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:py-10 py-5">
       {/* Top bar */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 grain-hero">
         <div className="grain-texture">
           <Link href="/" className="block">
             <Image
@@ -74,7 +74,7 @@ export default function Navbar() {
           {isLargeScreen && (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out"
+              className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out"
             >
               <span
                 className={cn(
@@ -95,7 +95,7 @@ export default function Navbar() {
           {isMediumScreen && (
             <DropdownMenu onOpenChange={(open) => setIsMediumMenuOpen(open)}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out">
+                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -239,7 +239,7 @@ export default function Navbar() {
                             Unlock real-time, tailored AI insights with NeuralNod—cutting through complexity to reveal what
                             others miss.
                           </p>
-                          <Button className="bg-[#FAF9F6] hover:bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
+                          <Button className="bg-[#FAF9F6] hover:bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                             Read Use Cases
                             <Image
                               src="/icons/arrow-navbar.svg"
@@ -263,7 +263,7 @@ export default function Navbar() {
                           height={80}
                           className="object-contain w-20 h-auto"
                         />
-                        <Button className="bg-[#575757] hover:bg-[#575757] text-white text-lg rounded-full px-10 py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
+                        <Button className="bg-[#575757] hover:bg-[#575757] text-white text-lg rounded-full px-10 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                           Visit Website
                         </Button>
                       </div>
@@ -284,7 +284,7 @@ export default function Navbar() {
           {isMobileScreen && (
             <DropdownMenu onOpenChange={(open) => setIsMobileMenuOpen(open)}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out">
+                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -318,7 +318,7 @@ export default function Navbar() {
                         {item}
                       </span>
                     ))}
-                    <Button className="bg-[#2F2C28] rounded-full py-5 px-8 text-base w-fit grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out cursor-pointer duration-300 transition-all">
+                    <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-5 px-8 text-base w-fit grain-texture hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out cursor-pointer duration-300 transition-all">
                       Sign In
                     </Button>
                   </div>
@@ -383,7 +383,7 @@ export default function Navbar() {
                       Unlock real-time, tailored AI insights with NeuralNod—cutting through complexity to reveal what others
                       miss.
                     </p>
-                    <Button className="bg-white text-[#493E32] rounded-full px-4 py-8 text-sm flex items-center gap-2 w-full">
+                    <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-4 py-8 text-sm flex items-center gap-2 w-full">
                       Read Use Cases
                       <Image
                         src="/icons/arrow.svg"
@@ -409,7 +409,7 @@ export default function Navbar() {
                     Ampersand transforms bold visions into impactful growth
                     through innovation and strategic collaboration.
                   </p>
-                  <Button className="bg-[#575757] text-white text-base rounded-full py-6 w-full hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
+                  <Button className="bg-[#575757] text-white text-base rounded-full py-6 w-full hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                     Visit Website
                   </Button>
                 </div>
@@ -418,7 +418,7 @@ export default function Navbar() {
           )}
 
           {!isMobileScreen && (
-            <Button className="bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
+            <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
               Sign In
             </Button>
           )}
@@ -580,7 +580,7 @@ export default function Navbar() {
                         height={80}
                         className="object-contain"
                       />
-                      <Button className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
+                      <Button className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
                         Visit Website
                       </Button>
                     </div>
@@ -612,7 +612,7 @@ export default function Navbar() {
                       <h2 className="text-[92px] font-semibold text-[#C0B3A6]">
                         NeuralNod
                       </h2>
-                      <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 w-fit">
+                      <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 w-fit">
                         Read Use Cases
                         <Image
                           src="/icons/arrow-navbar.svg"
