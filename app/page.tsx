@@ -1,12 +1,14 @@
 import Hero from "@/components/layout/hero-section";
 import DNA from "@/components/layout/dna";
-import Testimonials from "@/components/layout/testimonials";
 import FAQ from "@/components/layout/faq";
 import LLM from "@/components/layout/llm";
 import CaseStudies from "@/components/layout/case-studies";
 import Orb from "@/components/layout/orb";
 import OrbFeatures from "@/components/layout/orb-features";
 import Nod from "@/components/layout/nod";
+import CaseStudiesMobile from "@/components/layout/case-studies-mobile";
+import Suite from "@/components/layout/suite";
+import OrbFeaturesMobile from "@/components/layout/orb-features-mobile";
 
 export default function Home() {
   return (
@@ -14,11 +16,13 @@ export default function Home() {
       <Hero />
       <Orb />
       <OrbFeatures />
+      <OrbFeaturesMobile />
       <LLM />
       <Nod />
       <CaseStudies />
+      <CaseStudiesMobile />
+      <Suite />
       <DNA />
-      <Testimonials />
       <FAQ />
     </main>
   );

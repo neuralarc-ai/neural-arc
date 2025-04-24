@@ -47,7 +47,7 @@ const features = [
 
 const ORBFeatures = () => {
   return (
-    <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10">
+    <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10 hidden lg:block">
       {/* Section Headers */}
       <div className="text-center mb-16">
         <h2 className="text-[#807C65] text-2xl lg:text-5xl mb-4 font-semibold tracking-tight">

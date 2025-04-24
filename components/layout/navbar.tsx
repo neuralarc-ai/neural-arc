@@ -10,6 +10,12 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -46,11 +52,11 @@ export default function Navbar() {
   }, [pathname]);
 
   // Check if we're in the medium screen range
-  const isMediumScreen = windowWidth >= 769 && windowWidth < 1800;
+  const isMediumScreen = windowWidth >= 1396 && windowWidth < 1800;
   // Check if we're in the large screen range
   const isLargeScreen = windowWidth >= 1800;
   // Check if we're in the mobile screen range
-  const isMobileScreen = windowWidth <= 768;
+  const isMobileScreen = windowWidth < 1396;
 
   return (
     <nav className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:py-10 py-5">
@@ -112,167 +118,200 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="mt-4 border-none p-8 w-[848px] bg-white rounded-2xl"
+                className="mt-4 border-none p-8 max-w-[1297px] bg-white rounded-2xl grain-hero"
                 style={{
                   overflowY: "auto",
+                  right: "0",
+                  left: "auto",
+                  transform: "translateX(40px)",
                 }}
               >
                 <div className="flex flex-col">
-                  <div className="flex gap-16 mb-8">
-                    {/* Products Grid */}
-                    <div className="flex-1">
-                      <h2 className="text-[40px] font-semibold text-[#14141459] mb-6">
-                        Products
+                  {/* Main Grid */}
+                  <div className="flex gap-6 mb-6">
+                    {/* Company Section */}
+                    <div className="rounded-2xl p-8 pl-0 min-w-[280px]">
+                      <h2 className="text-[40px] font-semibold text-[#87765D] mb-8 tracking-tight">
+                        Company
                       </h2>
-                      <div className="grid grid-cols-2 gap-x-16 gap-y-12">
-                        {[
-                          {
-                            name: "Rovyk",
-                            sub: "AI Powerhouse",
-                            icon: "/icons/rovyk.svg",
-                            href: "https://rovyk.com",
-                          },
-                          {
-                            name: "Lawbit",
-                            sub: "AI for Legal Intelligence",
-                            icon: "/icons/lawbit.svg",
-                            href: "https://lawbit.ai",
-                          },
-                          {
-                            name: "Spider",
-                            sub: "AI Pitch Deck Analyzer",
-                            icon: "/icons/spider.svg",
-                            href: "#",
-                          },
-                          {
-                            name: "Kashew",
-                            sub: "AI for Invoicing",
-                            icon: "/icons/kashew.svg",
-                            href: "#",
-                          },
-                        ].map((product) => (
-                          <div
-                            key={product.name}
-                            className="flex items-center gap-4"
-                          >
+                      <div className="flex flex-col gap-6">
+                        <Link href="/about" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
                             <Image
-                              src={product.icon}
-                              alt={product.name}
-                              width={100}
-                              height={100}
-                              className="w-auto h-12 object-contain"
+                              src="/icons/overview.svg"
+                              alt="Overview"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                             />
-                            <div>
-                              <Link href={product.href} target="_blank">
-                                <p className="text-xl font-semibold text-[#2F2C28]">
-                                  {product.name}
-                                </p>
-                                <p className="text-base text-[#666666]">
-                                  {product.sub}
-                                </p>
-                              </Link>
-                            </div>
                           </div>
-                        ))}
+                          <span className="text-2xl text-[#2F2C28]">Overview</span>
+                        </Link>
+                        <Link href="/contact" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
+                            <Image
+                              src="/icons/contact.svg"
+                              alt="Contact"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                            />
+                          </div>
+                          <span className="text-2xl text-[#2F2C28]">Contact</span>
+                        </Link>
+                        <Link href="/careers" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
+                            <Image
+                              src="/icons/careers.svg"
+                              alt="Careers"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                            />
+                          </div>
+                          <span className="text-2xl text-[#2F2C28]">Careers</span>
+                        </Link>
                       </div>
                     </div>
 
-                    {/* Navigation Links */}
-                    <div className="bg-[#F8F8F8] px-8 py-6 rounded-2xl h-fit flex flex-col gap-8 min-w-[300px] ">
-                      {[
-                        { name: "Home", icon: "/icons/home.svg", href: "/" },
-                        {
-                          name: "About Us",
-                          icon: "/icons/about.svg",
-                          href: "/about",
-                        },
-                        {
-                          name: "Contact",
-                          icon: "/icons/contact.svg",
-                          href: "/contact",
-                        },
-                      ].map((item) => (
-                        <div
-                          key={item.name}
-                          className="flex items-center gap-2 hover:bg-[#5454541A] duration-300 transition-all ease-in-out p-3 rounded-md"
-                        >
-                          <Image
-                            src={item.icon}
-                            alt={item.name}
-                            width={32}
-                            height={32}
-                            className="w-auto h-10 object-contain aspect-[4/3] group-hover:grayscale-0 group-hover:brightness-0 transition-all duration-300"
-                          />
-                          <Link href={item.href}>
-                            <span className="text-xl text-[#2F2C28]">
-                              {item.name}
-                            </span>
-                          </Link>
-                        </div>
-                      ))}
+                    {/* ORB Section */}
+                    <div className="bg-[#E0E4DC] rounded-2xl p-8 min-w-[442px]">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Image
+                          src="/images/orb/orb.svg"
+                          alt="ORB"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                        <h2 className="text-[40px] font-bold text-[#465855]">ORB</h2>
+                      </div>
+                      <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
+                      <div className="flex flex-col gap-4 mb-8">
+                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
+                            <Image
+                              src="/icons/discover.svg"
+                              alt="Discover"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <span className="text-2xl text-[#2F2C28]">Discover</span>
+                        </Link>
+                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
+                            <Image
+                              src="/icons/value.svg"
+                              alt="Value Scenarios"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <span className="text-2xl text-[#2F2C28]">Value Scenarios</span>
+                        </Link>
+                      </div>
+                      <Button className="w-fit bg-[#2F2C28] hover:bg-[#2F2C28] cursor-pointer text-white rounded-full py-6 px-8 text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300">
+                        Get Early Access
+                      </Button>
+                    </div>
+
+                    {/* NOD Section */}
+                    <div className="bg-[#CCBEAE] rounded-2xl p-8 min-w-[442px]">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Image
+                          src="/images/nod/nod.svg"
+                          alt="NOD"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                        <h2 className="text-[40px] font-bold text-[#5F554F]">NOD</h2>
+                      </div>
+                      <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
+                      <div className="flex flex-col gap-4 mb-8">
+                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
+                            <Image
+                              src="/icons/discover.svg"
+                              alt="Discover"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <span className="text-2xl text-[#2F2C28]">Discover</span>
+                        </Link>
+                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <div className="w-8 h-8">
+                            <Image
+                              src="/icons/value.svg"
+                              alt="Value Scenarios"
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <span className="text-2xl text-[#2F2C28]">Value Scenarios</span>
+                        </Link>
+                      </div>
+                      <Button className="w-fit bg-[#2F2C28] hover:bg-[#2F2C28] cursor-pointer text-white rounded-full py-6 px-8 text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300">
+                        Get Early Access
+                      </Button>
                     </div>
                   </div>
 
-                  <div className="flex gap-8">
-                    {/* NeuralNod Section */}
-                    <div className="flex flex-col h-full relative">
-                      <h2 className="text-[40px] font-semibold text-[#14141459] mb-0">
-                        Platform
+                  {/* Banner Section */}
+                  <div className="relative w-full bg-[url('/images/navbar/banner-medium.png')] p-6 border border-[#65584A]/60 bg-no-repeat bg-cover bg-right rounded-2xl overflow-hidden max-h-[252px]">
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-4 items-center">
+
+                      <h2 className="text-[70px] font-semibold text-[#8A7E73] max-w-[330px] tracking-tight leading-none px-4">
+                        ARC&apos;s <br /> <span className="text-[40px] font-semibold">Micro SaaS Suite</span>
                       </h2>
-
-                      <div className="relative bg-[#493E32] p-6 rounded-[16px] min-w-[388px] overflow-hidden">
-                        {/* Background Image */}
-                        <Image
-                          src="/icons/navbar-circle.svg"
-                          alt="background circle"
-                          width={200}
-                          height={200}
-                          className="absolute bottom-0 right-0 z-0 pointer-events-none select-none"
-                        />
-
-                        {/* Foreground Content */}
-                        <div className="relative z-10">
-                          <h2 className="text-[24px] font-semibold text-[#84725E] mb-2">
-                            NeuralNod
-                          </h2>
-                          <p className="text-[#DCDCDC] text-base mb-4">
-                            Unlock real-time, tailored AI insights with NeuralNod—cutting through complexity to reveal what
-                            others miss.
-                          </p>
-                          <Button className="bg-[#FAF9F6] hover:bg-[#FAF9F6] text-[#55493D] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
-                            Read Use Cases
-                            <Image
-                              src="/icons/arrow-navbar.svg"
-                              alt="arrow"
-                              width={24}
-                              height={24}
-                              className="w-8 h-6 object-contain"
-                            />
-                          </Button>
-                        </div>
+                      <div className="max-w-[310px]">
+                        <h3 className="text-2xl font-semibold text-[#6B6B6B] mb-4 tracking-tight">
+                          Small Tools. Massive Impact.
+                        </h3>
+                        <p className="text-base text-[#6B6B6B] tracking-tight">
+                          NeuralArc offers a growing suite of focused AI-powered micro products—each built to solve real business problems, fast. Explore lightweight tools that pack enterprise-grade intelligence into simple, scalable solutions.
+                        </p>
                       </div>
+                      </div>
+                      <Button className="bg-[#55493D] hover:bg-[#2F2C28] text-white rounded-full px-8 py-6 text-lg shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300 self-start mt-16">
+                        Explore the Suite <Image src="/icons/arrow.svg" alt="Arrow" width={30} height={30} className="ml-1" />
+                      </Button>
                     </div>
+                    <p className="absolute bottom-4 right-8 text-2xl text-[#6B6B6B]">
+                      The suite is growing. Real needs. Lasting impact.
+                    </p>
+                  </div>
 
-                    {/* Bottom Section */}
-                    <div className="bg-[#EBEBEB] text-white rounded-2xl p-10 flex flex-col gap-8 max-w-[460px]">
-                      <div className="flex justify-between items-center">
-                        <Image
-                          src="/icons/ampersand-logo.svg"
-                          alt="Ampersand Logo"
-                          width={80}
-                          height={80}
-                          className="object-contain w-20 h-auto"
-                        />
-                        <Button className="bg-[#575757] hover:bg-[#575757] text-white text-lg rounded-full px-10 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
-                          Visit Website
-                        </Button>
-                      </div>
-                      <p className="text-base leading-relaxed text-[#575757]">
-                        At Ampersand, we turn bold visions into tangible
-                        outcomes. Through innovative solutions and strategic
-                        collaboration, we empower startups and businesses to
-                        grow with purpose and clarity.
+                  {/* Ampersand Section Below Banner */}
+                  <div className="bg-[#EBEBEB] rounded-2xl p-8 mt-6 w-full">
+                    <div className="flex justify-between items-center">
+                      <Image
+                        src="/icons/ampersand-logo.svg"
+                        alt="Ampersand Logo"
+                        width={100}
+                        height={80}
+                        className="object-contain"
+                      />
+                      <p className="text-lg text-[#575757] max-w-[60%]">
+                        At Ampersand, we turn bold visions into tangible outcomes.
+                        Through innovative solutions and strategic collaboration,
+                        we empower startups and businesses to grow with purpose
+                        and clarity.
                       </p>
+                      <Link 
+                        href="https://ampvc.co/"
+                        target="_blank"
+                        className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 flex items-center justify-center"
+                      >
+                        Visit Website
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -301,117 +340,207 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="mt-4 border-none p-6 max-w-[400px] bg-white rounded-[16px]"
+                className="mt-4 border-none p-4 max-w-[400px] bg-white rounded-[16px]"
                 style={{
                   overflowY: "auto",
                   boxShadow: "-4px 4px 10px 0 rgba(0, 0, 0, 0.12)",
+                  right: "0",
+                  left: "auto",
+                  transform: "translateX(0)",
+                  marginRight: "0",
                 }}
               >
-                <div className="grid grid-cols-2 gap-8">
-                  {/* Left Section - Navigation Links */}
-                  <div className="flex flex-col gap-6 mt-2">
-                    {["Home", "About Us", "Contact"].map((item) => (
-                      <span
-                        key={item}
-                        className="text-sm md:text-lg text-[#2F2C28] cursor-pointer "
-                      >
-                        {item}
-                      </span>
-                    ))}
-                    <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-5 px-8 text-base w-fit grain-texture hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out cursor-pointer duration-300 transition-all">
-                      Sign In
-                    </Button>
-                  </div>
-
-                  {/* Right Section - Products */}
-                  <div>
-                    <h2 className="md:text-[24px] text-base font-semibold text-[#000000] mb-6">
-                      Products
-                    </h2>
-                    <div className="flex flex-col gap-6">
-                      {[
-                        {
-                          name: "Rovyk",
-                          icon: "/icons/rovyk.svg",
-                          href: "https://rovyk.com",
-                        },
-                        {
-                          name: "Lawbit",
-                          icon: "/icons/lawbit.svg",
-                          href: "https://lawbit.ai",
-                        },
-                        {
-                          name: "Spider",
-                          icon: "/icons/spider.svg",
-                          href: "#",
-                        },
-                        {
-                          name: "kashew",
-                          icon: "/icons/kashew.svg",
-                          href: "#",
-                        },
-                      ].map((product) => (
-                        <div
-                          key={product.name}
-                          className="flex items-center gap-3"
-                        >
-                          <Image
-                            src={product.icon}
-                            alt={product.name}
-                            width={28}
-                            height={28}
-                            className="object-contain"
-                          />
-                          <Link href={product.href} target="_blank">
-                            <span className="text-sm md:text-lg text-[#000000]">
-                              {product.name}
-                            </span>
+                <div className="flex flex-col gap-6">
+                  {/* Company Section */}
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="company" className="border-none">
+                      <AccordionTrigger className="hover:no-underline py-0 pr-4 [&>svg]:rotate-90 [&[data-state=open]>svg]:-rotate-90">
+                        <h2 className="text-2xl font-semibold text-[#87765D] tracking-tight">Company</h2>
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-4">
+                        <div className="flex flex-col gap-4 pl-2">
+                          <Link href="/about" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/overview.svg"
+                                alt="Overview"
+                                width={32}
+                                height={32}
+                                className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                              />
+                            </div>
+                            <span className="text-2xl text-[#2F2C28]">Overview</span>
+                          </Link>
+                          <Link href="/contact" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/contact.svg"
+                                alt="Contact"
+                                width={32}
+                                height={32}
+                                className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                              />
+                            </div>
+                            <span className="text-2xl text-[#2F2C28]">Contact</span>
+                          </Link>
+                          <Link href="/careers" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/careers.svg"
+                                alt="Careers"
+                                width={32}
+                                height={32}
+                                className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                              />
+                            </div>
+                            <span className="text-2xl text-[#2F2C28]">Careers</span>
                           </Link>
                         </div>
-                      ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+
+                  {/* ORB Section */}
+                  <Accordion type="single" collapsible className="w-full p-4 bg-[#E0E4DC] rounded-[8px]">
+                    <AccordionItem value="orb" className="border-none">
+                      <AccordionTrigger className="hover:no-underline [&>svg]:rotate-90 [&[data-state=open]>svg]:-rotate-90 ">
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src="/images/orb/orb.svg"
+                              alt="ORB"
+                              width={24}
+                              height={24}
+                              className="object-contain"
+                            />
+                            <h2 className="text-2xl font-bold text-[#465855]">ORB</h2>
+                          </div>
+                          <p className="text-[#255B47]/45 font-semibold text-base">{"{Outlast. Reimagine. Build.}"}</p>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-4">
+                        <div className="flex flex-col gap-4 pl-2">
+                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/discover.svg"
+                                alt="Discover"
+                                width={24}
+                                height={24}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span className="text-base text-[#2F2C28]">Discover</span>
+                          </Link>
+                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/value.svg"
+                                alt="Value Scenarios"
+                                width={24}
+                                height={24}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span className="text-base text-[#2F2C28]">Value Scenarios</span>
+                          </Link>
+                          <Button className="w-fit bg-[#2F2C28] hover:bg-[#2F2C28] cursor-pointer text-white rounded-full py-6 px-8 text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300">
+                            Get Early Access
+                          </Button>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+
+                  {/* NOD Section */}
+                  <Accordion type="single" collapsible className="w-full bg-[#E1DBD4] p-4 rounded-[8px]">
+                    <AccordionItem value="nod" className="border-none">
+                      <AccordionTrigger className="hover:no-underline [&>svg]:rotate-90 [&[data-state=open]>svg]:-rotate-90">
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src="/images/nod/nod.svg"
+                              alt="NOD"
+                              width={24}
+                              height={24}
+                              className="object-contain"
+                            />
+                            <h2 className="text-2xl font-bold text-[#5F554F]">NOD</h2>
+                          </div>
+                          <p className="text-[#584F48]/75 font-semibold text-base">{"{Navigate. Optimize. Disrupt.}"}</p>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-4">
+                        <div className="flex flex-col gap-4 pl-2">
+                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/discover.svg"
+                                alt="Discover"
+                                width={24}
+                                height={24}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span className="text-2xl text-[#2F2C28]">Discover</span>
+                          </Link>
+                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                            <div className="w-8 h-8">
+                              <Image
+                                src="/icons/value.svg"
+                                alt="Value Scenarios"
+                                width={24}
+                                height={24}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span className="text-2xl text-[#2F2C28]">Value Scenarios</span>
+                          </Link>
+                          <Button className="w-fit bg-[#2F2C28] hover:bg-[#2F2C28] cursor-pointer text-white rounded-full py-6 px-8 text-base shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300">
+                            Get Early Access
+                          </Button>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+
+                  {/* ARC's Micro SaaS Suite Section */}
+                  <div className="bg-[#F5F5F5] rounded-2xl p-4 border border-[#65584A]/60">
+                    <div className="flex flex-col gap-4">
+                      <h2 className="text-[40px] font-semibold text-[#8A7E73] tracking-tight leading-none">
+                        ARC&apos;s <br /> <span className="text-[24px]">Micro SaaS Suite</span>
+                      </h2>
+                      <p className="text-sm text-[#6B6B6B]">
+                        The suite is growing. Real needs. Lasting impact.
+                      </p>
+                      <Button className="w-full bg-[#55493D] hover:bg-[#2F2C28] text-white rounded-full py-6 text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300">
+                        Explore the Suite <Image src="/icons/arrow.svg" alt="Arrow" width={24} height={24} className="ml-1" />
+                      </Button>
                     </div>
                   </div>
-                </div>
 
-                {/* NeuralNod Section */}
-                <div className="mt-4">
-                  <div className="bg-[#493E32] p-4 rounded-[16px] md:w-full w-[286px]">
-                    <h2 className="text-[18px] font-semibold text-white mb-2">
-                      NeuralNod
-                    </h2>
-                    <p className="text-white text-sm mb-4">
-                      Unlock real-time, tailored AI insights with NeuralNod—cutting through complexity to reveal what others
-                      miss.
-                    </p>
-                    <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-4 py-8 text-sm flex items-center gap-2 w-full">
-                      Read Use Cases
-                      <Image
-                        src="/icons/arrow.svg"
-                        alt="arrow"
-                        width={20}
-                        height={20}
-                        className="w-5 h-5 object-contain"
-                      />
-                    </Button>
+                  {/* Ampersand Section */}
+                  <div className="bg-[#EBEBEB] rounded-2xl p-4">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center gap-2">
+                        <Image
+                          src="/icons/ampersand-logo.svg"
+                          alt="Ampersand Logo"
+                          width={80}
+                          height={60}
+                          className="object-contain"
+                        />
+                        <p className="text-2xl font-semibold text-[#575757]">Ampersand</p>
+                      </div>
+                      <Link 
+                        href="https://ampvc.co/"
+                        target="_blank"
+                        className="w-full bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full py-6 cursor-pointer hover:shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 flex items-center justify-center"
+                      >
+                        Visit Website
+                      </Link>
+                    </div>
                   </div>
-                </div>
-
-                {/* Bottom Section - Ampersand */}
-                <div className="bg-[#EBEBEB] text-[#575757] md:w-full w-[286px] rounded-[16px] p-4 mt-8 flex flex-col gap-4">
-                  <Image
-                    src="/icons/ampersand-logo.svg"
-                    alt="Ampersand Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain w-10 h-auto"
-                  />
-                  <p className="text-sm leading-normal text-[#575757]">
-                    Ampersand transforms bold visions into impactful growth
-                    through innovation and strategic collaboration.
-                  </p>
-                  <Button className="bg-[#575757] text-white text-base rounded-full py-6 w-full hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
-                    Visit Website
-                  </Button>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -430,214 +559,206 @@ export default function Navbar() {
         {isOpen && isLargeScreen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 677, opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{
               duration: 0.35,
               ease: [0.4, 0, 0.2, 1],
-              height: {
-                duration: 0.35,
-                ease: [0.4, 0, 0.2, 1],
-              },
-              opacity: {
-                duration: 0.25,
-                ease: [0.4, 0, 0.2, 1],
-              },
             }}
-            className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] grain-navbar"
+            className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] grain-navbar mt-8"
           >
-            <div className="flex flex-col h-full gap-8 mt-4">
-              {/* Top Grid Section */}
-              <div className="flex justify-between gap-8">
-                {/* Products Section */}
-                <div className="flex-1 h-[320px] flex flex-col justify-between">
-                  <h2 className="text-[40px] font-semibold text-[#14141459]">
-                    Products
-                  </h2>
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-12 mb-8">
-                    {[
-                      {
-                        name: "Rovyk",
-                        sub: "AI Powerhouse",
-                        icon: "/icons/rovyk.svg",
-                        href: "https://rovyk.com",
-                      },
-                      {
-                        name: "Lawbit",
-                        sub: "AI for Legal Intelligence",
-                        icon: "/icons/lawbit.svg",
-                        href: "https://lawbit.ai",
-                      },
-                      {
-                        name: "Spider",
-                        sub: "AI Pitch Deck Analyzer",
-                        icon: "/icons/spider.svg",
-                        href: "#",
-                      },
-                      {
-                        name: "Kashew",
-                        sub: "AI for Invoicing",
-                        icon: "/icons/kashew.svg",
-                        href: "#",
-                      },
-                    ].map((product) => (
-                      <div
-                        key={product.name}
-                        className="flex items-center gap-4"
-                      >
-                        <Image
-                          src={product.icon}
-                          alt={product.name}
-                          width={48}
-                          height={48}
-                          className="w-auto h-10 object-contain"
-                        />
-                        <div>
-                          <Link href={product.href} target="_blank">
-                            <p className="text-[24px] font-semibold text-[#2F2C28]">
-                              {product.name}
-                            </p>
-                            <p className="text-lg text-[#7B746B]">
-                              {product.sub}
-                            </p>
-                          </Link>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Separator Line */}
-                <div className="w-[2px] h-[295px] bg-[#0000000D] self-center"></div>
-
-                {/* Company Section */}
-                <div className="flex-1 h-[320px] flex flex-col justify-between">
-                  <h2 className="text-[40px] font-semibold text-[#14141459]">
-                    Company
-                  </h2>
-                  <div className="grid grid-cols-2 gap-x-16 gap-y-6 h-[252px] mb-4">
-                    {/* Left Grid */}
-                    <div className="flex flex-col gap-4 justify-end">
-                      {[
-                        { name: "Company", href: "/about" },
-                        { name: "Vacancies", href: "/careers" },
-                        { name: "Contact", href: "/contact" },
-                      ].map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group flex items-center gap-6 p-3 rounded-md hover:bg-[#5454541A] transition-all duration-300 hover:translate-x-2"
-                        >
-                          <Image
-                            src="/icons/navbar-arrow.svg"
-                            alt=""
-                            width={34}
-                            height={24}
-                            className="opacity-50 group-hover:opacity-100 transition-opacity duration-300 ease-in-out w-auto h-auto"
-                          />
-                          <span className="text-[24px] text-[#2F2C28] font-semibold">
-                            {item.name}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                    {/* Right Grid */}
-                    <div className="flex flex-col gap-4 justify-end">
-                      {[
-                        { name: "Team", href: "/about" },
-                        { name: "Philosophy", href: "/about" },
-                        { name: "Join Us", href: "/careers" },
-                      ].map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group flex items-center gap-6 p-3 rounded-md hover:bg-[#5454541A] transition-all duration-300 hover:translate-x-2"
-                        >
-                          <Image
-                            src="/icons/navbar-arrow.svg"
-                            alt=""
-                            width={34}
-                            height={24}
-                            className="opacity-50 group-hover:opacity-100 transition-opacity duration-300 ease-in-out w-auto h-auto"
-                          />
-                          <span className="text-[24px] text-[#2F2C28] font-semibold">
-                            {item.name}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Ampersand Section */}
-                <div className="bg-[#EBEBEB] text-[#575757] rounded-[16px] p-12 flex flex-col justify-between max-w-[460px] h-[320px]">
-                  <div className="flex flex-col gap-8 justify-between h-full">
-                    <div className="flex justify-between items-center">
+            {/* Main Grid */}
+            <div className="grid grid-cols-4 gap-6 mb-6">
+              {/* Company Section */}
+              <div className="rounded-2xl p-8 pl-0">
+                <h2 className="text-[40px] font-semibold text-[#87765D] mb-8 tracking-tight">
+                  Company
+                </h2>
+                <div className="flex flex-col gap-6">
+                  <Link href="/about" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
                       <Image
-                        src="/icons/ampersand-logo.svg"
-                        alt="Ampersand Logo"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        src="/icons/overview.svg"
+                        alt="Overview"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                       />
-                      <Button className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300">
-                        Visit Website
-                      </Button>
                     </div>
-                    <p className="text-lg text-[#575757]">
-                      At Ampersand, we turn bold visions into tangible outcomes.
-                      Through innovative solutions and strategic collaboration,
-                      we empower startups and businesses to grow with purpose
-                      and clarity.
-                    </p>
-                  </div>
+                    <span className="text-2xl text-[#2F2C28]">Overview</span>
+                  </Link>
+                  <Link href="/contact" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
+                      <Image
+                        src="/icons/contact.svg"
+                        alt="Contact"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                    <span className="text-2xl text-[#2F2C28]">Contact</span>
+                  </Link>
+                  <Link href="/careers" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
+                      <Image
+                        src="/icons/careers.svg"
+                        alt="Careers"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                    <span className="text-2xl text-[#2F2C28]">Careers</span>
+                  </Link>
                 </div>
               </div>
 
-              {/* NeuralNod Section - Full Width */}
-              <div className="w-full">
-                <div className="relative bg-[#493E32] p-8 rounded-[16px] w-full overflow-hidden h-[252px] flex items-center">
-                  {/* Background Image */}
+              {/* ORB Section */}
+              <div className="bg-[#E0E4DC] rounded-2xl p-8">
+                <div className="flex items-center gap-2 mb-1">
                   <Image
-                    src="/icons/navbar-circle.svg"
-                    alt="background circle"
-                    width={350}
-                    height={450}
-                    className="absolute bottom-0 right-0 z-0 pointer-events-none select-none h-full"
+                    src="/images/orb/orb.svg"
+                    alt="ORB"
+                    width={40}
+                    height={40}
+                    className="object-contain"
                   />
-
-                  {/* Foreground Content */}
-                  <div className="relative z-10 flex flex-row items-center gap-8">
-                    <div className="flex flex-col gap-4">
-                      <h2 className="text-[92px] font-semibold text-[#C0B3A6]">
-                        NeuralNod
-                      </h2>
-                      <Button className="bg-[#FAF9F6] text-[#55493D] hover:bg-[#FAF9F6] rounded-full px-10 py-6 text-base flex items-center gap-2 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 w-fit">
-                        Read Use Cases
-                        <Image
-                          src="/icons/arrow-navbar.svg"
-                          alt="arrow"
-                          width={24}
-                          height={24}
-                          className="w-6 h-6 object-contain"
-                        />
-                      </Button>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-white text-lg max-w-[707px]">
-                        ​NeuralNod is an enterprise-grade AI analytics
-                        platform that rapidly transforms raw data into
-                        actionable insights, enabling businesses to make
-                        informed decisions swiftly. Leveraging advanced neural
-                        processing, it delivers predictive analytics, decision
-                        intelligence, and operational excellence, all within a
-                        user-friendly interface designed for teams without
-                        dedicated data expertise.
-                      </p>
-                    </div>
-                  </div>
+                  <h2 className="text-[40px] font-bold text-[#465855]">ORB</h2>
                 </div>
+                <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
+                <div className="flex flex-col gap-4 mb-8">
+                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
+                      <Image
+                        src="/icons/discover.svg"
+                        alt="Discover"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-2xl text-[#2F2C28]">Discover</span>
+                  </Link>
+                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
+                      <Image
+                        src="/icons/value.svg"
+                        alt="Value Scenarios"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-2xl text-[#2F2C28]">Value Scenarios</span>
+                  </Link>
+                </div>
+                <Button className="w-fit bg-[#2F2C28] hover:bg-[#2F2C28] cursor-pointer text-white rounded-full py-6 px-8 text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300">
+                  Get Early Access
+                </Button>
               </div>
+
+              {/* NOD Section */}
+              <div className="bg-[#CCBEAE] rounded-2xl p-8">
+                <div className="flex items-center gap-2 mb-1">
+                  <Image
+                    src="/images/nod/nod.svg"
+                    alt="NOD"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <h2 className="text-[40px] font-bold text-[#5F554F]">NOD</h2>
+                </div>
+                <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
+                <div className="flex flex-col gap-4 mb-8">
+                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
+                      <Image
+                        src="/icons/discover.svg"
+                        alt="Discover"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-2xl text-[#2F2C28]">Discover</span>
+                  </Link>
+                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                    <div className="w-8 h-8">
+                      <Image
+                        src="/icons/value.svg"
+                        alt="Value Scenarios"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-2xl text-[#2F2C28]">Value Scenarios</span>
+                  </Link>
+                </div>
+                <Button className="w-fit bg-[#2F2C28] hover:bg-[#2F2C28] cursor-pointer text-white rounded-full py-6 px-8 text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300">
+                  Get Early Access
+                </Button>
+              </div>
+
+              {/* Ampersand Section */}
+              <div className="bg-[#EBEBEB] flex flex-col justify-between rounded-2xl py-16 px-8">
+                <div className="flex justify-between items-center mb-8">
+                  <Image
+                    src="/icons/ampersand-logo.svg"
+                    alt="Ampersand Logo"
+                    width={100}
+                    height={80}
+                    className="object-contain"
+                  />
+                  <Link 
+                    href="https://ampvc.co/"
+                    target="_blank"
+                    className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 flex items-center justify-center"
+                  >
+                    Visit Website
+                  </Link>
+                </div>
+                <p className="text-lg text-[#575757]">
+                  At Ampersand, we turn bold visions into tangible outcomes.
+                  Through innovative solutions and strategic collaboration,
+                  we empower startups and businesses to grow with purpose
+                  and clarity.
+                </p>
+              </div>
+            </div>
+
+            {/* Banner Section */}
+            <div className="relative w-full bg-[url('/images/navbar/banner-web.png')] px-4 border border-[#65584A]/60 bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden max-h-[252px]">
+              <div className="flex items-center justify-between">
+                <h2 className="text-[70px] font-semibold text-[#8A7E73] max-w-[360px] leading-none px-4">
+                  ARC&apos;s <br /> <span className="text-[40px] font-semibold">Micro SaaS Suite</span>
+                </h2>
+                <div className="max-w-[387px]">
+                  <h3 className="text-2xl font-semibold text-[#6B6B6B] mb-4">
+                    Small Tools. Massive Impact.
+                  </h3>
+                  <p className="text-base text-[#6B6B6B]">
+                    NeuralArc offers a growing suite of focused AI-powered micro products—each built to solve real business problems, fast. Explore lightweight tools that pack enterprise-grade intelligence into simple, scalable solutions.
+                  </p>
+                </div>
+                <div className="relative w-fit h-full">
+                  <Image
+                    src="/images/navbar/logos.png"
+                    alt="Suite Logos"
+                    width={573}
+                    height={251}
+                    className="object-contain"
+                  />
+                </div>
+                <Button className="bg-[#55493D] hover:bg-[#2F2C28] text-white rounded-full px-8 py-6 text-lg shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300 self-start mt-16">
+                  Explore the Suite <Image src="/icons/arrow.svg" alt="Arrow" width={30} height={30} className="ml-1" />
+                </Button>
+              </div>
+              <p className="absolute bottom-4 right-8 text-2xl text-[#6B6B6B]">
+                The suite is growing. Real needs. Lasting impact.
+              </p>
             </div>
           </motion.div>
         )}

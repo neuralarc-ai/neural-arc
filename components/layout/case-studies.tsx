@@ -89,7 +89,7 @@ const enterpriseCases: CaseStudy[] = [
 
 const CaseStudies = () => {
   return (
-    <section className="w-full mx-auto py-16">
+    <section className="w-full mx-auto py-16 hidden lg:block">
       <div className="max-w-[1713px] mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -358,4 +358,4 @@ const CaseStudies = () => {
   )
 }
 
-export default CaseStudies
+export default CaseStudies;
