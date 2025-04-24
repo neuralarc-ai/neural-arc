@@ -151,14 +151,14 @@ const ContactForm = () => {
 
   return (
     <section className="relative w-full mx-auto py-16">
-      <div className="relative bg-[url('/images/contact/contact-form-bg.png')] bg-cover bg-center rounded-4xl px-4 md:px-8 xl:px-20 py-16 overflow-hidden min-h-[1100px] flex items-center">
-        <div id="contact-form" className="relative z-10 max-w-[1527px] mx-auto h-[843px]">
+      <div className="relative bg-[url('/images/contact/contact-form-bg.png')] bg-cover bg-center rounded-4xl px-4 md:px-8 xl:px-20 py-16 overflow-hidden lg:min-h-[1100px] flex items-center">
+        <div id="contact-form" className="relative z-10 max-w-[1527px] mx-auto h-[629px] lg:h-[843px]">
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center h-full text-center">
               <h2 className="text-4xl lg:text-5xl xl:text-7xl font-semibold text-white mb-4 tracking-tighter">
                 Thank You!
               </h2>
-              <p className="text-5xl text-[#868686] font-semibold">
+              <p className="text-xl xl:text-5xl text-[#868686] font-semibold">
                 We have received your message and will get back to you soon.
               </p>
             </div>
@@ -168,15 +168,15 @@ const ContactForm = () => {
                 <h2 className="text-4xl lg:text-5xl xl:text-7xl font-semibold text-white mb-4 tracking-tighter">
                   Tell Us About You
                 </h2>
-                <p className="text-5xl text-[#868686] font-semibold">
+                <p className="text-base xl:text-5xl text-[#868686] font-semibold">
                   We would love to hear from you—whether you are ready to apply or just want to introduce yourself.
                 </p>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center justify-center h-full">
                 {/* Header */}
 
                 {/* Input Field */}
-                <div className="relative w-full mt-32">
+                <div className="relative w-full">
                   {steps[currentStep].type === 'textarea' ? (
                     <textarea
                       ref={inputRef as React.RefObject<HTMLTextAreaElement>}
@@ -184,7 +184,7 @@ const ContactForm = () => {
                       onChange={handleInputChange}
                       onKeyDown={handleKeyDown}
                       placeholder={errors[steps[currentStep].field as keyof FormData] || steps[currentStep].placeholder}
-                      className={`w-full bg-transparent border-b-2 px-4 py-4 -mb-2 text-white placeholder:text-5xl text-5xl focus:outline-none transition-colors resize-none h-[72px] text-center ${
+                      className={`w-full bg-transparent border-b-2 px-4 py-4 -mb-2 text-white placeholder:text-[32px] lg:placeholder:text-5xl text-[32px] lg:text-5xl focus:outline-none transition-colors resize-none h-[72px] text-center ${
                         errors[steps[currentStep].field as keyof FormData] 
                           ? 'border-red-500 placeholder-red-500' 
                           : 'border-white/20 placeholder-white/50 focus:border-white/40'
@@ -199,7 +199,7 @@ const ContactForm = () => {
                       onChange={handleInputChange}
                       onKeyDown={handleKeyDown}
                       placeholder={errors[steps[currentStep].field as keyof FormData] || steps[currentStep].placeholder}
-                      className={`w-full bg-transparent border-b-2 px-4 py-4 text-white placeholder:text-5xl text-5xl focus:outline-none transition-colors text-center h-[72px] ${
+                      className={`w-full bg-transparent border-b-2 px-4 py-4 text-white placeholder:text-[32px] lg:placeholder:text-5xl text-[32px] lg:text-5xl focus:outline-none transition-colors text-center h-[72px] ${
                         errors[steps[currentStep].field as keyof FormData] 
                           ? 'border-red-500 placeholder-red-500' 
                           : 'border-white/20 placeholder-white/50 focus:border-white/40'
@@ -211,7 +211,7 @@ const ContactForm = () => {
                     {steps.map((_, index) => (
                       <div
                         key={index}
-                        className={`relative w-7 h-7 rounded-full transition-all duration-300 ${
+                        className={`relative w-3 h-3 lg:w-7 lg:h-7 rounded-full transition-all duration-300 ${
                           index === currentStep
                             ? 'bg-white' // Current step - solid white
                             : index < currentStep
@@ -238,7 +238,7 @@ const ContactForm = () => {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="bg-[#292929] text-[#CAC9C9] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer hover:shadow-[0_5px_0_0_#ADADAD] transition-all duration-300 flex items-center justify-between gap-10"
+                      className="bg-[#292929] text-[#CAC9C9] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer shadow-[0_5px_0_0_#ADADAD] hover:shadow-[0_3px_0_0_#ADADAD] transition-all duration-300 flex items-center justify-between gap-10"
                     >
                       <ArrowLeft className="w-6 h-6" />
                       Back
@@ -246,7 +246,7 @@ const ContactForm = () => {
                   )}
                   <button
                     type="submit"
-                    className={`bg-white text-[#2F2C28] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer hover:shadow-[0_5px_0_0_#6B5B4D] transition-all duration-300 flex items-center justify-between gap-10 ${
+                    className={`bg-white text-[#2F2C28] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer shadow-[0_5px_0_0_#6B5B4D]  hover:shadow-[0_3px_0_0_#6B5B4D] transition-all duration-300 flex items-center justify-between gap-10 ${
                       currentStep > 0 ? 'ml-8' : ''
                     }`}
                   >

@@ -34,7 +34,7 @@ const ContactHero = () => {
               formElement.scrollIntoView({ behavior: 'smooth' });
             }
           }}
-          className="flex items-center gap-4 bg-[#2F2C28] text-white px-10 py-4 rounded-full w-fit transition-all hover:bg-[#2F2C28] hover:shadow-[0_5px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
+          className="flex items-center gap-4 bg-[#2F2C28] text-white px-10 py-4 rounded-full w-fit transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
         >
           Get In Touch
           <svg
@@ -69,13 +69,13 @@ const ContactHero = () => {
               priority
             />
           </div>
-          <div className="2xl:px-24 2xl:pt-16 xl:p-12 lg:p-8 md:p-6 flex-1 relative">
+          <div className="2xl:px-24 2xl:pt-16 xl:p-12 lg:p-8 p-6 flex-1 relative">
             <Image
-              src="/images/illustrations/product-support.svg"
+              src="/images/contact/product.svg"
               alt="NeuralArc Product Support Illustration"
               width={400}
               height={400}
-              className="w-auto h-auto object-contain"
+              className="w-auto h-auto object-contain mb-15"
             />
             <h2 className="text-2xl 2xl:text-6xl lg:text-4xl font-semibold text-[#343434]/70 mb-4 tracking-tight">
               Product & Platform Support
@@ -84,7 +84,7 @@ const ContactHero = () => {
               Have questions about Neural Nexus or our MicroSaaS suite?
             </p>
           </div>
-          <div className="2xl:px-24 2xl:pb-12 xl:p-12 lg:p-8 md:p-6 bg-[#D7DDCF] rounded-b-3xl mt-auto relative">
+          <div className="2xl:px-24 2xl:pb-12 xl:p-12 lg:p-8 p-6 bg-[#D7DDCF] rounded-b-3xl mt-auto relative">
             <div className="flex flex-col xl:grid xl:grid-cols-2 justify-between gap-2">
               <p className="2xl:text-lg lg:text-sm text-[#55493D] text-balance">
                 Our product specialists are ready to assist you.
@@ -117,7 +117,7 @@ const ContactHero = () => {
               priority
             />
           </div>
-          <div className="2xl:px-24 2xl:pt-16 xl:p-12 lg:p-8 md:p-6 flex-1 relative">
+          <div className="2xl:px-24 2xl:pt-16 xl:p-12 lg:p-8 p-6 flex-1 relative">
             <Image
               src="/images/contact/inquiries.svg"
               alt="Neural Paths General Inquiries Illustration"
@@ -133,7 +133,7 @@ const ContactHero = () => {
               Not sure where to begin?
             </p>
           </div>
-          <div className="2xl:px-24 2xl:pb-12 xl:p-12 lg:p-8 md:p-6 bg-[#CDBCAD] rounded-b-3xl mt-auto relative">
+          <div className="2xl:px-24 2xl:pb-12 xl:p-12 lg:p-8 p-6 bg-[#CDBCAD] rounded-b-3xl mt-auto relative">
             <div className="flex flex-col xl:grid xl:grid-cols-2 justify-between gap-2">
               <p className="2xl:text-lg lg:text-sm text-[#55493D] text-balance">
                 We will make sure your message finds the right team.

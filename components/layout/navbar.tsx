@@ -58,6 +58,12 @@ export default function Navbar() {
   // Check if we're in the mobile screen range
   const isMobileScreen = windowWidth < 1396;
 
+  // Handle link clicks for mobile and medium menus
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+    setIsMediumMenuOpen(false);
+  };
+
   return (
     <nav className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:py-10 py-5">
       {/* Top bar */}
@@ -97,9 +103,9 @@ export default function Navbar() {
             </button>
           )}
 
-          {/* Menu Toggle - Responsive (769px-1800px) */}
+          {/* Menu Toggle - Responsive (1396px-1800px) */}
           {isMediumScreen && (
-            <DropdownMenu onOpenChange={(open) => setIsMediumMenuOpen(open)}>
+            <DropdownMenu open={isMediumMenuOpen} onOpenChange={setIsMediumMenuOpen}>
               <DropdownMenuTrigger asChild>
                 <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
                   <span
@@ -135,7 +141,7 @@ export default function Navbar() {
                         Company
                       </h2>
                       <div className="flex flex-col gap-6">
-                        <Link href="/about" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/about" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/overview.svg"
@@ -147,7 +153,7 @@ export default function Navbar() {
                           </div>
                           <span className="text-2xl text-[#2F2C28]">Overview</span>
                         </Link>
-                        <Link href="/contact" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/contact" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/contact.svg"
@@ -159,7 +165,7 @@ export default function Navbar() {
                           </div>
                           <span className="text-2xl text-[#2F2C28]">Contact</span>
                         </Link>
-                        <Link href="/careers" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/careers" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/careers.svg"
@@ -188,7 +194,7 @@ export default function Navbar() {
                       </div>
                       <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
                       <div className="flex flex-col gap-4 mb-8">
-                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/discover.svg"
@@ -200,7 +206,7 @@ export default function Navbar() {
                           </div>
                           <span className="text-2xl text-[#2F2C28]">Discover</span>
                         </Link>
-                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/value.svg"
@@ -232,7 +238,7 @@ export default function Navbar() {
                       </div>
                       <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
                       <div className="flex flex-col gap-4 mb-8">
-                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/discover.svg"
@@ -244,7 +250,7 @@ export default function Navbar() {
                           </div>
                           <span className="text-2xl text-[#2F2C28]">Discover</span>
                         </Link>
-                        <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/value.svg"
@@ -319,9 +325,9 @@ export default function Navbar() {
             </DropdownMenu>
           )}
 
-          {/* Menu Toggle - Mobile (<769px) */}
+          {/* Menu Toggle - Mobile (<1396px) */}
           {isMobileScreen && (
-            <DropdownMenu onOpenChange={(open) => setIsMobileMenuOpen(open)}>
+            <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <DropdownMenuTrigger asChild>
                 <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
                   <span
@@ -359,7 +365,7 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent className="pt-4">
                         <div className="flex flex-col gap-4 pl-2">
-                          <Link href="/about" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/about" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/overview.svg"
@@ -371,7 +377,7 @@ export default function Navbar() {
                             </div>
                             <span className="text-2xl text-[#2F2C28]">Overview</span>
                           </Link>
-                          <Link href="/contact" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/contact" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/contact.svg"
@@ -383,7 +389,7 @@ export default function Navbar() {
                             </div>
                             <span className="text-2xl text-[#2F2C28]">Contact</span>
                           </Link>
-                          <Link href="/careers" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/careers" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/careers.svg"
@@ -420,7 +426,7 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent className="pt-4">
                         <div className="flex flex-col gap-4 pl-2">
-                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/discover.svg"
@@ -432,7 +438,7 @@ export default function Navbar() {
                             </div>
                             <span className="text-base text-[#2F2C28]">Discover</span>
                           </Link>
-                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/value.svg"
@@ -472,7 +478,7 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent className="pt-4">
                         <div className="flex flex-col gap-4 pl-2">
-                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/discover.svg"
@@ -484,7 +490,7 @@ export default function Navbar() {
                             </div>
                             <span className="text-2xl text-[#2F2C28]">Discover</span>
                           </Link>
-                          <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/value.svg"
@@ -575,7 +581,7 @@ export default function Navbar() {
                   Company
                 </h2>
                 <div className="flex flex-col gap-6">
-                  <Link href="/about" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/about" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/overview.svg"
@@ -587,7 +593,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Overview</span>
                   </Link>
-                  <Link href="/contact" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/contact" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/contact.svg"
@@ -599,7 +605,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Contact</span>
                   </Link>
-                  <Link href="/careers" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/careers" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/careers.svg"
@@ -628,7 +634,7 @@ export default function Navbar() {
                 </div>
                 <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
                 <div className="flex flex-col gap-4 mb-8">
-                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/discover.svg"
@@ -640,7 +646,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Discover</span>
                   </Link>
-                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/value.svg"
@@ -672,7 +678,7 @@ export default function Navbar() {
                 </div>
                 <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
                 <div className="flex flex-col gap-4 mb-8">
-                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/discover.svg"
@@ -684,7 +690,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Discover</span>
                   </Link>
-                  <Link href="#" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/value.svg"
@@ -715,7 +721,7 @@ export default function Navbar() {
                   <Link 
                     href="https://ampvc.co/"
                     target="_blank"
-                    className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-6 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 flex items-center justify-center"
+                    className="bg-[#575757] hover:bg-[#575757] text-white text-base rounded-full px-8 py-4 cursor-pointer hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] transition-all duration-300 flex items-center justify-center"
                   >
                     Visit Website
                   </Link>
