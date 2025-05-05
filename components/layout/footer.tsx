@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <footer className="w-full bg-[#2E2A25] text-white py-12 z-10 grain-hero shadow-[0_-8px_0_0_#7E7367] rounded-t-2xl grain-hero">
-      <div className="max-w-[1920px] mx-auto px-4 md:px-8 xl:px-12">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-8 xl:px-12">
         <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16">
           {/* Left Section */}
           <div className="flex flex-col justify-between lg:h-[216px]">
@@ -92,7 +92,7 @@ const Footer = () => {
                 <div>
                   <div>
                     <h2 className="text-white text-lg xl:text-2xl">NOD</h2>
-                    <p className="text-[#817F7D] text-base xl:text-lg">Navigate. Optimize. Disrupt.</p>
+                    <p className="text-[#817F7D] text-base xl:text-lg">{"{Navigate. Optimize. Disrupt.}"}</p>
                   </div>
                   <p className="text-[#817F7D] mt-2 h-[136px] mb-4 lg:mb-0">
                     Unlock real-time, tailored AI insights with NOD — cutting through complexity to reveal what others miss.
@@ -104,7 +104,7 @@ const Footer = () => {
                       alt="arrow" 
                       width={38} 
                       height={20}
-                      className="transition-transform duration-300 group-hover:translate-x-1" 
+                      className="transition-transform duration-300 group-hover:translate-x-1 hidden lg:block" 
                     />
                   </Link>
                 </div>
@@ -113,7 +113,7 @@ const Footer = () => {
                 <div>
                   <div>
                     <h2 className="text-white text-lg xl:text-2xl">ORB</h2>
-                    <p className="text-[#817F7D] text-base xl:text-lg">Outlast, Reimagine, Build.</p>
+                    <p className="text-[#817F7D] text-base xl:text-lg">{"{Outlast. Reimagine. Build.}"}</p>
                   </div>
                   <p className="text-[#817F7D] mt-2 h-[136px] mb-4 lg:mb-0">
                     AI-driven competitor intelligence—unveiling strategic advantages instantly.
@@ -125,7 +125,7 @@ const Footer = () => {
                       alt="arrow" 
                       width={38} 
                       height={20}
-                      className="transition-transform duration-300 group-hover:translate-x-1" 
+                      className="transition-transform duration-300 group-hover:translate-x-1 hidden lg:block" 
                     />
                   </Link>
                 </div>
@@ -144,14 +144,14 @@ const Footer = () => {
                     alt="arrow" 
                     width={38} 
                     height={20}
-                    className="transition-transform duration-300 group-hover:translate-x-1" 
+                    className="transition-transform duration-300 group-hover:translate-x-1 hidden lg:block" 
                   />
                 </Link>
               </div>
             </div>
 
             {/* Ampersand Column */}
-            <div className="lg:h-[316px] mt-4 lg:mt-0 flex flex-col justify-between">
+            <div className="lg:h-[316px] mt-4 lg:mt-0 flex flex-col justify-between col-span-2 lg:col-span-1">
               <div>
                 <h2 className="text-white text-2xl mb-2">Ampersand</h2>
                 <p className="text-[#817F7D] mb-6">
@@ -165,7 +165,7 @@ const Footer = () => {
                   alt="arrow" 
                   width={38} 
                   height={20}
-                  className="transition-transform duration-300 group-hover:translate-x-1" 
+                  className="transition-transform duration-300 group-hover:translate-x-1 hidden lg:block" 
                 />
               </Link>
             </div>
@@ -180,8 +180,8 @@ const Footer = () => {
               <Image 
                 src="/icons/instagram.svg" 
                 alt="Instagram" 
-                width={35} 
-                height={35}
+                width={55} 
+                height={55}
                 className="transition-all duration-300 hover:brightness-125" 
               />
             </Link>
@@ -189,8 +189,8 @@ const Footer = () => {
               <Image 
                 src="/icons/linkedin.svg" 
                 alt="LinkedIn" 
-                width={35} 
-                height={35}
+                width={55} 
+                height={55}
                 className="transition-all duration-300 hover:brightness-125" 
               />
             </Link>
@@ -198,8 +198,8 @@ const Footer = () => {
               <Image 
                 src="/icons/twitter.svg" 
                 alt="Twitter" 
-                width={35} 
-                height={35}
+                width={55} 
+                height={55}
                 className="transition-all duration-300 hover:brightness-125" 
               />
             </Link>
@@ -207,8 +207,8 @@ const Footer = () => {
               <Image 
                 src="/icons/medium.svg" 
                 alt="Medium" 
-                width={35} 
-                height={35}
+                width={55} 
+                height={55}
                 className="transition-all duration-300 hover:brightness-125" 
               />
             </Link>
@@ -218,17 +218,17 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t-[0.5px] border-[#FFFFFF]/15">
           {/* Left - Terms and Privacy */}
-          <div className="flex items-center gap-4 mb-4 md:mb-0">
+          <div className="flex items-center gap-4 mb-4 md:mb-0 lg:order-1 order-2">
             <Link href="/terms" className="text-[#8C8376] hover:text-white transition-colors underline">Terms of use</Link>
             <span className="text-[#8C8376]">•</span>
             <Link href="/privacy" className="text-[#8C8376] hover:text-white transition-colors underline">Privacy Policy</Link>
           </div>
 
           {/* Center - Copyright */}
-          <p className="text-[#B4B0AA] mb-4 md:mb-0">Copyright 2025. All rights reserved.</p>
+          <p className="text-[#B4B0AA] mb-4 md:mb-0 lg:order-2 order-1">Copyright 2025. All rights reserved.</p>
 
           {/* Right - Brand */}
-          <p className="text-[#988C7D]">A thing by <span className="font-semibold text-[22px] text-[#F1EEE9]">NeuralArc</span></p>
+          <p className="text-[#988C7D] order-3">A thing by <span className="font-semibold text-[22px] text-[#F1EEE9]">NeuralArc</span></p>
         </div>
       </div>
     </footer>

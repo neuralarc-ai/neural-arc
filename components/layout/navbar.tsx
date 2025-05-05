@@ -634,7 +634,7 @@ export default function Navbar() {
                 </div>
                 <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
                 <div className="flex flex-col gap-4 mb-8">
-                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/orb" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/discover.svg"
@@ -646,7 +646,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Discover</span>
                   </Link>
-                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/orb"  className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/value.svg"
@@ -678,7 +678,7 @@ export default function Navbar() {
                 </div>
                 <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
                 <div className="flex flex-col gap-4 mb-8">
-                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/nod" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/discover.svg"
@@ -690,7 +690,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Discover</span>
                   </Link>
-                  <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="nod" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/value.svg"

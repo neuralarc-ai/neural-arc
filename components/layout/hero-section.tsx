@@ -54,7 +54,7 @@ const Hero = () => {
         </div>
 
         {/* Bottom Left Illustration */}
-        <div className="absolute bottom-0 -left-14 lg:left-[-60px] xl:left-[50px] 2xl:left-[200px] hidden xl:block">
+        <div className="absolute bottom-0 -left-14 z-30 lg:left-[-60px] xl:left-[50px] 2xl:left-[200px] hidden xl:block">
           <Image
             src="/images/hero/bottom-left.svg"
             alt="Decorative illustration"

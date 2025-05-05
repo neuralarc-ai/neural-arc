@@ -7,46 +7,46 @@ import { ArrowRight } from 'lucide-react';
 
 const features = [
   {
-    icon: '/images/nod/neural-decision.svg',
-    title: 'Neural Decision Velocity',
+    icon: '/images/orb/hero-1.svg',
+    title: 'Predictive Intelligence Matrix',
     description:
-      "Make strategic decisions in seconds, not days. NOD compresses analysis time with real-time, multi-modal synthesis and predictive modeling. It's not just faster—it's smarter by design.",
+      "ORB identifies early signals of competitor activity by analyzing data from social media, news, job listings, and more. Instead of looking backward, it helps you anticipate what’s coming—so you can act before the market shifts.",
   },
   {
-    icon: '/images/nod/neural-core.svg',
-    title: '14.3B Parameter Neural Core',
+    icon: '/images/orb/hero-2.svg',
+    title: 'Neural Decision Architecture',
     description:
-      "A superhuman brain for your business. Powered by a 14.3 billion parameter framework, NOD pulls from public and proprietary data sources to simulate complex decisions faster than traditional BI systems can load a dashboard.",
+      "Powered by a proprietary neural framework, ORB connects patterns across disconnected data points—mimicking how strategists think. This isn’t just AI. It’s cognitive-level insight designed for real business decisions.",
   },
   {
-    icon: '/images/nod/api-first.svg',
-    title: 'API-First Intelligence',
+    icon: '/images/orb/hero-3.svg',
+    title: 'Real-Time Adaptive Analysis',
     description:
-      "Connect everything. Rebuild nothing. NOD integrates with your existing tech stack-CRM, ERP, e-commerce, and beyond-using advanced computational linguistics and adaptive APIs to ensure frictionless deployment.",
+      "ORB’s quantum-inspired algorithms learn and evolve as new information emerges. The more data it sees, the sharper its predictions become—giving you an always-on, ever-improving strategic lens.",
   },
   {
-    icon: '/images/nod/decision-loops.svg',
+    icon: '/images/orb/hero-4.svg',
     title: 'Self-Optimizing Decision Loops',
     description:
-      "The more you use it, the smarter it gets. NOD's neural pathway (Navigate -> Optimize -> Disrupt) learns from every decision cycle, refining its models and strategies without manual retraining.",
+      "With advanced computational linguistics, ORB reads between the lines across languages and cultures. It surfaces insights from global competitors by interpreting subtle shifts in tone, message, and sentiment.",
   },
   {
-    icon: '/images/nod/cross-functional.svg',
-    title: 'Cross-Functional Intelligence',
+    icon: '/images/orb/hero-5.svg',
+    title: 'Intelligence for Every Team',
     description:
-      "Enterprise-wide impact, from finance to fulfillment. From forecasting to customer journey design, NOD amplifies decision-making across every department with precision and foresight.",
+      "From product development to marketing, recruiting to investment planning—ORB delivers tailored insights across your business. It transforms competitive intelligence from a silo into a company-wide advantage.",
   },
 ];
 
 const cardBgColors = [
-  '#9AC0BD', // 1st card
-  '#D5DFBC', // 2nd card
-  '#BED4B9', // 3rd card
-  '#DDDED6', // 4th card
-  '#CBE3E0', // 5th card
+  '#6B9FBD', // 1st card
+  '#CBB4C5', // 2nd card
+  '#C6D5DA', // 3rd card
+  '#B9B2CF', // 4th card
+  '#DEDDE5', // 5th card
 ];
 
-const NodHero = () => {
+const OrbHero = () => {
   // Embla for mobile slider
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -69,7 +69,7 @@ const NodHero = () => {
       {/* Logo */}
       <div className="flex justify-center mb-8">
         <Image
-          src="/images/nod/nod-logo.png"
+          src="/images/orb/orb-logo.png"
           alt="NOD by Neural Arc"
           width={300}
           height={140}
@@ -80,20 +80,20 @@ const NodHero = () => {
       {/* Headline */}
       <h1 className="text-[40px] md:text-5xl xl:text-[82px] text-[#373737] text-center my-8">
         {<span className="font-semibold">{`{`}</span>}
-        <span className="font-bold">N</span>
-        <span>avigate. </span>
         <span className="font-bold">O</span>
-        <span>ptimize. </span>
-        <span className="font-bold">D</span>
-        <span>isrupt.</span>
+        <span>utlast. </span>
+        <span className="font-bold">R</span>
+        <span>eimagine. </span>
+        <span className="font-bold">B</span>
+        <span>uild.</span>
         {<span className="font-semibold">{`}`}</span>}
       </h1>
       {/* Subheadline */}
-      <p className="text-center text-lg lg:text-2xl text-[#181A1A] font-light max-w-5xl mx-auto my-8">
-        In a world overwhelmed by data, advantage belongs to those who decide fast—and smart. NeuralArc&apos;s NOD platform transforms information into instant insight through a 14.3B parameter neural engine that doesn&apos;t just analyze—it thinks. From forecasting to real-time optimization, NOD delivers decisions at the speed of thought.
+      <p className="text-center text-lg lg:text-2xl text-[#181A1A] font-light max-w-7xl mx-auto my-8">
+      In today&apos;s algorithmic battlefield, survival belongs to those who outthink, not just outmaneuver. NeuralArc&apos;s ORB platform redefines competitive intelligence with a 14.3B parameter neural architecture that doesn’t just monitor the market—it predicts its next move. From strategic foresight to real-time signal processing, ORB delivers intelligence before the opportunity window even opens.
       </p>
-      <p className="text-center text-lg lg:text-2xl text-[#181A1A] font-light max-w-5xl mx-auto mb-8">
-        Navigate. Optimize. Disrupt. With NOD, you don&apos;t just react: you lead.
+      <p className="text-center text-lg lg:text-2xl text-[#181A1A] font-light max-w-7xl mx-auto mb-8">
+      Outlast. Reimagine. Build. With ORB, you don&apos;t just watch the competition—you stay three moves ahead.
       </p>
       {/* Cards (Desktop) */}
       <div className="hidden lg:block mt-16 max-w-[1600px] mx-auto">
@@ -164,4 +164,4 @@ const NodHero = () => {
   );
 };
 
-export default NodHero;
+export default OrbHero;

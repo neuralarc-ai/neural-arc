@@ -25,6 +25,14 @@ const startupCases: CaseStudy[] = [
     ]
   },
   {
+    title: "Service Business",
+    description: "Service businesses rely on customer retention and efficiency but often lack the data tools to scale smart, informed decisions.",
+    metrics: [
+      { value: "30%", label: "Additional Income" },
+      { value: "$150K+", label: "Value Drivers" }
+    ]
+  },
+  {
     title: "Restaurant/Food Service",
     subtitle: "Menu Engineering & Waste Reduction",
     description: "Restaurants face margin pressure and constant change but often lack the analytics to optimize."
@@ -47,7 +55,7 @@ const startupCases: CaseStudy[] = [
       { value: "$1B+", label: "Fewer delivery deal Global Logistics Enterprises" }
     ]
   }
-]
+];
 
 const enterpriseCases: CaseStudy[] = [
   {
@@ -85,7 +93,25 @@ const enterpriseCases: CaseStudy[] = [
       { value: "+34%", label: "Risk Management" }
     ]
   }
-]
+];
+
+const nodStartupColors = [
+  '#CFD4C9',
+  '#DDDED6',
+  '#CBE3E0',
+  '#9AC0BD',
+  '#C0C8B6',
+  '#A7BEAB',
+];
+
+const nodEnterpriseColors = [
+  '#DDE0D8',
+  '#BDD1C1',
+  '#DBECEA',
+  '#D0D7C8',
+  '#E8E9E3',
+  '#E9E9E4',
+];
 
 const NodCaseStudies = () => {
   return (
@@ -122,7 +148,7 @@ const NodCaseStudies = () => {
           <TabsContent value="startups" className="mt-0 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* E-commerce Case - Large Card */}
-              <div className="bg-[#CFD4C9] py-8 px-10 rounded-[16px] flex flex-col gap-8 min-h-[425px]">
+              <div className="py-8 px-10 rounded-[16px] flex flex-col gap-8 min-h-[425px]" style={{backgroundColor: nodStartupColors[0]}}>
                 <div>
                   <p className="text-[#000000] text-3xl mb-8">{startupCases[0].description}</p>
                   <div className="w-full h-[1px] bg-[#71717133] mb-8"></div>
@@ -148,7 +174,7 @@ const NodCaseStudies = () => {
               </div>
 
               {/* Service Business Case */}
-              <div className="bg-[#F0F0F0] py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[425px]">
+              <div className="py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[425px]" style={{backgroundColor: nodStartupColors[1]}}>
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#AEACA9] text-[54px] font-semibold tracking-tighter leading-none">Service Business</p>
@@ -173,34 +199,16 @@ const NodCaseStudies = () => {
 
               {/* Other Cases - 3 Column Grid */}
               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
-                {startupCases.slice(1, 4).map((caseStudy, index) => (
-                  <div key={index} className={`py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px] ${
-                    index === 0 ? 'bg-[#E3D9CF]' : 
-                    index === 1 ? 'bg-[#B7A694]' : 
-                    'bg-[#939090]'
-                  }`}>
+                {startupCases.slice(2, 5).map((caseStudy, index) => (
+                  <div key={index} className={`py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px]`} style={{backgroundColor: nodStartupColors[index+2]}}>
                     <div className="flex flex-col gap-4">
-                      <p className={`text-[38px] font-semibold tracking-tight ${
-                        index === 0 ? 'text-[#2F2C28]' : 
-                        index === 1 ? 'text-[#FFFFFF]' : 
-                        'text-[#FFFFFF]'
-                      }`}>{caseStudy.subtitle}</p>
-                      <p className={`text-[18px] ${
-                        index === 0 ? 'text-[#7A746C]' : 
-                        index === 1 ? 'text-[#7A746C]' : 
-                        'text-[#DFDEDE]'
-                      }`}>{caseStudy.description}</p>
+                      <p className={`text-[38px] font-semibold tracking-tight`}>{caseStudy.subtitle}</p>
+                      <p className={`text-[18px]`}>{caseStudy.description}</p>
                       <div className="w-full h-[1px] bg-[#71717133]"></div>
                     </div>
                     <div className="flex flex-row items-center w-full">
-                      <p className={`text-[40px] leading-none font-semibold w-2/3 ${
-                        index === 0 ? 'text-[#BBAA97]' : 
-                        index === 1 ? 'text-[#9B846A]' : 
-                        'text-[#787878]'
-                      }`}>
-                        {index === 0 ? 'Restaurant/\nFood Service' : 
-                         index === 1 ? 'Healthcare' : 
-                         'Channel\nRetail'}
+                      <p className={`text-[40px] leading-none font-semibold w-2/3`}>
+                        {caseStudy.title}
                       </p>
                       <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
@@ -211,10 +219,10 @@ const NodCaseStudies = () => {
               </div>
 
               {/* Global Supply Chain - Full Width */}
-              <div className="md:col-span-2 bg-[#CFD4C9] py-8 px-10 rounded-[16px]">
+              <div className="md:col-span-2 py-8 px-10 rounded-[16px]" style={{backgroundColor: nodStartupColors[5]}}>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
-                    <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[930px] tracking-tight">{startupCases[4].description}</p>
+                    <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[930px] tracking-tight">{startupCases[5].description}</p>
                     <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -222,7 +230,7 @@ const NodCaseStudies = () => {
                 </div>
                 <div className="flex justify-between items-center mt-8">
                   <div className="flex gap-12">
-                    {startupCases[4].metrics && startupCases[4].metrics.map((metric, index) => (
+                    {startupCases[5].metrics && startupCases[5].metrics.map((metric, index) => (
                       <div key={index}>
                         <p className="text-[40px] font-semibold text-[#55493D]">{metric.value}</p>
                         <p className="text-xl text-[#55493D]">{metric.label}</p>
@@ -235,11 +243,11 @@ const NodCaseStudies = () => {
             </div>
           </TabsContent>
 
-          {/* Enterprises Content */}
+          {/* Enterprises Content - updated colors */}
           <TabsContent value="enterprises" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Telecom Provider - Large Card */}
-              <div className="md:col-span-2 bg-[#F0F0F0] py-8 px-10 rounded-[16px]">
+              <div className="md:col-span-2 py-8 px-10 rounded-[16px]" style={{backgroundColor: nodEnterpriseColors[0]}}>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[960px] tracking-tight">{enterpriseCases[0].description}</p>
@@ -266,29 +274,25 @@ const NodCaseStudies = () => {
               {/* Middle Three Cards */}
               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
                 {enterpriseCases.slice(1, 4).map((caseStudy, index) => (
-                  <div key={index} className={`py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px] ${
-                    index === 0 ? 'bg-[#E3D9CF]' : 
-                    index === 1 ? 'bg-[#939090]' : 
-                    'bg-[#B7A694]'
-                  }`}>
+                  <div key={index} className={`py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px]`} style={{backgroundColor: nodEnterpriseColors[index+1]}}>
                     <div className="flex flex-col gap-4">
                       <p className={`text-[38px] font-semibold tracking-tight ${
                         index === 0 ? 'text-[#2F2C28]' : 
-                        index === 1 ? 'text-[#FFFFFF]' : 
-                        'text-[#FFFFFF]'
+                        index === 1 ? 'text-[#4D4D4D]' : 
+                        'text-[#3A3A3A]'
                       }`}>{caseStudy.subtitle}</p>
                       <p className={`text-[18px] leading-5 tracking-tight ${
-                        index === 0 ? 'text-[#7A746C]' : 
-                        index === 1 ? 'text-[#DFDEDE]' : 
+                        index === 0 ? 'text-[#739079]' : 
+                        index === 1 ? 'text-[#606060]' : 
                         'text-[#7A746C]'
                       }`}>{caseStudy.description}</p>
                       <div className="w-full h-[1px] bg-[#71717133]"></div>
                     </div>
                     <div className="flex flex-row items-end w-full mt-auto">
                       <p className={`leading-none font-semibold w-2/3 ${
-                        index === 0 ? 'text-[#BBAA97] text-[32px]' : 
-                        index === 1 ? 'text-[#787878] text-[54px]' : 
-                        'text-[#9B846A] text-[40px]'
+                        index === 0 ? 'text-[#4A7571AD] text-[32px]' : 
+                        index === 1 ? 'text-[#83B2AB] text-[54px]' : 
+                        'text-[#859472] text-[40px]'
                       }`}>
                         {index === 0 ? 'Manufacturing' : 
                          index === 1 ? 'Global\nRetailer' : 
@@ -303,7 +307,7 @@ const NodCaseStudies = () => {
               </div>
 
               {/* Bottom Two Cards */}
-              <div className="bg-[#CFD4C9] py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px]">
+              <div className="py-8 px-10 rounded-[16px] relative flex flex-col justify-between min-h-[403px]" style={{backgroundColor: nodEnterpriseColors[4]}}>
                 <div className="flex flex-col gap-8 h-full">
                   <div className="flex justify-between items-center">
                     <p className="text-[#080507] text-xl max-w-[496px] text-[28px] tracking-tight">{enterpriseCases[4].description}</p>
@@ -311,7 +315,7 @@ const NodCaseStudies = () => {
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                  <div className="w-full h-[1px] bg-[#71717133]"></div>
+                  <div className="w-full h-[1px] bg-[#71717133] mb-4"></div>
                   <div className="flex justify-between items-end mt-auto">
                     <div className="grid grid-cols-2 gap-16">
                       <div className="flex flex-col">
@@ -328,7 +332,7 @@ const NodCaseStudies = () => {
                 </div>
               </div>
 
-              <div className="bg-[#E3D9CF] py-8 px-10 rounded-[16px] relative flex flex-col justify-between">
+              <div className="py-8 px-10 rounded-[16px] relative flex flex-col justify-between" style={{backgroundColor: nodEnterpriseColors[5]}}>
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#BAA894] text-[54px] font-semibold tracking-tighter leading-none">Pharmaceutical<br />Enterprise</p>
@@ -358,4 +362,4 @@ const NodCaseStudies = () => {
   )
 }
 
-export default NodCaseStudies;
+export default NodCaseStudies; 

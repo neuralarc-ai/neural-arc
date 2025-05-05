@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
 
 const ORB = () => {
   return (
@@ -16,13 +17,13 @@ const ORB = () => {
         />
 
         {/* ORB Title */}
-        <h2 className="text-[#3E4F4C] text-3xl font-semibold mb-2">
-          ORB
-        </h2>
+        <h2 className="text-[#3E4F4C] text-3xl font-semibold mb-2">ORB</h2>
 
         {/* Acronym */}
         <h1 className="text-[#373737] text-2xl lg:text-5xl font-normal mb-2">
-          <span className="font-bold">O</span>utlast. <span className="font-bold">R</span>eimagine. <span className="font-bold">B</span>uild.
+          <span className="font-bold">O</span>utlast.{" "}
+          <span className="font-bold">R</span>eimagine.{" "}
+          <span className="font-bold">B</span>uild.
         </h1>
 
         {/* Subtitle */}
@@ -32,7 +33,12 @@ const ORB = () => {
 
         {/* Description */}
         <p className="text-[#181A1A] text-base lg:text-2xl px-4 font-light mb-12">
-          ORB is a next-gen AI platform that transforms competitive intelligence from passive monitoring to strategic insight. Unlike static tools, ORB offers a dynamic, real-time view of the market. Its intelligence engine tracks thousands of signals to uncover hidden patterns and shifts, enabling leaders to make confident, informed decisions with a complete competitive picture.
+          ORB is a next-gen AI platform that transforms competitive intelligence
+          from passive monitoring to strategic insight. Unlike static tools, ORB
+          offers a dynamic, real-time view of the market. Its intelligence
+          engine tracks thousands of signals to uncover hidden patterns and
+          shifts, enabling leaders to make confident, informed decisions with a
+          complete competitive picture.
         </p>
 
         {/* Illustrations - Desktop and Mobile */}
@@ -59,10 +65,12 @@ const ORB = () => {
             Join the waitlist
             <ArrowRightIcon className="w-6 h-6" />
           </button>
-          <button className="flex items-center gap-4 justify-center bg-[#C1BBB4] text-[#2F2C28] px-8 py-5 rounded-full transition-all hover:bg-[#C1BBB4] shadow-[0_5px_0_0_#9A918C] hover:shadow-[0_3px_0_0_#9A918C] duration-300 cursor-pointer ease-in-out w-full md:w-auto">
-            Learn More
-            <ArrowRightIcon className="w-6 h-6" />
-          </button>
+          <Link href="/orb">
+            <button className="flex items-center gap-4 justify-center bg-[#C1BBB4] text-[#2F2C28] px-8 py-5 rounded-full transition-all hover:bg-[#C1BBB4] shadow-[0_5px_0_0_#9A918C] hover:shadow-[0_3px_0_0_#9A918C] duration-300 cursor-pointer ease-in-out w-full md:w-auto">
+              Learn More
+              <ArrowRightIcon className="w-6 h-6" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

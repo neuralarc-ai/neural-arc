@@ -103,103 +103,33 @@ const enterpriseCases: CaseStudy[] = [
   }
 ];
 
+const nodStartupColors = [
+  '#CFD4C9',
+  '#DDDED6',
+  '#CBE3E0',
+  '#9AC0BD',
+  '#C0C8B6',
+  '#A7BEAB',
+];
+
+const nodEnterpriseColors = [
+  '#DDE0D8',
+  '#BDD1C1',
+  '#DBECEA',
+  '#D0D7C8',
+  '#E8E9E3',
+  '#E9E9E4',
+];
+
 const getCardStyles = (index: number, isStartups: boolean) => {
   if (isStartups) {
-    switch (index) {
-      case 0:
-        return {
-          bg: 'bg-[#CFD4C9]',
-          title: 'text-[#000000]/25',
-          description: 'text-[#2F2C28]',
-          metrics: 'text-[#55493D]'
-        };
-      case 1:
-        return {
-          bg: 'bg-[#F0F0F0]',
-          title: 'text-[#AEACA9]',
-          description: 'text-[#080507]',
-          metrics: 'text-[#55493D]'
-        };
-      case 2:
-        return {
-          bg: 'bg-[#E3D9CF]',
-          title: 'text-[#BBAA97]',
-          description: 'text-[#7A746C]'
-        };
-      case 3:
-        return {
-          bg: 'bg-[#B7A694]',
-          title: 'text-[#9B846A]',
-          description: 'text-white'
-        };
-      case 4:
-        return {
-          bg: 'bg-[#939090]',
-          title: 'text-[#787878]',
-          description: 'text-[#DFDEDE]'
-        };
-      case 5:
-        return {
-          bg: 'bg-[#CFD4C9]',
-          title: 'text-[#000000]/25',
-          description: 'text-[#2F2C28]',
-          metrics: 'text-[#55493D]'
-        };
-      default:
-        return {
-          bg: 'bg-[#F0F0F0]',
-          title: 'text-[#AEACA9]',
-          description: 'text-[#7A746C]'
-        };
-    }
+    return {
+      bg: `bg-[${nodStartupColors[index]}]`,
+    };
   } else {
-    switch (index) {
-      case 0:
-        return {
-          bg: 'bg-[#F0F0F0]',
-          title: 'text-[#AEACA9]',
-          description: 'text-[#2F2C28]',
-          metrics: 'text-[#55493D]'
-        };
-      case 1:
-        return {
-          bg: 'bg-[#E3D9CF]',
-          title: 'text-[#BBAA97]',
-          description: 'text-[#7A746C]',
-          metrics: 'text-[#55493D]'
-        };
-      case 2:
-        return {
-          bg: 'bg-[#939090]',
-          title: 'text-[#787878]',
-          description: 'text-[#DFDEDE]'
-        };
-      case 3:
-        return {
-          bg: 'bg-[#B7A694]',
-          title: 'text-[#9B846A]',
-          description: 'text-[#7A746C]'
-        };
-      case 4:
-        return {
-          bg: 'bg-[#E3D9CF]',
-          title: 'text-[#BBAA97]',
-          description: 'text-[#7A746C]'
-        };
-      case 5:
-        return {
-          bg: 'bg-[#E3D9CF]',
-          title: 'text-[#BAA894]',
-          description: 'text-[#080507]',
-          metrics: 'text-[#55493D]'
-        };
-      default:
-        return {
-          bg: 'bg-[#F0F0F0]',
-          title: 'text-[#AEACA9]',
-          description: 'text-[#7A746C]'
-        };
-    }
+    return {
+      bg: `bg-[${nodEnterpriseColors[index]}]`,
+    };
   }
 };
 
@@ -253,7 +183,11 @@ const NodCaseStudiesMobile = () => {
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {cases.map((item, index) => {
-                const styles = getCardStyles(index, activeTab === "startups");
+                const isStartups = activeTab === "startups";
+                const styles = getCardStyles(index, isStartups);
+                const descriptionClass = styles && 'description' in styles && styles.description ? ` ${styles.description}` : '';
+                const metricsClass = styles && 'metrics' in styles && styles.metrics ? ` ${styles.metrics}` : '';
+                const titleClass = styles && 'title' in styles && styles.title ? ` ${styles.title}` : '';
                 return (
                   <div
                     key={index}
@@ -264,22 +198,22 @@ const NodCaseStudiesMobile = () => {
                       transition: 'all 0.4s ease'
                     }}
                   >
-                    <div className={`${styles.bg} rounded-2xl p-6 h-[378px] flex flex-col`}>
+                    <div className={`rounded-2xl p-6 h-[378px] flex flex-col ${styles.bg}`}>
                       {item.metrics ? (
                         // Layout for cards with metrics
                         <>
                           <div className="flex-1">
-                            <p className={`${styles.description} text-base mb-2 leading-5`}>{item.description}</p>
+                            <p className={`text-base mb-2 leading-5${descriptionClass}`}>{item.description}</p>
                             <div className="grid grid-cols-2 gap-4 mb-4">
                               {item.metrics.map((metric, idx) => (
                                 <div key={idx}>
-                                  <p className={`${styles.metrics} text-2xl font-semibold`}>{metric.value}</p>
-                                  <p className={`${styles.metrics} text-xs opacity-75`}>{metric.label}</p>
+                                  <p className={`text-2xl font-semibold${metricsClass}`}>{metric.value}</p>
+                                  <p className={`text-xs opacity-75${metricsClass}`}>{metric.label}</p>
                                 </div>
                               ))}
                             </div>
                             <div className="w-full h-[1px] bg-[#71717133] mb-4"></div>
-                            <p className={`${styles.title} text-2xl font-semibold leading-none`}>{item.title}</p>
+                            <p className={`text-2xl font-semibold leading-none${titleClass}`}>{item.title}</p>
                           </div>
                           <Link
                             href="#"
@@ -292,10 +226,10 @@ const NodCaseStudiesMobile = () => {
                         // Layout for cards without metrics
                         <>
                           <div className="flex-1">
-                            <h3 className={`${styles.description} text-xl font-semibold mb-2`}>{item.subtitle}</h3>
-                            <p className={`${styles.description} text-base mb-4 leading-5 tracking-tight`}>{item.description}</p>
+                            <h3 className={`text-xl font-semibold mb-2${descriptionClass}`}>{item.subtitle}</h3>
+                            <p className={`text-base mb-4 leading-5 tracking-tight${descriptionClass}`}>{item.description}</p>
                             <div className="w-full h-[1px] bg-[#71717133] mb-2"></div>
-                            <p className={`${styles.title} text-2xl font-semibold`}>{item.title}</p>
+                            <p className={`text-2xl font-semibold${titleClass}`}>{item.title}</p>
                           </div>
                           <Link
                             href="#"
