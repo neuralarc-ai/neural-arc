@@ -34,7 +34,7 @@ const OrbWaitlist = () => {
         {/* Right Column */}
         <div className="text-[#515151] max-w-4xl h-full flex flex-col justify-between">
           <h2 className="text-base lg:text-2xl leading-normal">
-          Whether you’re syncing with HubSpot, Snowflake, or a custom CI workflow, ORB deploys within hours—no complex setup.
+          Whether you are syncing with HubSpot, Snowflake, or a custom CI workflow, ORB deploys within hours—no complex setup.
           </h2>
 
           <ul className="mt-6 space-y-2 text-base lg:text-2xl lg:py-4 lg:px-4">
