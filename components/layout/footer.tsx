@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#2E2A25] text-white py-12 z-10 grain-hero shadow-[0_-8px_0_0_#7E7367] rounded-t-2xl grain-hero">
+    <footer className="w-full bg-[#2E2A25] text-white py-12 z-10 shadow-[0_-8px_0_0_#7E7367] rounded-t-2xl">
       <div className="max-w-[1920px] mx-auto px-6 md:px-8 xl:px-12">
         <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16">
           {/* Left Section */}
@@ -217,18 +217,15 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t-[0.5px] border-[#FFFFFF]/15">
-          {/* Left - Terms and Privacy */}
-          <div className="flex items-center gap-4 mb-4 md:mb-0 lg:order-1 order-2">
+          
+          <p className="text-[#B4B0AA] mb-4 md:mb-0 lg:order-1 order-2">Copyright 2025. All rights reserved.</p>
+          
+          <div className="flex items-center gap-4 mb-4 md:mb-0 lg:order-2 order-1">
             <Link href="/terms" className="text-[#8C8376] hover:text-white transition-colors underline">Terms of use</Link>
             <span className="text-[#8C8376]">•</span>
             <Link href="/privacy" className="text-[#8C8376] hover:text-white transition-colors underline">Privacy Policy</Link>
           </div>
 
-          {/* Center - Copyright */}
-          <p className="text-[#B4B0AA] mb-4 md:mb-0 lg:order-2 order-1">Copyright 2025. All rights reserved.</p>
-
-          {/* Right - Brand */}
-          <p className="text-[#988C7D] order-3">A thing by <span className="font-semibold text-[22px] text-[#F1EEE9]">NeuralArc</span></p>
         </div>
       </div>
     </footer>

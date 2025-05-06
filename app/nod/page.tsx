@@ -8,7 +8,7 @@ import NodWaitlist from '@/components/nod/nod-waitlist';
 
 const NOD = () => {
   return (
-    <main className='max-w-[1920px] mx-auto md:px-8 px-4 grain-texture'>
+    <main className='max-w-[1920px] mx-auto md:px-8 px-4'>
         <NodHero />
         <Parameters />
         <NodCaseStudies />

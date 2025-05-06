@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NeuralArc
+
+NeuralArc is a modern, modular, and scalable Next.js application designed for advanced case study presentation, analytics, and operational dashboards. The project is structured for easy extension and customization, with a focus on clean UI, reusable components, and responsive design.
+
+## Project Overview
+
+NeuralArc provides:
+- Case study pages with reusable, composable sections (hero, challenges, value, dashboard, etc.)
+- Responsive layouts for desktop and mobile
+- Modular component structure for rapid feature development
+- Real-world data visualization and business storytelling
+
+## Tech Stack
+- [Next.js](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [embla-carousel-react](https://www.embla-carousel.com/) for mobile sliders
+- [next/image](https://nextjs.org/docs/app/api-reference/components/image) for optimized images
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+3. **Open [http://localhost:3000](http://localhost:3000) in your browser.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Folder Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `app/` — Next.js app directory (routes, pages)
+- `components/` — All reusable UI components, organized by feature (e.g., `case-study/nod/`)
+- `public/` — Static assets (images, SVGs, etc.)
+- `styles/` — Global and Tailwind CSS config
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding/Editing Case Study Pages
+- Each case study page (e.g., `/app/case-study/nod/ecommerce/page.tsx`) composes modular sections from `components/case-study/nod/`.
+- To add a new section, create a new component in `components/case-study/nod/` and import it into your page.
+- All section content (titles, images, text, etc.) is passed as props for easy customization.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
+- Keep components modular and reusable.
+- Use Tailwind CSS for all styling.
+- Prefer composition over duplication—reuse existing components where possible.
+- Use TypeScript for all files.
+- Add new images/SVGs to the `public/images/` directory.
+- Test your changes on both desktop and mobile breakpoints.
 
 ## Learn More
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [embla-carousel-react Docs](https://www.embla-carousel.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
+Deploy easily on [Vercel](https://vercel.com/) or your preferred platform. See [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For questions or contributions, please open an issue or pull request.

@@ -8,7 +8,7 @@ import OrbWaitlist from '@/components/orb/orb-waitlist';
 
 const Orb = () => {
   return (
-    <main className='max-w-[1920px] mx-auto md:px-8 px-4 grain-texture'>
+    <main className='max-w-[1920px] mx-auto md:px-8 px-4'>
         <OrbHero />
         <OrbParameters />
         <OrbCaseStudies />

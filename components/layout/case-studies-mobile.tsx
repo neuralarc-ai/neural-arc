@@ -13,6 +13,7 @@ interface Metric {
 
 interface CaseStudy {
   title: string;
+  slug: string;
   subtitle?: string;
   description: string;
   metrics?: Metric[];
@@ -21,6 +22,7 @@ interface CaseStudy {
 const startupCases: CaseStudy[] = [
   {
     title: "Revolutionizing E-Commerce",
+    slug: "ecommerce",
     description: "Small and mid-sized e-commerce businesses often struggle with inventory inefficiencies, leading to stockouts, deadstock, and lost revenue.",
     metrics: [
       { value: "20%", label: "Annual Savings" },
@@ -29,6 +31,7 @@ const startupCases: CaseStudy[] = [
   },
   {
     title: "Service Business",
+    slug: "service-business",
     description: "Service businesses rely on customer retention and efficiency but often lack the data tools to scale smart, informed decisions.",
     metrics: [
       { value: "30%", label: "Additional Income" },
@@ -37,21 +40,25 @@ const startupCases: CaseStudy[] = [
   },
   {
     title: "Restaurant/Food Service",
+    slug: "food-service",
     subtitle: "Menu Engineering & Waste Reduction",
     description: "Restaurants face margin pressure and constant change but often lack the analytics to optimize."
   },
   {
     title: "Healthcare",
+    slug: "healthcare",
     subtitle: "Enhancing Efficiency and Reducing Costs",
     description: "Health systems generate massive data, but disconnected tools keep decisions and lower operational costs below expectations."
   },
   {
     title: "Channel Retail",
+    slug: "channel-retail",
     subtitle: "Unified Customer Intelligence",
     description: "Traditional retail and omni-channel digital-native brands trust us for advanced data to personalize, target, and smarter customer experiences."
   },
   {
     title: "Global Supply Chain",
+    slug: "supply-chain",
     description: "Global logistics firms face rising disruption risks, but traditional methods often lack the foresight needed to navigate today's volatile supply chains.",
     metrics: [
       { value: "30%+", label: "Current Annual Revenue" },
@@ -63,6 +70,7 @@ const startupCases: CaseStudy[] = [
 const enterpriseCases: CaseStudy[] = [
   {
     title: "Telecommunications Provider",
+    slug: "telecom-provider",
     description: "Telecom providers generate massive data, but siloed systems limit its value—hindering efforts to modernize and deliver smarter, personalized connectivity.",
     metrics: [
       { value: "+23%", label: "Increased ROI" },
@@ -71,6 +79,7 @@ const enterpriseCases: CaseStudy[] = [
   },
   {
     title: "Global Financial Services",
+    slug: "financial-services",
     subtitle: "Operational Excellence & Supply Chain Resilience",
     description: "Large manufacturers face mounting pressure to cut waste, boost efficiency, and adapt fast—yet siloed data, aging systems, and complexity hinder real-time agility and sustainability.",
     metrics: [
@@ -80,21 +89,25 @@ const enterpriseCases: CaseStudy[] = [
   },
   {
     title: "Global Retailer",
+    slug: "global-retailer",
     subtitle: "Profit Through Precision",
     description: "By leveraging Neural Nexus' Unified Commerce & Supply Chain Intelligence, global retailers can unlock true omnichannel power—enhancing customer experience, efficiency, and long-term growth in a highly competitive market."
   },
   {
     title: "Insurance Corporation",
+    slug: "insurance-corporation",
     subtitle: "Risk Assessment & Claims Optimization",
     description: "Insurance firms rely on data for risk, claims, and fraud—but fragmented systems and low AI adoption drive inefficiencies and poor customer experiences."
   },
   {
     title: "Manufacturing",
+    slug: "manufacturing",
     subtitle: "Operational Excellence & Supply Chain Resilience",
     description: "Large manufacturers face mounting pressure to cut waste, boost efficiency, and adapt fast—yet siloed data, aging systems, and complexity hinder real-time agility and sustainability."
   },
   {
     title: "Pharmaceutical Enterprise",
+    slug: "pharmaceutical-enterprise",
     description: "Pharma faces high stakes data demands but bring risk-averse and regulatory while change moves from insights to impact.",
     metrics: [
       { value: "+28%", label: "Operational Efficiency" },
@@ -282,7 +295,7 @@ const NodCaseStudiesMobile = () => {
                             <p className={`${styles.title} text-2xl font-semibold leading-none`}>{item.title}</p>
                           </div>
                           <Link
-                            href="#"
+                            href={`/case-study/nod/${item.slug}`}
                             className="inline-flex w-full justify-center items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out mt-4"
                           >
                             Read story <ArrowRight className="w-4 h-4" />
@@ -298,7 +311,7 @@ const NodCaseStudiesMobile = () => {
                             <p className={`${styles.title} text-2xl font-semibold`}>{item.title}</p>
                           </div>
                           <Link
-                            href="#"
+                            href={`/case-study/nod/${item.slug}`}
                             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-full mt-4"
                           >
                             Read story <ArrowRight className="w-4 h-4" />

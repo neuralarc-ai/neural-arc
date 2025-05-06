@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fustat.className} antialiased bg-[#F8F7F3]`}>
+      <body className={`${fustat.className} antialiased bg-[#F8F7F3] grain-texture`}>
         <Navbar />
         {children}
         <Footer />

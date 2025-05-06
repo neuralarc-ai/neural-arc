@@ -67,8 +67,8 @@ export default function Navbar() {
   return (
     <nav className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:py-10 py-5">
       {/* Top bar */}
-      <div className="flex justify-between items-center mb-4 grain-hero">
-        <div className="grain-texture">
+      <div className="flex justify-between items-center mb-4">
+        <div>
           <Link href="/" className="block">
             <Image
               src="/icons/neural-paths-logo.svg"
@@ -86,7 +86,7 @@ export default function Navbar() {
           {isLargeScreen && (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out"
+              className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out"
             >
               <span
                 className={cn(
@@ -107,7 +107,7 @@ export default function Navbar() {
           {isMediumScreen && (
             <DropdownMenu open={isMediumMenuOpen} onOpenChange={setIsMediumMenuOpen}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full grain-texture hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
+                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -124,7 +124,7 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="mt-4 border-none p-8 max-w-[1297px] bg-white rounded-2xl grain-hero"
+                className="mt-4 border-none p-8 max-w-[1297px] bg-white rounded-2xl"
                 style={{
                   overflowY: "auto",
                   right: "0",
@@ -553,7 +553,7 @@ export default function Navbar() {
           )}
 
           {!isMobileScreen && (
-            <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-7 px-13 text-base grain-texture hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
+            <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-7 px-13 text-base hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
               Sign In
             </Button>
           )}
@@ -571,7 +571,7 @@ export default function Navbar() {
               duration: 0.35,
               ease: [0.4, 0, 0.2, 1],
             }}
-            className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] grain-navbar mt-8"
+            className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] mt-8"
           >
             {/* Main Grid */}
             <div className="grid grid-cols-4 gap-6 mb-6">

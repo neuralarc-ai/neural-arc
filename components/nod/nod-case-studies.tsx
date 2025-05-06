@@ -10,6 +10,7 @@ interface Metric {
 
 interface CaseStudy {
   title: string;
+  slug: string;
   subtitle?: string;
   description: string;
   metrics?: Metric[];
@@ -18,6 +19,7 @@ interface CaseStudy {
 const startupCases: CaseStudy[] = [
   {
     title: "Revolutionizing E-Commerce",
+    slug: "ecommerce",
     description: "Small and mid-sized e-commerce businesses often struggle with inventory inefficiencies, leading to stockouts, deadstock, and lost revenue.",
     metrics: [
       { value: "20%", label: "Annual Savings" },
@@ -26,6 +28,7 @@ const startupCases: CaseStudy[] = [
   },
   {
     title: "Service Business",
+    slug: "service-business",
     description: "Service businesses rely on customer retention and efficiency but often lack the data tools to scale smart, informed decisions.",
     metrics: [
       { value: "30%", label: "Additional Income" },
@@ -34,21 +37,25 @@ const startupCases: CaseStudy[] = [
   },
   {
     title: "Restaurant/Food Service",
+    slug: "food-service",
     subtitle: "Menu Engineering & Waste Reduction",
     description: "Restaurants face margin pressure and constant change but often lack the analytics to optimize."
   },
   {
     title: "Healthcare",
+    slug: "healthcare",
     subtitle: "Enhancing Efficiency and Reducing Costs",
     description: "Health systems generate massive data, but disconnected tools keep decisions and lower operational costs below expectations."
   },
   {
     title: "Channel Retail",
+    slug: "channel-retail",
     subtitle: "Unified Customer Intelligence",
     description: "Traditional retail and omni-channel digital-native brands trust us for advanced data to personalize, target, and smarter customer experiences."
   },
   {
     title: "Global Supply Chain",
+    slug: "supply-chain",
     description: "Global logistics firms face rising disruption risks, but traditional methods often lack the foresight needed to navigate today's volatile supply chains.",
     metrics: [
       { value: "30%+", label: "Current Annual Revenue" },
@@ -60,6 +67,7 @@ const startupCases: CaseStudy[] = [
 const enterpriseCases: CaseStudy[] = [
   {
     title: "Telecommunications Provider",
+    slug: "telecom-provider",
     description: "Telecom providers generate massive data, but siloed systems limit its value—hindering efforts to modernize and deliver smarter, personalized connectivity.",
     metrics: [
       { value: "+23%", label: "Increased ROI" },
@@ -68,6 +76,7 @@ const enterpriseCases: CaseStudy[] = [
   },
   {
     title: "Global Financial Services",
+    slug: "financial-services",
     subtitle: "Operational Excellence & Supply Chain Resilience",
     description: "Large manufacturers face mounting pressure to cut waste, boost efficiency, and adapt fast—yet siloed data, aging systems, and complexity hinder real-time agility and sustainability.",
     metrics: [
@@ -77,16 +86,25 @@ const enterpriseCases: CaseStudy[] = [
   },
   {
     title: "Global Retailer",
+    slug: "global-retailer",
     subtitle: "Profit Through Precision",
     description: "By leveraging Neural Nexus' Unified Commerce & Supply Chain Intelligence, global retailers can unlock true omnichannel power—enhancing customer experience, efficiency, and long-term growth in a highly competitive market."
   },
   {
     title: "Insurance Corporation",
+    slug: "insurance-corporation",
     subtitle: "Risk Assessment & Claims Optimization",
     description: "Insurance firms rely on data for risk, claims, and fraud—but fragmented systems and low AI adoption drive inefficiencies and poor customer experiences."
   },
   {
+    title: "Manufacturing",
+    slug: "manufacturing",
+    subtitle: "Operational Excellence & Supply Chain Resilience",
+    description: "Large manufacturers face mounting pressure to cut waste, boost efficiency, and adapt fast—yet siloed data, aging systems, and complexity hinder real-time agility and sustainability."
+  },
+  {
     title: "Pharmaceutical Enterprise",
+    slug: "pharmaceutical-enterprise",
     description: "Pharma faces high stakes data demands but bring risk-averse and regulatory while change moves from insights to impact.",
     metrics: [
       { value: "+28%", label: "Operational Efficiency" },
@@ -152,7 +170,7 @@ const NodCaseStudies = () => {
                 <div>
                   <p className="text-[#000000] text-3xl mb-8">{startupCases[0].description}</p>
                   <div className="w-full h-[1px] bg-[#71717133] mb-8"></div>
-                  <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                  <Link href={`/case-study/nod/${startupCases[0].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                     Read story <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -178,7 +196,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#AEACA9] text-[54px] font-semibold tracking-tighter leading-none">Service Business</p>
-                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href={`/case-study/nod/${startupCases[1].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -210,7 +228,7 @@ const NodCaseStudies = () => {
                       <p className={`text-[40px] leading-none font-semibold w-2/3`}>
                         {caseStudy.title}
                       </p>
-                      <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
+                      <Link href={`/case-study/nod/${caseStudy.slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -223,7 +241,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[930px] tracking-tight">{startupCases[5].description}</p>
-                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href={`/case-study/nod/${startupCases[5].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -251,7 +269,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[960px] tracking-tight">{enterpriseCases[0].description}</p>
-                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href={`/case-study/nod/${enterpriseCases[0].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -298,7 +316,7 @@ const NodCaseStudies = () => {
                          index === 1 ? 'Global\nRetailer' : 
                          'Insurance\nCorporation'}
                       </p>
-                      <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
+                      <Link href={`/case-study/nod/${caseStudy.slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -311,7 +329,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col gap-8 h-full">
                   <div className="flex justify-between items-center">
                     <p className="text-[#080507] text-xl max-w-[496px] text-[28px] tracking-tight">{enterpriseCases[4].description}</p>
-                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href={`/case-study/nod/${enterpriseCases[4].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -336,7 +354,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#BAA894] text-[54px] font-semibold tracking-tighter leading-none">Pharmaceutical<br />Enterprise</p>
-                    <Link href="#" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href={`/case-study/nod/${enterpriseCases[5].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
