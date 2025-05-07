@@ -110,7 +110,7 @@ export default function EcommerceCaseStudyPage() {
         title="Revolutionizing E-Commerce – "
         subtitle="Inventory Optimization Potential"
         description="Small and mid-sized e-commerce businesses face intense pressure to manage inventory efficiently. With limited resources, they often find themselves overstocking slow-moving items while running out of popular products. Manual forecasting based on gut instinct or incomplete data can lead to stockouts, deadstock, and missed revenue opportunities—ultimately tying up capital and straining operations."
-        image="/images/case-study/case1-hero.png"
+        image="/images/case-study/ecommerce/case1-hero.png"
       />
       <Challenges
         title="Core Operational Challenges in E-Commerce"

@@ -47,7 +47,7 @@ const features = [
 
 const ORBFeatures = () => {
   return (
-    <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10 hidden lg:block">
+    <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10 hidden xl:block">
       {/* Section Headers */}
       <div className="text-center mb-16">
         <h2 className="text-[#807C65] text-2xl lg:text-5xl mb-4 font-semibold tracking-tight">
@@ -77,7 +77,7 @@ const ORBFeatures = () => {
                 <div className="flex gap-8">
                   {features[0].metrics.map((metric, idx) => (
                     <div key={idx} className="flex flex-col">
-                      <span className="text-[40px] font-semibold text-[#55493D] tracking-tight">
+                      <span className="text-[32px] 2xl:text-[40px] font-semibold text-[#55493D] tracking-tight">
                         {metric.value}
                       </span>
                       <span className="text-[#55493D] font-semibold tracking-tight text-xl">
@@ -86,7 +86,7 @@ const ORBFeatures = () => {
                     </div>
                   ))}
                 </div>
-                <h3 className="text-[54px] font-semibold text-[#A2A89C] tracking-tight text-right leading-17">
+                <h3 className="xl:text-[40px] 2xl:text-[54px] font-semibold text-[#A2A89C] tracking-tight text-right leading-17">
                   {features[0].title}
                 </h3>
               </div>
@@ -147,7 +147,7 @@ const ORBFeatures = () => {
               </div>
               <div className="w-full h-[1px] bg-[#717171] opacity-20 mb-8"></div>
               <div className="flex justify-between items-end mt-auto">
-                <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#C4B3AB]">
+                <h3 className="text-[32px] 2xl:text-[40px] font-semibold tracking-tight leading-none text-[#C4B3AB]">
                   {features[2].title}
                 </h3>
                 <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">

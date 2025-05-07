@@ -30,12 +30,12 @@ export default function Value({ title, subtitle, cards }: ValueProps) {
         {cards.slice(0, 3).map((card, idx) => (
           <div
             key={idx}
-            className={`rounded-2xl ${cardColors[idx]} h-[403px] flex flex-col justify-between p-8`}
+            className={`rounded-2xl ${cardColors[idx]} h-[403px] flex flex-col justify-between p-6 xl:p-8`}
           >
             <div className={`${(idx === 1) ? 'text-[#232323]' : 'text-[#fff]'} text-xl md:text-2xl xl:text-[48px] font-semibold mb-2 tracking-tight leading-tight`}>{card.title}</div>
             <div className="flex flex-row justify-between items-end w-full">
-              <div className={`${(idx === 1) ? 'text-[#232323]' : 'text-[#fff]'} text-base leading-tight tracking-tight lg:text-[32px] self-end font-semibold`}>{card.subtitle}</div>
-              <div className="text-5xl 2xl:text-[164px] lg:text-[90px] font-semibold text-[#fff] opacity-50">{card.value}</div>
+              <div className={`${(idx === 1) ? 'text-[#232323]' : 'text-[#fff]'} text-base leading-tight tracking-tight xl:text-[32px] lg:text-[24px] self-end font-semibold`}>{card.subtitle}</div>
+              <div className="text-5xl 2xl:text-[124px] lg:text-[72px] font-semibold text-[#fff] opacity-50">{card.value}</div>
             </div>
           </div>
         ))}

@@ -99,7 +99,7 @@ const ORBFeaturesMobile = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="w-full mx-auto py-8 lg:hidden">
+    <section className="w-full mx-auto py-8 xl:hidden">
       <div className="mx-auto">
         {/* Section Headers */}
         <div className="text-center mb-16 px-4">
@@ -117,9 +117,9 @@ const ORBFeaturesMobile = () => {
             {features.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[85%] pl-4 first:pl-4"
+                className="min-w-[85%] md:min-w-[48%] pl-4 first:pl-4"
                 style={{
-                  opacity: index === currentIndex ? 1 : 0.7,
+                  opacity: index === currentIndex ? 1 : 1,
                   transform: `scale(${index === currentIndex ? 1 : 1})`,
                   transition: 'all 0.4s ease'
                 }}

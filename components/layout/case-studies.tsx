@@ -115,7 +115,7 @@ const enterpriseCases: CaseStudy[] = [
 
 const NodCaseStudies = () => {
   return (
-    <section className="w-full mx-auto py-16 hidden lg:block">
+    <section className="w-full mx-auto py-16 hidden xl:block">
       <div className="max-w-[1713px] mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -228,7 +228,12 @@ const NodCaseStudies = () => {
                          index === 1 ? 'Healthcare' : 
                          'Channel\nRetail'}
                       </p>
-                      <Link href={`/case-study/nod/${startupCases[index+1].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
+                      <Link href={
+                        index === 0 ? "/case-study/nod/food-service" :
+                        index === 1 ? "/case-study/nod/healthcare" :
+                        index === 2 ? "/case-study/nod/channel-retail" :
+                        `/case-study/nod/${startupCases[index+1].slug}`
+                      } className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -241,7 +246,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[930px] tracking-tight">{startupCases[4].description}</p>
-                    <Link href={`/case-study/nod/${startupCases[4].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href="/case-study/nod/supply-chain" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -269,7 +274,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex-1 flex flex-row justify-between items-center">
                     <p className="text-[#2F2C28] text-[28px] font-semibold max-w-[960px] tracking-tight">{enterpriseCases[0].description}</p>
-                    <Link href={`/case-study/nod/${enterpriseCases[0].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href="/case-study/nod/telecommunications-provider" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -320,7 +325,11 @@ const NodCaseStudies = () => {
                          index === 1 ? 'Global\nRetailer' : 
                          'Insurance\nCorporation'}
                       </p>
-                      <Link href={`/case-study/nod/${enterpriseCases[index+1].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
+                      <Link href={
+                        index === 0 ? "/case-study/nod/manufacturing" :
+                        index === 1 ? "/case-study/nod/global-retailer" :
+                        "/case-study/nod/insurance-corporation"
+                      } className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit justify-center">
                         Read story <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -333,7 +342,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col gap-8 h-full">
                   <div className="flex justify-between items-center">
                     <p className="text-[#080507] text-xl max-w-[496px] text-[28px] tracking-tight">{enterpriseCases[4].description}</p>
-                    <Link href={`/case-study/nod/${enterpriseCases[4].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href="/case-study/nod/financial-services" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -358,7 +367,7 @@ const NodCaseStudies = () => {
                 <div className="flex flex-col gap-8">
                   <div className="flex justify-between items-center">
                     <p className="text-[#BAA894] text-[54px] font-semibold tracking-tighter leading-none">Pharmaceutical<br />Enterprise</p>
-                    <Link href={`/case-study/nod/${enterpriseCases[4].slug}`} className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    <Link href="/case-study/nod/pharmaceutical-enterprise" className="inline-flex flex-shrink-0 items-center gap-2 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
                       Read story <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
