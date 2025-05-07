@@ -171,7 +171,7 @@ const NodCaseStudiesMobile = () => {
   const cases = activeTab === "startups" ? startupCases : enterpriseCases;
 
   return (
-    <section className="w-full mx-auto py-8 lg:hidden">
+    <section className="w-full mx-auto py-8 xl:hidden">
       <div className="mx-auto">
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -201,10 +201,33 @@ const NodCaseStudiesMobile = () => {
                 const descriptionClass = styles && 'description' in styles && styles.description ? ` ${styles.description}` : '';
                 const metricsClass = styles && 'metrics' in styles && styles.metrics ? ` ${styles.metrics}` : '';
                 const titleClass = styles && 'title' in styles && styles.title ? ` ${styles.title}` : '';
+                let linkHref = `/case-study/nod/${item.slug}`;
+                if (activeTab === "enterprises") {
+                  switch (item.slug) {
+                    case "telecom-provider":
+                      linkHref = "/case-study/nod/telecommunications-provider";
+                      break;
+                    case "manufacturing":
+                      linkHref = "/case-study/nod/manufacturing";
+                      break;
+                    case "global-retailer":
+                      linkHref = "/case-study/nod/global-retailer";
+                      break;
+                    case "insurance-corporation":
+                      linkHref = "/case-study/nod/insurance-corporation";
+                      break;
+                    case "financial-services":
+                      linkHref = "/case-study/nod/financial-services";
+                      break;
+                    case "pharmaceutical-enterprise":
+                      linkHref = "/case-study/nod/pharmaceutical-enterprise";
+                      break;
+                  }
+                }
                 return (
                   <div
                     key={index}
-                    className="min-w-[85%] pl-4 first:pl-4"
+                    className="min-w-[85%] md:min-w-[48%] pl-4 first:pl-4"
                     style={{
                       opacity: index === currentIndex ? 1 : 0.7,
                       transform: `scale(${index === currentIndex ? 1 : 1})`,
@@ -229,7 +252,7 @@ const NodCaseStudiesMobile = () => {
                             <p className={`text-2xl font-semibold leading-none${titleClass}`}>{item.title}</p>
                           </div>
                           <Link
-                            href={`/case-study/nod/${item.slug}`}
+                            href={linkHref}
                             className="inline-flex w-full justify-center items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out mt-4"
                           >
                             Read story <ArrowRight className="w-4 h-4" />
@@ -245,7 +268,7 @@ const NodCaseStudiesMobile = () => {
                             <p className={`text-2xl font-semibold${titleClass}`}>{item.title}</p>
                           </div>
                           <Link
-                            href={`/case-study/nod/${item.slug}`}
+                            href={linkHref}
                             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-full mt-4"
                           >
                             Read story <ArrowRight className="w-4 h-4" />
