@@ -48,7 +48,7 @@ const features = [
 
 const OrbCaseStudies = () => {
   return (
-    <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10 hidden lg:block">
+    <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10 hidden xl:block">
       {/* Section Headers */}
       <div className="text-center mb-16">
         <h2 className="text-[#638097] text-2xl lg:text-5xl mb-4 font-semibold tracking-tight">
@@ -89,7 +89,7 @@ const OrbCaseStudies = () => {
                     </div>
                   ))}
                 </div>
-                <h3 className="text-[54px] font-semibold text-[#BC90AE] tracking-tight text-right leading-17">
+                <h3 className="xl:text-[40px] 2xl:text-[54px] font-semibold text-[#BC90AE] tracking-tight text-right leading-17">
                   {features[0].title}
                 </h3>
               </div>
@@ -152,7 +152,7 @@ const OrbCaseStudies = () => {
               </div>
               <div className="w-full h-[1px] bg-[#717171] opacity-20 mb-8"></div>
               <div className="flex justify-between items-end mt-auto">
-                <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#5688A1]">
+                <h3 className="text-[24px] 2xl:text-[40px] font-semibold tracking-tight leading-none text-[#5688A1]">
                   {features[2].title}
                 </h3>
                 <Link href="/case-study/orb/product-development" className="flex-shrink-0">
@@ -185,7 +185,7 @@ const OrbCaseStudies = () => {
               </p>
               <div className="w-full h-[1px] bg-[#717171] opacity-40 my-auto"></div>
               <div className="flex justify-between items-end mt-auto">
-                <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#91ADB2]">
+                <h3 className="text-[24px] 2xl:text-[40px] font-semibold tracking-tight leading-none text-[#91ADB2]">
                   {features[3].title}
                 </h3>
                 <Link href="/case-study/orb/strategic-research" className="flex-shrink-0">
@@ -218,7 +218,7 @@ const OrbCaseStudies = () => {
               </div>
               <div className="w-full h-[1px] bg-[#717171] opacity-20 my-auto"></div>
               <div className="flex justify-between items-end mt-auto">
-                <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#9489B9]">
+                <h3 className="text-[24px] 2xl:text-[40px] font-semibold tracking-tight leading-none text-[#9489B9]">
                   {features[4].title}
                 </h3>
                 <Link href="/case-study/orb/market-expansion" className="flex-shrink-0">

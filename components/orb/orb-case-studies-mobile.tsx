@@ -1,9 +1,32 @@
 'use client'
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
+
+// Add useWindowSize hook
+function useWindowSize() {
+  const [size, setSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return size;
+}
 
 const features = [
   {
@@ -80,10 +103,29 @@ const features = [
 
 const OrbCaseStudiesMobile = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { width } = useWindowSize();
+  const pathname = usePathname();
+
+  // Scroll to top on page load and navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  // Disable scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: 'start',
-    containScroll: 'trimSnaps'
+    containScroll: 'trimSnaps',
+    breakpoints: {
+      '(min-width: 768px)': { slidesToScroll: 2 },
+      '(min-width: 1024px)': { slidesToScroll: 3 }
+    }
   });
 
   const onSelect = useCallback(() => {
@@ -107,8 +149,21 @@ const OrbCaseStudiesMobile = () => {
     '/case-study/orb/market-expansion',
   ];
 
+  // Calculate how many indicators to show and which one should be active
+  const getIndicatorCount = () => {
+    if (width < 768) return 5; // mobile
+    if (width < 1024) return 3; // md
+    return 2; // lg
+  };
+
+  const getActiveIndicator = () => {
+    if (width < 768) return currentIndex;
+    if (width < 1024) return Math.floor(currentIndex / 2);
+    return Math.floor(currentIndex / 3);
+  };
+
   return (
-    <section className="w-full mx-auto py-8 lg:hidden">
+    <section className="w-full mx-auto py-8 xl:hidden">
       <div className="mx-auto">
         {/* Section Headers */}
         <div className="text-center mb-16 px-4">
@@ -126,9 +181,9 @@ const OrbCaseStudiesMobile = () => {
             {features.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[85%] pl-4 first:pl-4"
+                className="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] pl-4 first:pl-4"
                 style={{
-                  opacity: index === currentIndex ? 1 : 0.7,
+                  opacity: index === currentIndex ? 1 : 1,
                   transform: `scale(${index === currentIndex ? 1 : 1})`,
                   transition: 'all 0.4s ease'
                 }}
@@ -169,11 +224,11 @@ const OrbCaseStudiesMobile = () => {
 
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mt-6">
-          {features.map((_, index) => (
+          {Array.from({ length: getIndicatorCount() }).map((_, index) => (
             <div
               key={index}
               className={`h-1 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'w-8 bg-[#2F2C28]' : 'w-2 bg-[#D9D8D8]'
+                index === getActiveIndicator() ? 'w-8 bg-[#2F2C28]' : 'w-2 bg-[#D9D8D8]'
               }`}
             />
           ))}

@@ -65,10 +65,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:py-10 py-5">
+    <motion.nav 
+      initial={{ y: -10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="relative w-full max-w-[1920px] mx-auto md:px-8 px-4 md:pt-10 py-5"
+    >
       {/* Top bar */}
       <div className="flex justify-between items-center mb-4">
-        <div>
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Link href="/" className="block">
             <Image
               src="/icons/neural-paths-logo.svg"
@@ -79,12 +87,14 @@ export default function Navbar() {
               priority
             />
           </Link>
-        </div>
+        </motion.div>
 
         <div className="flex gap-4 items-center">
           {/* Menu Toggle - Desktop (>1800px) */}
           {isLargeScreen && (
-            <button
+            <motion.button
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
               onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out"
             >
@@ -100,14 +110,18 @@ export default function Navbar() {
                   isOpen ? "-rotate-45 -translate-y-[2.5px]" : ""
                 )}
               />
-            </button>
+            </motion.button>
           )}
 
           {/* Menu Toggle - Responsive (1396px-1800px) */}
           {isMediumScreen && (
             <DropdownMenu open={isMediumMenuOpen} onOpenChange={setIsMediumMenuOpen}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
+                <motion.button 
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-9 py-6 bg-[#BAB3AB] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out"
+                >
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -120,7 +134,7 @@ export default function Navbar() {
                       isMediumMenuOpen ? "-rotate-45 -translate-y-[2.5px]" : ""
                     )}
                   />
-                </button>
+                </motion.button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
@@ -194,7 +208,7 @@ export default function Navbar() {
                       </div>
                       <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
                       <div className="flex flex-col gap-4 mb-8">
-                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/orb" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/discover.svg"
@@ -206,7 +220,7 @@ export default function Navbar() {
                           </div>
                           <span className="text-2xl text-[#2F2C28]">Discover</span>
                         </Link>
-                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/orb" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/value.svg"
@@ -238,7 +252,7 @@ export default function Navbar() {
                       </div>
                       <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
                       <div className="flex flex-col gap-4 mb-8">
-                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/nod" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/discover.svg"
@@ -250,7 +264,7 @@ export default function Navbar() {
                           </div>
                           <span className="text-2xl text-[#2F2C28]">Discover</span>
                         </Link>
-                        <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                        <Link href="/nod" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                           <div className="w-8 h-8">
                             <Image
                               src="/icons/value.svg"
@@ -329,7 +343,11 @@ export default function Navbar() {
           {isMobileScreen && (
             <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <DropdownMenuTrigger asChild>
-                <button className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out">
+                <motion.button 
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="cursor-pointer space-y-1.5 transition-all duration-300 group focus:outline-none px-6 py-6 bg-[#C1BBB4] rounded-full hover:shadow-[0_2px_0_0_#6B5B4D] shadow-[0_4px_0_0_#6B5B4D] ease-in-out"
+                >
                   <span
                     className={cn(
                       "block h-[2.5px] w-[27px] bg-[#2F2C28] transition-transform duration-300 rounded-full",
@@ -342,7 +360,7 @@ export default function Navbar() {
                       isMobileMenuOpen ? "-rotate-45 -translate-y-[2.5px]" : ""
                     )}
                   />
-                </button>
+                </motion.button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
@@ -426,7 +444,7 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent className="pt-4">
                         <div className="flex flex-col gap-4 pl-2">
-                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/orb" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/discover.svg"
@@ -438,7 +456,7 @@ export default function Navbar() {
                             </div>
                             <span className="text-base text-[#2F2C28]">Discover</span>
                           </Link>
-                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/orb" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/value.svg"
@@ -478,7 +496,7 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent className="pt-4">
                         <div className="flex flex-col gap-4 pl-2">
-                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/nod" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/discover.svg"
@@ -490,7 +508,7 @@ export default function Navbar() {
                             </div>
                             <span className="text-2xl text-[#2F2C28]">Discover</span>
                           </Link>
-                          <Link href="#" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                          <Link href="/nod" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                             <div className="w-8 h-8">
                               <Image
                                 src="/icons/value.svg"
@@ -553,9 +571,14 @@ export default function Navbar() {
           )}
 
           {!isMobileScreen && (
-            <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-7 px-13 text-base hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
-              Sign In
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+            >
+              <Button className="bg-[#2F2C28] hover:bg-[#2F2C28] rounded-full py-7 px-13 text-base hover:shadow-[0_3px_0_0_#C6AEA3] shadow-[0_5px_0_0_#C6AEA3] ease-in-out transition-all duration-300 cursor-pointer">
+                Sign In
+              </Button>
+            </motion.div>
           )}
         </div>
       </div>
@@ -568,8 +591,8 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{
-              duration: 0.35,
-              ease: [0.4, 0, 0.2, 1],
+              duration: 0.4,
+              ease: [0.22, 1, 0.36, 1],
             }}
             className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] mt-8"
           >
@@ -634,7 +657,7 @@ export default function Navbar() {
                 </div>
                 <p className="text-[#255B47]/45 font-semibold text-2xl mb-8">{"{Outlast. Reimagine. Build.}"}</p>
                 <div className="flex flex-col gap-4 mb-8">
-                  <Link href="/orb" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/orb" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/discover.svg"
@@ -646,7 +669,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Discover</span>
                   </Link>
-                  <Link href="/orb"  className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/orb" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/value.svg"
@@ -678,7 +701,7 @@ export default function Navbar() {
                 </div>
                 <p className="text-[#584F48]/75 font-semibold text-2xl mb-8">{"{Navigate. Optimize. Disrupt.}"}</p>
                 <div className="flex flex-col gap-4 mb-8">
-                  <Link href="/nod" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/nod" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/discover.svg"
@@ -690,7 +713,7 @@ export default function Navbar() {
                     </div>
                     <span className="text-2xl text-[#2F2C28]">Discover</span>
                   </Link>
-                  <Link href="nod" className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
+                  <Link href="/nod" onClick={handleLinkClick} className="group flex items-center gap-4 hover:bg-[#5454541A] p-3 rounded-lg transition-all duration-300">
                     <div className="w-8 h-8">
                       <Image
                         src="/icons/value.svg"
@@ -769,6 +792,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
