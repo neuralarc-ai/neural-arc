@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from "next/image";
+import Link from 'next/link';
 
 const features = [
   {
@@ -146,10 +147,18 @@ const ORBFeaturesMobile = () => {
                       {item.title}
                     </p>
                   </div>
-                  <button className="inline-flex w-full justify-center items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out mt-4">
-                    Read story
-                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                  </button>
+                  <Link href={
+                    index === 0 ? '/case-study/orb/market-position' :
+                    index === 1 ? '/case-study/orb/pricing-optimization' :
+                    index === 2 ? '/case-study/orb/product-development' :
+                    index === 3 ? '/case-study/orb/strategic-research' :
+                    '/case-study/orb/market-expansion'
+                  }>
+                    <button className="inline-flex w-full justify-center items-center gap-2 px-6 py-3 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out mt-4">
+                      Read story
+                      <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}

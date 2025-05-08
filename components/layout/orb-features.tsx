@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from 'next/link';
 
 const features = [
   {
@@ -69,10 +70,12 @@ const ORBFeatures = () => {
                 {features[0].description}
               </p>
               <div className="w-full h-[1px] bg-[#717171] opacity-20 my-auto"></div>
-              <button className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                Read story
-                <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-              </button>
+              <Link href="/case-study/orb/market-position" className="flex-shrink-0">
+                <button className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                  Read story
+                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                </button>
+              </Link>
               <div className="flex justify-between items-end mt-auto">
                 <div className="flex gap-8">
                   {features[0].metrics.map((metric, idx) => (
@@ -100,10 +103,12 @@ const ORBFeatures = () => {
                 <h3 className="text-[54px] font-semibold tracking-tight leading-17 text-[#637794] opacity-75">
                   {features[1].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                Read story
-                <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-              </button>
+                <Link href="/case-study/orb/pricing-optimization" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
               <p className="text-[#080507] text-xl font-semibold tracking-tight mb-8">
                 {features[1].description}
@@ -150,10 +155,12 @@ const ORBFeatures = () => {
                 <h3 className="text-[32px] 2xl:text-[40px] font-semibold tracking-tight leading-none text-[#C4B3AB]">
                   {features[2].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                  Read story
-                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                </button>
+                <Link href="/case-study/orb/product-development" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -181,10 +188,12 @@ const ORBFeatures = () => {
                 <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#787878]">
                   {features[3].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                  Read story
-                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                </button>
+                <Link href="/case-study/orb/strategic-research" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -212,10 +221,12 @@ const ORBFeatures = () => {
                 <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#9B846A]">
                   {features[4].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                  Read story
-                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                </button>
+                <Link href="/case-study/orb/market-expansion" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -250,10 +261,12 @@ const ORBFeatures = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="mt-6 w-full bg-[#2F2C28] text-white px-6 py-3 rounded-full flex items-center justify-center gap-2">
-                    Read story
-                    <ArrowRightIcon className="w-4 h-4" />
-                  </button>
+                  <Link href={`/case-study/orb/${feature.title.toLowerCase().replace(/\s+/g, '-')}`} className="flex-shrink-0">
+                    <button className="mt-6 w-full bg-[#2F2C28] text-white px-6 py-3 rounded-full flex items-center justify-center gap-2">
+                      Read story
+                      <ArrowRightIcon className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}

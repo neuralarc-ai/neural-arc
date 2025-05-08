@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
@@ -69,10 +70,12 @@ const OrbCaseStudies = () => {
                 {features[0].description}
               </p>
               <div className="w-full h-[1px] bg-[#717171] opacity-20 my-auto"></div>
-              <button className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                Read story
-                <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-              </button>
+              <Link href="/case-study/orb/market-position" className="flex-shrink-0">
+                <button className="flex items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                  Read story
+                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                </button>
+              </Link>
               <div className="flex justify-between items-end mt-auto">
                 <div className="flex gap-8">
                   {features[0].metrics.map((metric, idx) => (
@@ -100,10 +103,12 @@ const OrbCaseStudies = () => {
                 <h3 className="text-[54px] font-semibold tracking-tight leading-17 text-[#A1A1A1] opacity-75">
                   {features[1].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                Read story
-                <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-              </button>
+                <Link href="/case-study/orb/pricing-optimization" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
               <p className="text-[#080507] text-xl font-semibold tracking-tight mb-8">
                 {features[1].description}
@@ -150,10 +155,12 @@ const OrbCaseStudies = () => {
                 <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#5688A1]">
                   {features[2].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                  Read story
-                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                </button>
+                <Link href="/case-study/orb/product-development" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -181,10 +188,12 @@ const OrbCaseStudies = () => {
                 <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#91ADB2]">
                   {features[3].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                  Read story
-                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                </button>
+                <Link href="/case-study/orb/strategic-research" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -212,10 +221,12 @@ const OrbCaseStudies = () => {
                 <h3 className="text-[40px] font-semibold tracking-tight leading-none text-[#9489B9]">
                   {features[4].title}
                 </h3>
-                <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
-                  Read story
-                  <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
-                </button>
+                <Link href="/case-study/orb/market-expansion" className="flex-shrink-0">
+                  <button className="flex flex-shrink-0 items-center gap-2 bg-[#2F2C28] text-white px-8 py-4 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-fit">
+                    Read story
+                    <Image src="/icons/arrow.svg" alt="arrow" width={24} height={16} />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
