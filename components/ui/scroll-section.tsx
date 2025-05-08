@@ -17,7 +17,7 @@ const ScrollSection = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { 
     once: true,
-    margin
+    margin: margin as any
   });
 
   return (
