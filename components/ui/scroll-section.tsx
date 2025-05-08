@@ -17,7 +17,8 @@ const ScrollSection = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { 
     once: true,
-    margin: margin as any
+    // @ts-expect-error - framer-motion types are incorrect for margin
+    margin
   });
 
   return (
