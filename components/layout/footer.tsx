@@ -221,9 +221,11 @@ const Footer = () => {
           <p className="text-[#B4B0AA] mb-4 md:mb-0 lg:order-1 order-2">Copyright 2025. All rights reserved.</p>
           
           <div className="flex items-center gap-4 mb-4 md:mb-0 lg:order-2 order-1">
-            <Link href="/terms" className="text-[#8C8376] hover:text-white transition-colors underline">Terms of use</Link>
+            <Link href="/terms-of-use" className="text-[#8C8376] hover:text-white transition-colors underline">Terms of use</Link>
             <span className="text-[#8C8376]">•</span>
-            <Link href="/privacy" className="text-[#8C8376] hover:text-white transition-colors underline">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="text-[#8C8376] hover:text-white transition-colors underline">Privacy Policy</Link>
+            <span className="text-[#8C8376]">•</span>
+            <Link href="/disclaimer" className="text-[#8C8376] hover:text-white transition-colors underline">Disclaimer</Link>
           </div>
 
         </div>

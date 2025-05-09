@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import ContactHero from '@/components/contact/contact-hero'
 import Careers from '@/components/contact/careers'
 import ContactForm from '@/components/contact/contact-form'
+import ScrollSection from '@/components/ui/scroll-section';
 
 const Contact = () => {
   useEffect(() => {
@@ -13,9 +14,15 @@ const Contact = () => {
 
   return (
     <main className='max-w-[1920px] mx-auto md:px-8 px-4'>
-      <ContactHero />
-      <Careers />
-      <ContactForm />
+      <ScrollSection>
+        <ContactHero />
+      </ScrollSection>
+      <ScrollSection>
+        <Careers />
+      </ScrollSection>
+      <ScrollSection>
+        <ContactForm />
+      </ScrollSection>
     </main>
   )
 }

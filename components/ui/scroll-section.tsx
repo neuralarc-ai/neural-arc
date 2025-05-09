@@ -11,7 +11,7 @@ interface ScrollSectionProps {
 
 const ScrollSection = ({ 
   children, 
-  className = "", 
+  className = "w-full", 
   margin = "-30% 0px -30% 0px" 
 }: ScrollSectionProps) => {
   const ref = useRef(null);

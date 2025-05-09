@@ -591,8 +591,8 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{
-              duration: 0.4,
-              ease: [0.22, 1, 0.36, 1],
+              duration: 0.3,
+              ease: [0.4, 0, 0.2, 1],
             }}
             className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] mt-8"
           >
@@ -781,7 +781,7 @@ export default function Navbar() {
                     className="object-contain"
                   />
                 </div>
-                <Button className="bg-[#55493D] hover:bg-[#2F2C28] text-white rounded-full px-8 py-6 text-lg shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300 self-start mt-16">
+                <Button className="bg-[#55493D] hover:bg-[#55493D] cursor-pointer text-white rounded-full px-8 py-6 text-lg shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-300 self-start mt-16">
                   Explore the Suite <Image src="/icons/arrow.svg" alt="Arrow" width={30} height={30} className="ml-1" />
                 </Button>
               </div>

@@ -25,7 +25,7 @@ const Careers = () => {
           </p>
         </div>
         <Link
-          href="/open-roles"
+          href="/careers"
           className="flex items-center gap-2 md:gap-8 w-fit bg-[#2F2C28] text-white px-8 py-5 rounded-full transition-all shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
         >
           View Open Roles

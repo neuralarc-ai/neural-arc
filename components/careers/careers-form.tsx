@@ -314,7 +314,7 @@ const CareersForm = () => {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="bg-[#292929] text-[#CAC9C9] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer hover:shadow-[0_5px_0_0_#ADADAD] transition-all duration-300 flex items-center justify-between gap-10"
+                      className="bg-[#292929] text-[#CAC9C9] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer shadow-[0_5px_0_0_#ADADAD] hover:shadow-[0_3px_0_0_#ADADAD] transition-all duration-300 flex items-center justify-between gap-10"
                     >
                       <ArrowLeft className="w-6 h-6" />
                       Back
@@ -322,7 +322,7 @@ const CareersForm = () => {
                   )}
                   <button
                     type="submit"
-                    className={`bg-white text-[#2F2C28] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer hover:shadow-[0_5px_0_0_#6B5B4D] transition-all duration-300 flex items-center justify-between gap-10 ${
+                    className={`bg-white text-[#2F2C28] px-12 py-4 text-3xl font-semibold rounded-full cursor-pointer shadow-[0_5px_0_0_#6B5B4D] hover:shadow-[0_3px_0_0_#6B5B4D] transition-all duration-300 flex items-center justify-between gap-10 ${
                       currentStep > 0 ? 'ml-8' : ''
                     }`}
                   >
