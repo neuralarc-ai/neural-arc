@@ -126,10 +126,10 @@ const Hero = memo(() => {
         className="absolute bottom-0 -left-14 z-30 lg:left-[-60px] xl:left-[50px] 2xl:left-[200px] hidden xl:block"
       >
         <Image
-          src="/images/hero/bottom-left.svg"
+          src="/images/hero/bottom-left.png"
           alt="Decorative illustration"
-          width={120}
-          height={120}
+          width={310}
+          height={390}
           className="w-auto h-auto object-contain"
           priority={false}
           loading="lazy"
@@ -144,10 +144,10 @@ const Hero = memo(() => {
         className="absolute bottom-0 right-[150px] 2xl:right-[300px] hidden xl:block opacity-80"
       >
         <Image
-          src="/images/hero/bottom-right.svg"
+          src="/images/hero/bottom-right.png"
           alt="Decorative illustration"
-          width={120}
-          height={120}
+          width={197}
+          height={417}
           className="w-auto h-auto object-contain"
           priority={false}
           loading="lazy"
@@ -162,10 +162,10 @@ const Hero = memo(() => {
         className="absolute bottom-0 lg:-bottom-16 right-0 hidden xl:block -mr-8"
       >
         <Image
-          src="/images/hero/right.svg"
+          src="/images/hero/right.png"
           alt="Decorative illustration"
-          width={150}
-          height={120}
+          width={197}
+          height={1228}
           className="w-auto h-auto object-contain"
           priority={false}
           loading="lazy"
