@@ -2,7 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Openings = () => {
+interface OpeningsProps {
+  formRef?: React.RefObject<HTMLDivElement>;
+}
+
+const Openings = ({ formRef }: OpeningsProps) => {
   const positions = [
     {
       title: "Product Designer",
@@ -44,10 +48,15 @@ const Openings = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center ">
           {positions.map((position, index) => (
-            <Link 
-              href={`/careers/${position.title.toLowerCase().replace(/\s+/g, '-')}`}
+            <button
+              type="button"
               key={index}
-              className="group relative bg-[#6B5B4D] rounded-2xl px-12 py-12 flex flex-col min-h-[238px] overflow-hidden cursor-pointer justify-center"
+              className="group relative bg-[#6B5B4D] rounded-2xl px-12 py-12 flex flex-col min-h-[238px] overflow-hidden cursor-pointer justify-center text-left"
+              onClick={() => {
+                if (formRef && formRef.current) {
+                  formRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               {/* Background Illustration */}
               <div className="absolute inset-0">
@@ -82,7 +91,7 @@ const Openings = () => {
                   />
                 </div>
               </div>
-            </Link>
+            </button>
           ))}
           
           {/* Don't see your role card */}

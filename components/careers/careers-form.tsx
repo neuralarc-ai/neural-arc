@@ -136,14 +136,27 @@ const CareersForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const field = steps[currentStep].field as keyof FormData;
     if (validateField(field, formData[field])) {
       if (currentStep === steps.length - 1) {
         try {
           formSchema.parse(formData);
-          console.log('Form submitted:', formData);
+          // Send as FormData (multipart/form-data)
+          const data = new FormData();
+          data.append('name', formData.name);
+          data.append('email', formData.email);
+          data.append('portfolio', formData.portfolio);
+          data.append('role', formData.role);
+          data.append('message', formData.message);
+          if (formData.resume) {
+            data.append('resume', formData.resume);
+          }
+          await fetch('/api/careers', {
+            method: 'POST',
+            body: data,
+          });
           setIsSubmitted(true);
         } catch (error) {
           if (error instanceof z.ZodError) {

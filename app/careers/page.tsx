@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import CareersHero from '@/components/careers/careers-hero';
 import Openings from '@/components/careers/openings';
 import Mission from '@/components/careers/mission';
@@ -13,18 +13,20 @@ const Careers = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const formSectionRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
+
   return (
     <main className='max-w-[1920px] mx-auto md:px-8 px-4'>
       <ScrollSection>
         <CareersHero />
       </ScrollSection>
       <ScrollSection>
-        <Openings />
+        <Openings formRef={formSectionRef} />
       </ScrollSection>
       <ScrollSection>
         <Mission />
       </ScrollSection>
-      <ScrollSection>
+      <ScrollSection forwardedRef={formSectionRef}>
         <CareersForm />
       </ScrollSection>
     </main>

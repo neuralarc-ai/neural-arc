@@ -1,21 +1,24 @@
 'use client';
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, RefObject } from "react";
 
 interface ScrollSectionProps {
   children: React.ReactNode;
   className?: string;
   margin?: string;
+  forwardedRef?: RefObject<HTMLDivElement>;
 }
 
 const ScrollSection = ({ 
   children, 
   className = "w-full", 
-  margin = "-30% 0px -30% 0px" 
+  margin = "-30% 0px -30% 0px",
+  forwardedRef
 }: ScrollSectionProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { 
+  const localRef = useRef<HTMLDivElement>(null);
+  const ref = forwardedRef || localRef;
+  const isInView = useInView(ref as RefObject<Element>, { 
     once: true,
     // @ts-expect-error - framer-motion types are incorrect for margin
     margin
