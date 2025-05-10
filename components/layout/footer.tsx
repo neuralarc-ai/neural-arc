@@ -158,7 +158,7 @@ const Footer = () => {
                   At Ampersand, we turn bold visions into tangible outcomes. Through innovative solutions and strategic collaboration, we empower startups and businesses to grow with purpose and clarity.
                 </p>
               </div>
-              <Link href="https://ampvc.com" target="_blank" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
+              <Link href="https://ampvc.co" target="_blank" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
                 Visit Website
                 <Image 
                   src="/icons/arrow.svg" 
@@ -176,7 +176,7 @@ const Footer = () => {
         <div className="lg:hidden mb-16">
           <h4 className="text-[#FFFFFF7A] text-2xl xl:text-3xl mb-6">Stay Connected</h4>
           <div className="flex gap-4">
-            <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full">
+            {/* <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full">
               <Image 
                 src="/icons/instagram.svg" 
                 alt="Instagram" 
@@ -184,8 +184,8 @@ const Footer = () => {
                 height={55}
                 className="transition-all duration-300 hover:brightness-125" 
               />
-            </Link>
-            <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full">
+            </Link> */}
+            <Link href="https://www.linkedin.com/company/neuralarcsai" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full">
               <Image 
                 src="/icons/linkedin.svg" 
                 alt="LinkedIn" 
@@ -194,7 +194,7 @@ const Footer = () => {
                 className="transition-all duration-300 hover:brightness-125" 
               />
             </Link>
-            <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full">
+            <Link href="https://www.instagram.com/neural_arc/" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full">
               <Image 
                 src="/icons/twitter.svg" 
                 alt="Twitter" 
@@ -203,7 +203,7 @@ const Footer = () => {
                 className="transition-all duration-300 hover:brightness-125" 
               />
             </Link>
-            <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full">
+            {/* <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full">
               <Image 
                 src="/icons/medium.svg" 
                 alt="Medium" 
@@ -211,7 +211,7 @@ const Footer = () => {
                 height={55}
                 className="transition-all duration-300 hover:brightness-125" 
               />
-            </Link>
+            </Link> */}
           </div>
         </div>
 

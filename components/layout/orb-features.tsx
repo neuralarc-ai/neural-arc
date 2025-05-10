@@ -60,7 +60,7 @@ const ORBFeatures = () => {
       </div>
 
       {/* Desktop Layout - Hidden on mobile */}
-      <div className="hidden md:block">
+      <div className="hidden md:flex md:flex-col gap-4">
         {/* First Row - Two Cards */}
         <div className="grid grid-cols-2 gap-8 mb-8 h-[425px]">
           {/* First Card */}

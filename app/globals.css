@@ -186,3 +186,65 @@
   background: linear-gradient(-165deg, #5E5E5E, #54736C 30%, #978163 45%, #AFB7A6 65%);
 }
 
+/* Sleek & Premium Custom Scrollbar Styles */
+
+/* Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--color-border) 60%, var(--color-primary) 100%);
+  border-radius: 12px;
+  min-height: 40px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  border: 2px solid var(--color-background);
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--color-primary) 60%, var(--color-border) 100%);
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+  border-radius: 12px;
+}
+
+/* Hide scrollbar arrow buttons (Webkit browsers) */
+::-webkit-scrollbar-button:single-button,
+::-webkit-scrollbar-button:decrement,
+::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0;
+  height: 0;
+}
+
+/* Firefox */
+html, body, * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) rgba(0,0,0,0.03);
+}
+
+/* Dark mode overrides */
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--color-border) 60%, var(--color-primary) 100%);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--color-primary) 60%, var(--color-border) 100%);
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.06);
+}
+
+/* Remove any scrollbar-hide effect */
+.scrollbar-hide, .scrollbar-hide::-webkit-scrollbar {
+  display: initial !important;
+  width: 7px !important;
+  height: 7px !important;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+

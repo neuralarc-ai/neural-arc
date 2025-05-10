@@ -98,7 +98,7 @@ const ContactHero = () => {
                   className="text-[#2F2C28] text-lg font-semibold hover:text-[#2F2C28] hover:underline transition-all duration-300"
                   aria-label="Contact NeuralArc Product Support Team"
                 >
-                  product@neuralarc.ai
+                  hello@neuralarc.ai
                 </a>
               </div>
             </div>
@@ -147,7 +147,7 @@ const ContactHero = () => {
                   className="text-[#2F2C28] text-lg font-semibold hover:text-[#2F2C28] hover:underline transition-all duration-300"
                   aria-label="Contact NeuralArc General Inquiries Team"
                 >
-                  product@neuralarc.ai
+                  hello@neuralarc.ai
                 </a>
               </div>
             </div>
