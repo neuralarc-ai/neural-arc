@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
   try {
     await transporter.sendMail({
       from: `NeuralARC Careers <${process.env.SMTP_USER}>`,
-      to: 'careers@neuralarc.ai',
+      to: 'dev@neuralarc.ai',
       subject: `New Careers Application: ${name} (${role})`,
       html,
       attachments,

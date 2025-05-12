@@ -15,7 +15,7 @@ const teamMembers = [
   },
   {
     name: "Pratik",
-    role: "AI Coder",
+    role: "SDE - I",
     image: "/images/about/pratik.png",
   },
   {
@@ -25,7 +25,7 @@ const teamMembers = [
   },
   {
     name: "Sahil",
-    role: "AI Coder",
+    role: "SDE - I",
     image: "/images/about/sahil.png",
   },
   // Second Row
@@ -36,13 +36,23 @@ const teamMembers = [
   },
   {
     name: "Aman",
-    role: "AI Coder",
+    role: "AI Developer",
     image: "/images/about/aman.png",
   },
   {
     name: "Pranav",
     role: "AI Developer",
     image: "/images/about/pranav.png",
+  },
+  {
+    name: "Aditya",
+    role: "AI Developer",
+    image: "/images/about/aditya.png",
+  },
+  {
+    name: "Utkarsh",
+    role: "AI Developer",
+    image: "/images/about/utkarsh.png",
   },
 ];
 
@@ -75,7 +85,7 @@ const Team = () => {
                 alt="Aniket Tapre"
                 width={408}
                 height={408}
-                className="xl:w-full xl:h-full w-[200px] h-[200px] object-contain"
+                className="xl:w-full xl:h-full h-[200px] object-contain"
               />
             </div>
 
@@ -95,76 +105,23 @@ const Team = () => {
         {/* Horizontal Separator */}
         <div className="w-full h-[3px] bg-[#FFFFFF]/25 my-24"></div>
 
-        {/* Team Grid */}
-        {/* Mobile Team Grid */}
-        <div className="lg:hidden grid grid-cols-2 gap-8 mb-16">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="flex flex-col items-center">
-              <div className="overflow-hidden mb-4">
+        {/* Team Grid - Responsive: 2 cols below xl, 5 cols xl+ */}
+        <div className="grid grid-cols-2 xl:grid-cols-5 gap-8 mb-16">
+          {teamMembers.map((member, idx) => (
+            <div key={member.name + idx} className="flex flex-col items-center">
+              <div className="xl:w-[200px] overflow-hidden mb-4">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  width={100}
-                  height={100}
-                  className="object-contain"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-contain"
                 />
               </div>
               <h3 className="text-xl text-white font-semibold mb-1">{member.name}</h3>
               <p className="text-[#BAB6B6]">{member.role}</p>
             </div>
           ))}
-        </div>
-
-        {/* Desktop Team Grid */}
-        <div className="hidden lg:block">
-          {/* Top Team Members */}
-          <div className="grid grid-cols-5 gap-8 mb-16">
-            {teamMembers.slice(0, 5).map((member) => (
-              <div key={member.name} className="flex flex-col items-center">
-                <div className="xl:w-[200px] overflow-hidden mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-xl text-white font-semibold mb-1">{member.name}</h3>
-                <p className="text-[#BAB6B6]">{member.role}</p>
-              </div>
-            ))}
-            <div></div> {/* Empty div for 6th column */}
-          </div>
-
-          {/* Bottom Section */}
-          <div className="grid grid-cols-5 gap-8 items-center">
-            {/* Team Members */}
-            <div className="col-span-3 grid grid-cols-3 gap-2 col-start-1">
-              {teamMembers.slice(5).map((member) => (
-                <div key={member.name} className="flex flex-col items-center">
-                  <div className="xl:w-[200px] overflow-hidden mb-4">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={200}
-                      height={200}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl text-white font-semibold mb-1">{member.name}</h3>
-                  <p className="text-[#BAB6B6]">{member.role}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Text Section */}
-            <div className="col-span-3 col-start-4">
-              <h2 className="text-4xl xl:text-6xl text-[#BAB6B6] font-semibold leading-tight">
-                We are focused on building for the long haul, with the right foundation.
-              </h2>
-            </div>
-          </div>
         </div>
       </div>
     </section>
