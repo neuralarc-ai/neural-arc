@@ -21,7 +21,7 @@ const Suite = () => {
         </p>
 
         <Link
-          href="#"
+          href="https://neuralpaths.ai"
           className="inline-flex items-center gap-2 z-20 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
         >
           Learn More <ArrowRight className="w-5 h-5" />

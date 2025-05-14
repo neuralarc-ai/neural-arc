@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import JoinWaitlistDialog from "./JoinWaitlistDialog";
 
 const NOD = () => {
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
   return (
     <section className="relative mx-auto lg:px-8 px-4 2xl:px-20 py-10 mt-10">
       <div className="flex flex-col items-center text-center">
@@ -63,7 +65,10 @@ const NOD = () => {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row items-center gap-4">
-          <button className="flex items-center gap-4 bg-[#2F2C28] text-white px-8 py-5 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-full md:w-auto">
+          <button
+            className="flex items-center gap-4 bg-[#2F2C28] text-white px-8 py-5 rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out w-full md:w-auto"
+            onClick={() => setWaitlistOpen(true)}
+          >
             Join the waitlist
             <ArrowRight className="w-6 h-6" />
           </button>
@@ -74,6 +79,7 @@ const NOD = () => {
             </button>
           </Link>
         </div>
+        <JoinWaitlistDialog open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
       </div>
     </section>
   );
