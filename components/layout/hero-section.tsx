@@ -17,7 +17,7 @@ const Hero = memo(() => {
   const topRightRotate = useTransform(scrollY, [0, 300], [0, 5]);
 
   return (
-    <div className="relative w-full max-h-[384px] md:max-h-[1019px] px-8 pt-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 overflow-hidden">
+    <div className="relative w-full max-h-[484px] md:max-h-[1019px] px-8 pt-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 overflow-hidden">
       {/* Top Left Illustration */}
       <motion.div 
         initial={{ opacity: 0, x: -20, y: -20, rotate: -15, scale: 0.8 }}

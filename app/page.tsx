@@ -13,7 +13,7 @@ import CaseStudiesMobile from "@/components/layout/case-studies-mobile";
 import Suite from "@/components/layout/suite";
 import OrbFeaturesMobile from "@/components/layout/orb-features-mobile";
 import ScrollSection from "@/components/ui/scroll-section";
-
+import AiServices from "@/components/layout/ai-services";
 const fadeInUp = {
   initial: { opacity: 0, y: 10 },
   animate: { opacity: 1, y: 0 },
@@ -75,6 +75,10 @@ export default function Home() {
       
       <ScrollSection>
         <DNA />
+      </ScrollSection>
+
+      <ScrollSection>
+        <AiServices />
       </ScrollSection>
       
       <ScrollSection>
