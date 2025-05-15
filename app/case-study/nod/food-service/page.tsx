@@ -139,7 +139,7 @@ export default function FoodServiceCaseStudyPage() {
         title="Operational Excellence Dashboard"
         subtitle="Real-time insights to drive smarter, faster decisions across food service operations"
         bullets={dashboardBullets}
-        buttonText="View Dashboard"
+        buttonText="Get Early Access"
         image="/images/case-study/food-service/dashboard-web.png"
         mobileImage="/images/case-study/food-service/dashboard-mobile.png"
       />

@@ -23,7 +23,7 @@ const Hero = memo(() => {
         initial={{ opacity: 0, x: -20, y: -20, rotate: -15, scale: 0.8 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
         style={{ y: topLeftY, rotate: topLeftRotate }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
         className="absolute top-0 hidden xl:block -ml-8"
       >
         <Image
@@ -43,7 +43,7 @@ const Hero = memo(() => {
         initial={{ opacity: 0, x: 20, y: -20, rotate: 15, scale: 0.8 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
         style={{ y: topRightY, rotate: topRightRotate }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
         className="absolute top-[60px] lg:top-[20px] xl:top-[60px] right-[160px] lg:right-[60px] xl:right-[160px] hidden xl:block -mr-8"
       >
         <Image
@@ -65,7 +65,7 @@ const Hero = memo(() => {
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.05 }}
           className="text-3xl lg:text-7xl font-semibold text-white max-w-full md:max-w-md lg:max-w-4xl mx-auto text-center text-shadow-[0_0_40px_rgba(255,255,255,0.35)] leading-tight tracking-tight"
         >
           The Cognitive Engine for Business Evolution
@@ -73,7 +73,7 @@ const Hero = memo(() => {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 1.05 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.25 }}
           className="text-sm lg:text-lg text-white lg:max-w-lg md:max-w-md max-w-full mx-auto text-center mt-2 text-balance"
         >
           Where Neural Networks Become NeuralArc
@@ -83,10 +83,10 @@ const Hero = memo(() => {
 
       <div className="w-full mx-auto flex justify-center items-center mt-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 300 }}
           animate={{ opacity: 1, y: 0 }}
           style={{ y: illustrationY }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
           className="hidden sm:block"
         >
           <Image
@@ -103,7 +103,7 @@ const Hero = memo(() => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           style={{ y: illustrationY }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
           className="block sm:hidden"
         >
           <Image
@@ -120,9 +120,9 @@ const Hero = memo(() => {
 
       {/* Bottom Left Illustration */}
       <motion.div 
-        initial={{ opacity: 0, y: 30, rotate: -10, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.55 }}
+        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
         className="absolute bottom-0 -left-14 z-30 lg:left-[-60px] xl:left-[50px] 2xl:left-[200px] hidden xl:block"
       >
         <Image
@@ -138,9 +138,9 @@ const Hero = memo(() => {
 
       {/* Bottom Right Illustration */}
       <motion.div 
-        initial={{ opacity: 0, y: 30, rotate: 10, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
+        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
         className="absolute bottom-0 right-[150px] 2xl:right-[300px] hidden xl:block opacity-80"
       >
         <Image
@@ -156,9 +156,9 @@ const Hero = memo(() => {
 
       {/* Right Bottom Illustration */}
       <motion.div 
-        initial={{ opacity: 0, y: 30, rotate: 5, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.75 }}
+        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
         className="absolute bottom-0 lg:-bottom-16 right-0 hidden xl:block -mr-8"
       >
         <Image

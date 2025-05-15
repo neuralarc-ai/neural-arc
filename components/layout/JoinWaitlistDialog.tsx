@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -6,8 +6,7 @@ import {
 } from '@/components/ui/dialog';
 import { Confetti } from '@/components/magicui/confetti';
 import { z } from 'zod';
-import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface JoinWaitlistDialogProps {
@@ -16,67 +15,117 @@ interface JoinWaitlistDialogProps {
 }
 
 const schema = z.object({
-  name: z.string().min(1, 'Full name is required'),
+  name: z.string().min(1, 'Name is required'),
   email: z.string().email('Please enter a valid email address'),
 });
 
 const JoinWaitlistDialog: React.FC<JoinWaitlistDialogProps> = ({ open, onClose }) => {
+  const [currentStep, setCurrentStep] = useState(0);
   const [form, setForm] = useState({ name: '', email: '' });
   const [error, setError] = useState<{ [k: string]: string | null }>({ name: null, email: null });
   const [apiError, setApiError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const steps = [
+    {
+      field: "name",
+      placeholder: "Your Name",
+      type: "text"
+    },
+    {
+      field: "email",
+      placeholder: "Your Work Email",
+      type: "email"
+    }
+  ];
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [currentStep]);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleNext();
+    }
+  };
+
+  const validateField = (field: keyof typeof form, value: string) => {
+    try {
+      schema.shape[field].parse(value);
+      setError(prev => ({ ...prev, [field]: null }));
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        setError(prev => ({ ...prev, [field]: error.errors[0].message }));
+      }
+      return false;
+    }
+  };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setError({ ...error, [e.target.name]: null });
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+    validateField(name as keyof typeof form, value);
     setApiError(null);
+  };
+
+  const handleNext = () => {
+    const field = steps[currentStep].field as keyof typeof form;
+    if (validateField(field, form[field])) {
+      if (currentStep < steps.length - 1) {
+        setCurrentStep(currentStep + 1);
+      }
+    }
+  };
+
+  const handleBack = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setApiError(null);
-    const result = schema.safeParse(form);
-    if (!result.success) {
-      const newErrors: { [k: string]: string | null } = { name: null, email: null };
-      result.error.errors.forEach(err => {
-        if (err.path[0]) newErrors[err.path[0]] = err.message;
-      });
-      setError(newErrors);
-      if (newErrors.name && nameRef.current) nameRef.current.focus();
-      else if (newErrors.email && emailRef.current) emailRef.current.focus();
-      return;
-    }
-    setError({ name: null, email: null });
-    setLoading(true);
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: form.name, email: form.email })
-      });
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        setApiError(data.error || 'Failed to join the waitlist. Please try again.');
-        setLoading(false);
-        return;
+    const field = steps[currentStep].field as keyof typeof form;
+    if (validateField(field, form[field])) {
+      if (currentStep === steps.length - 1) {
+        try {
+          schema.parse(form);
+          setLoading(true);
+          const res = await fetch('/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(form)
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            setApiError(data.error || 'Failed to join the waitlist. Please try again.');
+            setLoading(false);
+            return;
+          }
+          setSuccess(true);
+          setLoading(false);
+          setTimeout(() => {
+            onClose();
+          }, 4000);
+        } catch {
+          setApiError('Something went wrong. Please try again.');
+          setLoading(false);
+        }
+      } else {
+        handleNext();
       }
-      setSuccess(true);
-      setLoading(false);
-      setTimeout(() => {
-        onClose();
-      }, 4000);
-    } catch {
-      setApiError('Something went wrong. Please try again.');
-      setLoading(false);
     }
   };
 
   return (
     <Dialog open={open} onOpenChange={v => !v && onClose()}>
-      <DialogContent className="rounded-3xl border-[#E0E4DC] bg-[#F7F6F3] p-4 shadow-2xl min-w-4xl overflow-hidden">
+      <DialogContent className="rounded-4xl border-[#E0E4DC] bg-[#1C1C1C] p-0 shadow-2xl lg:min-w-4xl min-w-[90%] overflow-hidden">
         <AnimatePresence mode="wait" initial={false}>
           {!success && (
             <motion.div
@@ -85,23 +134,35 @@ const JoinWaitlistDialog: React.FC<JoinWaitlistDialogProps> = ({ open, onClose }
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex flex-col items-center justify-center mb-6"
+              className="relative flex flex-col p-6 items-center justify-center"
             >
-              <Image
-                src="/images/waitlist/waitlist-banner.png"
-                alt="Join Waitlist Banner"
-                width={420}
-                height={120}
-                className="object-contain w-full h-auto rounded-2xl shadow-sm"
-                priority
-              />
+              <div 
+                className="relative w-full h-[200px] lg:h-[300px] rounded-2xl bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center px-6"
+                style={{ 
+                  backgroundImage: 'url(/images/waitlist/waitlist-banner.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
+                
+                {/* Text content */}
+                <div className="relative z-10">
+                  <h2 className="text-3xl lg:text-5xl xl:text-7xl font-semibold text-[#392E26] mb-4 tracking-tighter">
+                    Join the Waitlist
+                  </h2>
+                  <p className="text-lg lg:text-xl text-[#392E26] max-w-2xl">
+                    Be among the first to experience our AI-powered solutions.
+                  </p>
+                </div>
+              </div>
+
               <DialogClose asChild>
                 <button
-                  className="absolute top-6 right-6 z-10 text-[#8B857C] hover:text-[#2F2C28] transition-colors rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-[#C6AEA3] bg-white/80 shadow"
+                  className="absolute top-8 right-8 lg:right-9 cursor-pointer xl:top-9 z-10 text-white/50 hover:text-white transition-colors rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-white/20 bg-black/20 backdrop-blur-sm"
                   aria-label="Close dialog"
                   type="button"
                 >
-                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M18 6 6 18M6 6l12 12"/></svg>
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M18 6 6 18M6 6l12 12"/></svg>
                 </button>
               </DialogClose>
             </motion.div>
@@ -113,7 +174,7 @@ const JoinWaitlistDialog: React.FC<JoinWaitlistDialogProps> = ({ open, onClose }
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex flex-col items-center justify-center text-center py-8 min-h-[220px]"
+              className="relative flex flex-col items-center justify-center text-center py-16 min-h-[400px] bg-[#1C1C1C]"
             >
               <Confetti
                 options={{
@@ -131,53 +192,82 @@ const JoinWaitlistDialog: React.FC<JoinWaitlistDialogProps> = ({ open, onClose }
                 globalOptions={{ resize: true, useWorker: true }}
               />
               <svg width="56" height="56" fill="none" viewBox="0 0 56 56" className="mb-4 text-[#8DA571]"><circle cx="28" cy="28" r="28" fill="#E0E4DC"/><path d="M18 28l8 8 12-12" stroke="#8DA571" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              <h3 className="text-3xl font-bold text-[#2F2C28] mb-2">You&apos;re on the waitlist!</h3>
-              <p className="text-[#76716E] text-lg max-w-md">Thank you for joining. We&apos;ll let you know as soon as early access is available. Stay tuned for updates!</p>
+              <h3 className="text-4xl font-bold text-white mb-4">You&apos;re on the waitlist!</h3>
+              <p className="text-[#868686] text-2xl max-w-md">Thank you for joining. We&apos;ll let you know as soon as early access is available. Stay tuned for updates!</p>
             </motion.div>
           )}
         </AnimatePresence>
         {!success && (
-          <form onSubmit={handleSubmit} className="flex w-full flex-col gap-6 p-8 pt-0">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="waitlist-name" className="text-base font-medium text-[#373737] mb-1">Full Name</label>
-              <input
-                id="waitlist-name"
-                name="name"
-                ref={nameRef}
-                type="text"
-                value={form.name}
-                onChange={handleInput}
-                placeholder="Your full name"
-                className={`w-full px-5 py-4 rounded-xl border-2 text-base bg-white/80 text-[#2F2C28] border-[#E0E4DC] focus:border-[#8DA571] focus:outline-none transition-all shadow-sm ${error.name ? 'border-red-400' : ''}`}
-                required
-                disabled={loading}
-              />
-              {error.name && <div className="text-red-500 text-sm -mt-1">{error.name}</div>}
+          <form onSubmit={handleSubmit} className="flex flex-col justify-between lg:min-h-[400px] min-h-[250px] p-8 bg-[#1C1C1C]">
+
+            <div className="flex flex-col items-center lg:mt-10">
+              <div className="relative w-full">
+                <input
+                  ref={inputRef}
+                  type={steps[currentStep].type}
+                  name={steps[currentStep].field}
+                  value={form[steps[currentStep].field as keyof typeof form]}
+                  onChange={handleInput}
+                  onKeyDown={handleKeyDown}
+                  placeholder={error[steps[currentStep].field as keyof typeof form] || steps[currentStep].placeholder}
+                  className={`w-full bg-transparent border-b-2 px-4 py-4 text-white placeholder:text-2xl xl:placeholder:text-4xl text-2xl xl:text-4xl focus:outline-none transition-colors text-center h-[72px] ${
+                    error[steps[currentStep].field as keyof typeof form] 
+                      ? 'border-red-500 placeholder-red-500' 
+                      : 'border-white/20 placeholder-white/50 focus:border-white/40'
+                  }`}
+                  disabled={loading}
+                />
+                
+                <div className="flex justify-end gap-2 mt-4">
+                  {steps.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`relative w-7 h-7 rounded-full transition-all duration-300 ${
+                        index === currentStep
+                          ? 'bg-white'
+                          : index < currentStep
+                          ? 'bg-white'
+                          : 'border-2 border-white'
+                      }`}
+                    >
+                      {index < currentStep && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-3 h-3 rounded-full bg-[#1C1C1C]" />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="waitlist-email" className="text-base font-medium text-[#373737] mb-1">Work Email</label>
-              <input
-                id="waitlist-email"
-                name="email"
-                ref={emailRef}
-                type="email"
-                value={form.email}
-                onChange={handleInput}
-                placeholder="Your work email"
-                className={`w-full px-5 py-4 rounded-xl border-2 text-base bg-white/80 text-[#2F2C28] border-[#E0E4DC] focus:border-[#8DA571] focus:outline-none transition-all shadow-sm ${error.email ? 'border-red-400' : ''}`}
-                required
-                disabled={loading}
-              />
-              {error.email && <div className="text-red-500 text-sm -mt-1">{error.email}</div>}
+
+            {apiError && <div className="text-red-500 text-sm text-center font-medium mt-4">{apiError}</div>}
+
+            <div className="flex flex-col gap-8 mt-16">
+              <div className="flex justify-center items-center">
+                {currentStep > 0 && (
+                  <button
+                    type="button"
+                    onClick={handleBack}
+                    className="bg-[#292929] text-[#CAC9C9] px-12 py-4 text-xl font-semibold rounded-full cursor-pointer shadow-[0_5px_0_0_#ADADAD] hover:shadow-[0_3px_0_0_#ADADAD] transition-all duration-300 flex items-center justify-between gap-10"
+                    disabled={loading}
+                  >
+                    <ArrowLeft className="w-6 h-6" />
+                    Back
+                  </button>
+                )}
+                <button
+                  type="submit"
+                  className={`bg-white text-[#2F2C28] px-12 py-4 text-xl font-semibold rounded-full cursor-pointer shadow-[0_5px_0_0_#6B5B4D] hover:shadow-[0_3px_0_0_#6B5B4D] transition-all duration-300 flex items-center justify-between gap-10 ${
+                    currentStep > 0 ? 'ml-8' : ''
+                  } disabled:opacity-60 disabled:cursor-not-allowed`}
+                  disabled={loading}
+                >
+                  {loading ? 'Joining...' : (currentStep === steps.length - 1 ? 'Join Waitlist' : 'Next')}
+                  <ArrowRight className="w-6 h-6" />
+                </button>
+              </div>
             </div>
-            {apiError && <div className="text-red-500 text-sm -mt-1 text-center font-medium">{apiError}</div>}
-            <button
-              type="submit"
-              className="w-fit self-center cursor-pointer flex items-center justify-center gap-2 bg-[#2F2C28] text-white rounded-full py-4 px-8 font-semibold text-base shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
-              disabled={loading}
-            >
-              {loading ? 'Joining...' : (<><span>Join Waitlist</span> <ArrowRight className="ml-2 w-5 h-5" /></>)}
-            </button>
           </form>
         )}
       </DialogContent>

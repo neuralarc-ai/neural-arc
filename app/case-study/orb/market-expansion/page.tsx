@@ -136,7 +136,7 @@ export default function MarketExpansionCaseStudy() {
         bullets={dashboardBullets}
         image="/images/case-study/market-expansion/dashboard-web.png"
         mobileImage="/images/case-study/market-expansion/dashboard-mobile.png"
-        buttonText="Schedule a Demo"
+        buttonText="Get Early Access"
       />
     </main>
   );

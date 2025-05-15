@@ -1,28 +1,29 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowRight } from 'lucide-react';
+import JoinWaitlistDialog from '@/components/layout/JoinWaitlistDialog';
 
 const features = [
   {
     icon: '/images/orb/hero-1.svg',
     title: 'Predictive Intelligence Matrix',
     description:
-      "ORB identifies early signals of competitor activity by analyzing data from social media, news, job listings, and more. Instead of looking backward, it helps you anticipate what’s coming—so you can act before the market shifts.",
+      "ORB identifies early signals of competitor activity by analyzing data from social media, news, job listings, and more. Instead of looking backward, it helps you anticipate what's coming—so you can act before the market shifts.",
   },
   {
     icon: '/images/orb/hero-2.svg',
     title: 'Neural Decision Architecture',
     description:
-      "Powered by a proprietary neural framework, ORB connects patterns across disconnected data points—mimicking how strategists think. This isn’t just AI. It’s cognitive-level insight designed for real business decisions.",
+      "Powered by a proprietary neural framework, ORB connects patterns across disconnected data points—mimicking how strategists think. This isn't just AI. It's cognitive-level insight designed for real business decisions.",
   },
   {
     icon: '/images/orb/hero-3.svg',
     title: 'Real-Time Adaptive Analysis',
     description:
-      "ORB’s quantum-inspired algorithms learn and evolve as new information emerges. The more data it sees, the sharper its predictions become—giving you an always-on, ever-improving strategic lens.",
+      "ORB's quantum-inspired algorithms learn and evolve as new information emerges. The more data it sees, the sharper its predictions become—giving you an always-on, ever-improving strategic lens.",
   },
   {
     icon: '/images/orb/hero-4.svg',
@@ -47,6 +48,7 @@ const cardBgColors = [
 ];
 
 const OrbHero = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   // Embla for mobile slider
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -66,6 +68,12 @@ const OrbHero = () => {
 
   return (
     <section className="w-full mx-auto py-12 px-4">
+      {/* Waitlist Dialog */}
+      <JoinWaitlistDialog 
+        open={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
+
       {/* Logo */}
       <div className="flex justify-center mb-8">
         <Image
@@ -90,7 +98,7 @@ const OrbHero = () => {
       </h1>
       {/* Subheadline */}
       <p className="text-center text-lg lg:text-2xl text-[#181A1A] font-light max-w-7xl mx-auto my-8">
-      In today&apos;s algorithmic battlefield, survival belongs to those who outthink, not just outmaneuver. NeuralArc&apos;s ORB platform redefines competitive intelligence with a 14.3B parameter neural architecture that doesn’t just monitor the market—it predicts its next move. From strategic foresight to real-time signal processing, ORB delivers intelligence before the opportunity window even opens.
+      In today&apos;s algorithmic battlefield, survival belongs to those who outthink, not just outmaneuver. NeuralArc&apos;s ORB platform redefines competitive intelligence with a 14.3B parameter neural architecture that doesn&apos;t just monitor the market—it predicts its next move. From strategic foresight to real-time signal processing, ORB delivers intelligence before the opportunity window even opens.
       </p>
       <p className="text-center text-lg lg:text-2xl text-[#181A1A] font-light max-w-7xl mx-auto mb-8">
       Outlast. Reimagine. Build. With ORB, you don&apos;t just watch the competition—you stay three moves ahead.
@@ -152,9 +160,10 @@ const OrbHero = () => {
           ))}
         </div>
       </div>
-      {/* Waitlist Button - Now visible on both desktop and mobile */}
+      {/* Waitlist Button - Updated with onClick handler */}
       <div className="flex justify-center mt-12">
         <button
+          onClick={() => setIsWaitlistOpen(true)}
           className="inline-flex items-center gap-4 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
         >
           Join the Waitlist <ArrowRight className='w-5 h-5'/>

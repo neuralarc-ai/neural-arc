@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import { useRef } from "react";
 import Hero from "@/components/layout/hero-section";
 import DNA from "@/components/layout/dna";
 import FAQ from "@/components/layout/faq";
@@ -14,76 +15,178 @@ import Suite from "@/components/layout/suite";
 import OrbFeaturesMobile from "@/components/layout/orb-features-mobile";
 import ScrollSection from "@/components/ui/scroll-section";
 import AiServices from "@/components/layout/ai-services";
+
+// Enhanced animation variants
 const fadeInUp = {
-  initial: { opacity: 0, y: 10 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+  initial: { 
+    opacity: 0, 
+    y: 20,
+    filter: "blur(8px)"
+  },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    filter: "blur(0px)",
+    transition: { 
+      duration: 0.8, 
+      ease: [0.22, 1, 0.36, 1],
+      filter: { duration: 0.6 }
+    }
+  }
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.2,
       delayChildren: 0.1
     }
   }
 };
 
-export default function Home() {
-  return (
-    <motion.main 
-      className="max-w-[1920px] mx-auto md:px-8 px-4"
-      initial="initial"
-      animate="animate"
-      variants={staggerContainer}
-    >
-      <motion.div variants={fadeInUp}>
-        <Hero />
-      </motion.div>
-      
-      <ScrollSection>
-        <Orb />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <OrbFeatures />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <OrbFeaturesMobile />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <LLM />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <Nod />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <CaseStudies />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <CaseStudiesMobile />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <Suite />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <DNA />
-      </ScrollSection>
+// Smooth scroll progress indicator
+const ScrollProgress = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
-      <ScrollSection>
-        <AiServices />
-      </ScrollSection>
-      
-      <ScrollSection>
-        <FAQ />
-      </ScrollSection>
-    </motion.main>
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#8DA571] via-[#C6AEA3] to-[#2F2C28] origin-left z-50"
+      style={{ scaleX }}
+    />
+  );
+};
+
+// Enhanced scroll section with intersection observer
+interface EnhancedScrollSectionProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const EnhancedScrollSection: React.FC<EnhancedScrollSectionProps> = ({ children, className = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true,
+    margin: "-10% 0px -10% 0px"
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { 
+        opacity: 1, 
+        y: 0,
+        transition: {
+          duration: 0.8,
+          ease: [0.22, 1, 0.36, 1]
+        }
+      } : { opacity: 0, y: 30 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default function Home() {
+  // Smooth scroll behavior
+  const { scrollYProgress } = useScroll();
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Parallax effect for background elements
+  const y = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
+
+  return (
+    <>
+      <ScrollProgress />
+      <motion.main 
+        className="max-w-[1920px] mx-auto md:px-8 px-4 relative"
+        initial="initial"
+        animate="animate"
+        variants={staggerContainer}
+      >
+        {/* Subtle background gradient animation */}
+        <motion.div 
+          className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]"
+          style={{ y }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#8DA571] via-[#C6AEA3] to-[#2F2C28] animate-gradient" />
+        </motion.div>
+
+        <motion.div 
+          variants={fadeInUp}
+          className="relative z-10"
+        >
+          <Hero />
+        </motion.div>
+        
+        <EnhancedScrollSection>
+          <Orb />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <OrbFeatures />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <OrbFeaturesMobile />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <LLM />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <Nod />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <CaseStudies />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <CaseStudiesMobile />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <Suite />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <DNA />
+        </EnhancedScrollSection>
+
+        <EnhancedScrollSection>
+          <AiServices />
+        </EnhancedScrollSection>
+        
+        <EnhancedScrollSection>
+          <FAQ />
+        </EnhancedScrollSection>
+      </motion.main>
+    </>
   );
 }
+
+// Add this to your global CSS file
+/*
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+*/

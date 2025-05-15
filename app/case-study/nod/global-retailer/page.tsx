@@ -139,7 +139,7 @@ export default function GlobalRetailerCaseStudyPage() {
         title="Retail Revolution: Unlocking Growth Potential"
         subtitle="Transform Your Global Retail Operations with DataNeuron Intelligence"
         bullets={dashboardBullets}
-        buttonText="See Insights"
+        buttonText="Get Early Access"
         image="/images/case-study/global-retailer/dashboard-web.png"
       />
     </main>

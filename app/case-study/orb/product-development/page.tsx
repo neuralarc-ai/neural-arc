@@ -136,7 +136,7 @@ export default function ProductDevelopmentCaseStudy() {
         bullets={dashboardBullets}
         image="/images/case-study/product-development/dashboard-web.png"
         mobileImage="/images/case-study/product-development/dashboard-mobile.png"
-        buttonText="Schedule a Demo"
+        buttonText="Get Early Access"
       />
     </main>
   );

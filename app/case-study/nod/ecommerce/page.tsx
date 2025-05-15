@@ -138,7 +138,7 @@ export default function EcommerceCaseStudyPage() {
         title="Performance Dashboard: Measurable Impact"
         subtitle="Key metrics demonstrating how our solution transformed client outcomes"
         bullets={dashboardBullets}
-        buttonText="Schedule a Demo"
+        buttonText="Get Early Access"
         image="/images/case-study/ecommerce/dashboard-web.png"
         mobileImage="/images/case-study/ecommerce/dashboard-mobile.png"
       />

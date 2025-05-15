@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
+import JoinWaitlistDialog from '@/components/layout/JoinWaitlistDialog';
 
 interface DashboardProps {
   title: string;
@@ -22,8 +24,24 @@ export default function Dashboard({
   mobileImage,
   imageAlt = "Dashboard Illustration",
 }: DashboardProps) {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    if (onButtonClick) {
+      onButtonClick();
+    } else {
+      setIsWaitlistOpen(true);
+    }
+  };
+
   return (
     <section className="w-full max-w-[1640px] mx-auto px-4 md:px-8 py-12">
+      {/* Waitlist Dialog */}
+      <JoinWaitlistDialog 
+        open={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
+
       <h2 className="text-3xl md:text-5xl font-bold text-center mb-2 text-[#232323] text-pretty">{title}</h2>
       <p className="text-lg md:text-xl text-center mb-10 text-[#7A7A7A]">{subtitle}</p>
       <div className="bg-[url('/images/case-study/dashboard-bg.png')] overflow-hidden bg-cover bg-center rounded-3xl flex flex-col xl:flex-row gap-8 2xl:h-[800px] xl:h-[750px]">
@@ -44,7 +62,7 @@ export default function Dashboard({
           <div className="xl:hidden w-full flex justify-center mb-4">
             <button
               className="px-8 py-4 bg-[#C1BBB4] cursor-pointer text-[#232323] rounded-full font-semibold shadow-[0_5px_0_0_#6B5B4D] hover:shadow-[0_3px_0_0_#6B5B4D] transition mx-auto"
-              onClick={onButtonClick}
+              onClick={handleButtonClick}
             >
               {buttonText}
             </button>
@@ -52,7 +70,7 @@ export default function Dashboard({
           {/* Button for xl and above (bottom of text) */}
           <button
             className="hidden xl:block px-8 py-4 cursor-pointer bg-[#C1BBB4] text-[#232323] rounded-full font-semibold shadow-[0_5px_0_0_#6B5B4D] hover:shadow-[0_3px_0_0_#6B5B4D] transition mt-auto self-start xl:mx-0"
-            onClick={onButtonClick}
+            onClick={handleButtonClick}
           >
             {buttonText}
           </button>

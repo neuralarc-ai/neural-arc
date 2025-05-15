@@ -136,7 +136,7 @@ export default function StrategicResearchCaseStudy() {
         bullets={dashboardBullets}
         image="/images/case-study/strategic-research/dashboard-web.png"
         mobileImage="/images/case-study/strategic-research/dashboard-mobile.png"
-        buttonText="Schedule a Demo"
+        buttonText="Get Early Access"
       />
     </main>
   );

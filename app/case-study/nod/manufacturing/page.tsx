@@ -139,7 +139,7 @@ export default function ManufacturingCaseStudyPage() {
         title="Transforming Multi-Channel Retail"
         subtitle="Unified Intelligence Platform for Seamless Operations"
         bullets={dashboardBullets}
-        buttonText="Explore Now"
+        buttonText="Get Early Access"
         image="/images/case-study/manufacturing/dashboard-web.png"
       />
     </main>

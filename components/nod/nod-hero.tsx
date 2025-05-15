@@ -1,9 +1,10 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowRight } from 'lucide-react';
+import JoinWaitlistDialog from '@/components/layout/JoinWaitlistDialog';
 
 const features = [
   {
@@ -47,6 +48,7 @@ const cardBgColors = [
 ];
 
 const NodHero = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   // Embla for mobile slider
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -66,6 +68,12 @@ const NodHero = () => {
 
   return (
     <section className="w-full mx-auto py-12 px-4">
+      {/* Waitlist Dialog */}
+      <JoinWaitlistDialog 
+        open={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
+
       {/* Logo */}
       <div className="flex justify-center mb-8">
         <Image
@@ -152,9 +160,10 @@ const NodHero = () => {
           ))}
         </div>
       </div>
-      {/* Waitlist Button - Now visible on both desktop and mobile */}
+      {/* Waitlist Button - Updated with onClick handler */}
       <div className="flex justify-center mt-12">
         <button
+          onClick={() => setIsWaitlistOpen(true)}
           className="inline-flex items-center gap-4 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 cursor-pointer ease-in-out"
         >
           Join the Waitlist <ArrowRight className='w-5 h-5'/>

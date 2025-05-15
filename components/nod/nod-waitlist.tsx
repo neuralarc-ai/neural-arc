@@ -1,10 +1,21 @@
+'use client'
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import JoinWaitlistDialog from '@/components/layout/JoinWaitlistDialog';
 
 const NodWaitlist = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
   return (
     <section className="rounded-[32px] w-full my-6 lg:my-12 px-8 2xl:px-24 py-10 lg:py-16 lg:h-[464px] bg-[url('/images/nod/waitlist-bg.png')] bg-no-repeat lg:bg-right bg-cover">
+      {/* Waitlist Dialog */}
+      <JoinWaitlistDialog 
+        open={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
+
       <div className="flex flex-col lg:flex-row items-center justify-center 2xl:gap-24 gap-8 lg:h-[330px] py-8">
         {/* Left Column */}
         <div className="flex flex-col justify-between flex-shrink-0 h-full">
@@ -21,7 +32,10 @@ const NodWaitlist = () => {
             </h3>
           </div>
 
-          <button className="hidden flex-shrink-0 lg:inline-flex items-center justify-center text-base lg:text-xl gap-4 mt-10 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 ease-in-out">
+          <button 
+            onClick={() => setIsWaitlistOpen(true)}
+            className="hidden flex-shrink-0 lg:inline-flex items-center justify-center text-base lg:text-xl gap-4 mt-10 px-8 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 ease-in-out"
+          >
             Join the waitlist <ArrowRight className="w-5 h-5" />
           </button>
         </div>
@@ -44,9 +58,12 @@ const NodWaitlist = () => {
           </ul>
         </div>
 
-        <button className="lg:hidden inline-flex w-full justify-center items-center text-xl gap-4 px-6 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 ease-in-out">
-            Join the waitlist <ArrowRight className="w-5 h-5" />
-          </button>
+        <button 
+          onClick={() => setIsWaitlistOpen(true)}
+          className="lg:hidden inline-flex w-full justify-center items-center text-xl gap-4 px-6 py-4 bg-[#2F2C28] text-white rounded-full transition-all hover:bg-[#2F2C28] shadow-[0_5px_0_0_#C6AEA3] hover:shadow-[0_3px_0_0_#C6AEA3] duration-300 ease-in-out"
+        >
+          Join the waitlist <ArrowRight className="w-5 h-5" />
+        </button>
       </div>
     </section>
   );

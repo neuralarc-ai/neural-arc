@@ -136,7 +136,7 @@ export default function PricingOptimizationCaseStudy() {
         bullets={dashboardBullets}
         image="/images/case-study/pricing-optimization/dashboard-web.png"
         mobileImage="/images/case-study/pricing-optimization/dashboard-mobile.png"
-        buttonText="Schedule a Demo"
+        buttonText="Get Early Access"
       />
     </main>
   );

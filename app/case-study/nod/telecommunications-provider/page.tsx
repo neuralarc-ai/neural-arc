@@ -141,7 +141,7 @@ export default function TelecomProviderCaseStudyPage() {
         title="Performance Dashboard: Measurable Impact"
         subtitle="Key metrics demonstrating how our solution transformed client outcomes"
         bullets={dashboardBullets}
-        buttonText="Schedule a Demo"
+        buttonText="Get Early Access"
         image="/images/case-study/telecommunications-provider/dashboard-web.png"
       />
     </main>
