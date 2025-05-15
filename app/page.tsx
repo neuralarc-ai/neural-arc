@@ -13,7 +13,6 @@ import Nod from "@/components/layout/nod";
 import CaseStudiesMobile from "@/components/layout/case-studies-mobile";
 import Suite from "@/components/layout/suite";
 import OrbFeaturesMobile from "@/components/layout/orb-features-mobile";
-import ScrollSection from "@/components/ui/scroll-section";
 import AiServices from "@/components/layout/ai-services";
 
 // Enhanced animation variants
@@ -176,17 +175,3 @@ export default function Home() {
     </>
   );
 }
-
-// Add this to your global CSS file
-/*
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 15s ease infinite;
-}
-*/
