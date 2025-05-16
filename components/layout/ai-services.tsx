@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AiServices() {
   return (
@@ -18,9 +19,9 @@ export default function AiServices() {
           <div className="text-[#3d3935] text-base lg:text-2xl font-normal">
             From concept to launch, we design intelligent solutions tailored to your business. Let&apos;s turn bold ideas into powerful, scalable tools—with AI that&apos;s made for you.
           </div>
-          <Link href="https://neuralpaths.ai/ai-solutions">
-            <button className="mt-2 bg-[#26221c] text-white px-6 py-2 rounded-full font-medium text-base flex items-center gap-2 hover:bg-[#3d3935] transition w-max">
-              Start Your Project <span aria-hidden>→</span>
+          <Link href="https://neuralpaths.ai/ai-solutions" target='_blank'>
+            <button className="mt-2 bg-[#26221c] text-white cursor-pointer px-6 py-4 rounded-full font-medium text-2xl flex items-center gap-2 hover:bg-[#3d3935] transition w-max">
+              Start Your Project <Image src={'/icons/arrow.svg'} alt='Arrow Icon' width={100} height={100} className='w-7 h-7' />
             </button>
           </Link>
         </div>
@@ -28,9 +29,9 @@ export default function AiServices() {
       {/* Bottom Section: Pills */}
       <div className="flex flex-col lg:flex-row gap-4 mt-2 w-full">
         <div className="flex flex-col lg:flex-row gap-4">
-          <button className="w-fit lg:w-auto rounded-full bg-[#ece7e1] px-6 py-3 text-2xl font-bold shadow-md transition">AI Micro-Apps</button>
-          <button className="w-fit lg:w-auto rounded-full bg-[#ece7e1] px-6 py-3 text-2xl font-bold shadow-md transition">Workflow Automation</button>
-          <button className="w-fit lg:w-auto rounded-full bg-[#ece7e1] px-6 py-3 text-2xl font-bold shadow-md transition">Intelligent UI/UX</button>
+          <button className="w-fit lg:w-auto rounded-full bg-[#ece7e1] px-6 py-3 text-2xl font-bold shadow-md transition hover:bg-gradient-to-r hover:from-[#b7a692] hover:to-[#7c766e] hover:text-white">AI Micro-Apps</button>
+          <button className="w-fit lg:w-auto rounded-full bg-[#ece7e1] px-6 py-3 text-2xl font-bold shadow-md transition hover:bg-gradient-to-r hover:from-[#7c766e] hover:to-[#3d3935] hover:text-white">AI Workflow Automation</button>
+          <button className="w-fit lg:w-auto rounded-full bg-[#ece7e1] px-6 py-3 text-2xl font-bold shadow-md transition hover:bg-gradient-to-r hover:from-[#3d3935] hover:to-[#26221c] hover:text-white">Intelligent UI/UX</button>
         </div>
       </div>
     </div>

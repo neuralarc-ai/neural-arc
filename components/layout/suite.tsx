@@ -11,7 +11,7 @@ const Suite = () => {
       {/* Content */}
       <div className="relative z-10 max-w-[1858px] mx-auto px-4 py-8 flex flex-col items-center text-center">
         <h2 className="text-[32px] lg:text-[60px] font-semibold text-[#373737] mb-2 tracking-tight">
-          NeuralArc&apos;s Micro SaaS Suite
+          NeuralPaths Micro SaaS Suite
         </h2>
         <h3 className="text-base lg:text-[32px] text-[#373737]/75 font-semibold tracking-tight mb-2">
           Small Tools. Massive Impact.

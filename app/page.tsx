@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import { motion, useScroll, useSpring, useInView } from "framer-motion";
 import { useRef } from "react";
 import Hero from "@/components/layout/hero-section";
 import DNA from "@/components/layout/dna";
@@ -93,16 +93,6 @@ const EnhancedScrollSection: React.FC<EnhancedScrollSectionProps> = ({ children,
 };
 
 export default function Home() {
-  // Smooth scroll behavior
-  const { scrollYProgress } = useScroll();
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  // Parallax effect for background elements
-  const y = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <>
@@ -116,7 +106,7 @@ export default function Home() {
         {/* Subtle background gradient animation */}
         <motion.div 
           className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]"
-          style={{ y }}
+          
         >
           <div className="absolute inset-0 bg-gradient-to-br from-[#8DA571] via-[#C6AEA3] to-[#2F2C28] animate-gradient" />
         </motion.div>

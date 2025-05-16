@@ -113,7 +113,7 @@ const Footer = () => {
                 <div>
                   <div>
                     <h2 className="text-white text-lg xl:text-2xl">ORB</h2>
-                    <p className="text-[#817F7D] text-base xl:text-lg">{"{Outlast. Reimagine. Build.}"}</p>
+                    <p className="text-[#817F7D] text-base xl:text-lg max-w-[90%]">{"{Outlast. Reimagine. Build.}"}</p>
                   </div>
                   <p className="text-[#817F7D] mt-2 h-[136px] mb-4 lg:mb-0">
                     AI-driven competitor intelligence—unveiling strategic advantages instantly.
@@ -151,7 +151,7 @@ const Footer = () => {
             </div>
 
             {/* Ampersand Column */}
-            <div className="lg:h-[316px] mt-4 lg:mt-0 flex flex-col justify-between col-span-2 lg:col-span-1">
+            <div className="lg:h-fit mt-4 lg:mt-0 flex flex-col justify-between col-span-2 lg:col-span-1">
               <div>
                 <h2 className="text-white text-2xl mb-2">Ampersand</h2>
                 <p className="text-[#817F7D] mb-6">
