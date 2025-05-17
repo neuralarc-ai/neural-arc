@@ -535,8 +535,8 @@ export default function Navbar() {
                     {/* ARC's Micro SaaS Suite Section */}
                     <div className="bg-[#F5F5F5] rounded-2xl p-4 border border-[#65584A]/60">
                       <div className="flex flex-col gap-4">
-                        <h2 className="text-[40px] font-semibold text-[#8A7E73] tracking-tight leading-none">
-                          ARC&apos;s <br /> <span className="text-[24px]">Micro SaaS Suite</span>
+                        <h2 className="text-[32px] font-semibold text-[#8A7E73] tracking-tight leading-none">
+                          NeuralPaths <br /> <span className="text-[24px]">Micro SaaS Suite</span>
                         </h2>
                         <p className="text-sm text-[#6B6B6B]">
                           The suite is growing. Real needs. Lasting impact.

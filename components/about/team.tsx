@@ -67,37 +67,45 @@ const Team = () => {
             <h2 className="text-4xl 2xl:text-7xl font-semibold text-white mb-8 text-balance">
               The Architects of Intelligence
             </h2>
-            <p className="text-2xl text-[#BAB6B6] xl:max-w-[500px]">
+            <p className="text-2xl text-[#BAB6B6] xl:max-w-[500px] text-pretty">
               NeuralArc is a team of visionary minds reimagining AI. We create bold, accessible 
               technology that empowers businesses to unlock intelligent insights quickly and efficiently.
             </p>
           </div>
 
           {/* Separator Line */}
-          <div className="hidden xl:block w-[3px] h-[420px] bg-[#FFFFFF]/25 absolute left-[33%] top-1/2 -translate-y-1/2"></div>
+          <div className="hidden xl:block w-[3px] h-[465px] bg-[#FFFFFF]/25 absolute left-[33%] top-1/2 -translate-y-1/2"></div>
 
-          {/* Center and Right Content Wrapper */}
-          <div className="flex flex-col lg:flex-row gap-8 xl:col-span-2">
-            {/* Center Image */}
-            <div className="w-full h-full overflow-hidden xl:max-w-[408px] ml-auto">
-              <Image
-                src="/images/about/aniket.png"
-                alt="Aniket Tapre"
-                width={408}
-                height={408}
-                className="xl:w-full xl:h-full h-[200px] object-contain"
-              />
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
+            {/* Aniket's Card */}
+            <div className="flex flex-col items-center">
+              <div className="w-full h-full overflow-hidden xl:max-w-[408px]">
+                <Image
+                  src="/images/about/aniket.png"
+                  alt="Aniket Tapre"
+                  width={308}
+                  height={308}
+                  className="xl:w-full xl:h-full h-[200px] object-contain"
+                />
+              </div>
+              <h3 className="text-[40px] text-white font-semibold mt-4">Aniket Tapre</h3>
+              <p className="text-xl text-[#BAB6B6]">Founder & CEO</p>
             </div>
 
-            {/* Right Content */}
-            <div className="flex flex-col justify-end max-w-[485px]">
-              <p className="text-2xl text-[#BAB6B6] mb-4 text-balance">
-                I believe in creating AI that empowers businesses to think smarter and act 
-                faster. Our mission is to make intelligence accessible to all, not just a 
-                select few.
-              </p>
-              <h3 className="text-[40px] text-white font-semibold mb-2">Aniket Tapre</h3>
-              <p className="text-xl text-[#BAB6B6]">Founder & CEO</p>
+            {/* Michael's Card */}
+            <div className="flex flex-col items-center">
+              <div className="w-full h-full overflow-hidden xl:max-w-[408px]">
+                <Image
+                  src="/images/about/michael.png"
+                  alt="Michael Orleando"
+                  width={308}
+                  height={308}
+                  className="xl:w-full xl:h-full h-[200px] object-contain"
+                />
+              </div>
+              <h3 className="text-[40px] text-white font-semibold mt-4">Michael Orlando</h3>
+              <p className="text-xl text-[#BAB6B6]">Co-Founder</p>
             </div>
           </div>
         </div>
