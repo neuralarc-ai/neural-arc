@@ -134,10 +134,10 @@ const Footer = () => {
               {/* Bottom Bordered Section */}
               <div className="border-[0.5px] border-[#FFFFFF80] rounded-2xl px-5 py-3 flex justify-between items-center">
                 <div className="flex flex-col">
-                  <h3 className="text-white text-lg">NeuralArc&apos;s</h3>
+                  <h3 className="text-white text-lg">NeuralPaths</h3>
                   <p className="text-[#817F7D] text-lg">Micro SaaS Suite</p>
                 </div>
-                <Link href="#" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
+                <Link href="https://neuralpaths.ai" target="_blank" className="text-[#817F7D] hover:text-white transition-colors flex items-center gap-2 group">
                   Learn More
                   <Image 
                     src="/icons/arrow.svg" 

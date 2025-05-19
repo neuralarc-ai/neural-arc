@@ -151,13 +151,13 @@ export default function Home() {
         </EnhancedScrollSection>
         
         <EnhancedScrollSection>
-          <DNA />
+          <AiServices />
         </EnhancedScrollSection>
 
         <EnhancedScrollSection>
-          <AiServices />
+          <DNA />
         </EnhancedScrollSection>
-        
+
         <EnhancedScrollSection>
           <FAQ />
         </EnhancedScrollSection>
