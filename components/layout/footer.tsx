@@ -18,7 +18,7 @@ const Footer = () => {
                     alt="NeuralArc"
                     width={66}
                     height={66}
-                    className="w-auto h-8"
+                    className="w-auto lg:h-12 h-8"
                   />
                   <span className="text-white text-[30px] font-semibold">NeuralArc</span>
                 </div>

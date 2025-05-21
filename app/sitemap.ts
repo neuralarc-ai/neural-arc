@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const baseUrl = 'https://neuralarc.com'
+const baseUrl = 'https://neuralarc.ai'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Base routes that are always present

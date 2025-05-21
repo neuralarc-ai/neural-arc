@@ -1,36 +1,23 @@
 import React, { memo } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
-// Memoize the Hero component to prevent unnecessary re-renders
 const Hero = memo(() => {
-  const { scrollY } = useScroll();
-  
-  // Optimize transform calculations by using more efficient ranges
-  const textY = useTransform(scrollY, [0, 300], [0, -50]);
-  const illustrationY = useTransform(scrollY, [0, 300], [0, -40]);
-  const topLeftY = useTransform(scrollY, [0, 300], [0, -25]);
-  const topRightY = useTransform(scrollY, [0, 300], [0, -35]);
-  
-  // Optimize rotation values
-  const topLeftRotate = useTransform(scrollY, [0, 300], [0, -5]);
-  const topRightRotate = useTransform(scrollY, [0, 300], [0, 5]);
 
   return (
-    <div className="relative w-full max-h-[484px] md:max-h-[1019px] px-8 pt-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 overflow-hidden">
+    <div className="relative w-full md:min-h-[484px] xl:min-h-[1019px] px-8 pt-6 mx-auto lg:rounded-[32px] rounded-[16px] bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center -mt-3 overflow-hidden">
       {/* Top Left Illustration */}
       <motion.div 
         initial={{ opacity: 0, x: -20, y: -20, rotate: -15, scale: 0.8 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
-        style={{ y: topLeftY, rotate: topLeftRotate }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
         className="absolute top-0 hidden xl:block -ml-8"
       >
         <Image
           src="/images/hero/top-left.png"
           alt="Decorative illustration"
-          width={560}
-          height={460}
+          width={630}
+          height={594}
           className="w-auto h-auto object-contain"
           priority={false}
           loading="lazy"
@@ -42,15 +29,14 @@ const Hero = memo(() => {
       <motion.div 
         initial={{ opacity: 0, x: 20, y: -20, rotate: 15, scale: 0.8 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
-        style={{ y: topRightY, rotate: topRightRotate }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-        className="absolute top-[60px] lg:top-[20px] xl:top-[60px] right-[160px] lg:right-[60px] xl:right-[160px] hidden xl:block -mr-8"
+        className="absolute top-0 -right-50 2xl:right-0  hidden xl:block -mr-8"
       >
         <Image
           src="/images/hero/top-right.png"
           alt="Decorative illustration"
-          width={340}
-          height={320}
+          width={612}
+          height={517}
           className="w-auto h-auto object-contain"
           priority={false}
           loading="lazy"
@@ -59,7 +45,6 @@ const Hero = memo(() => {
       </motion.div>
 
       <motion.div 
-        style={{ y: textY }}
         className="xl:mt-37 lg:mt-20 mt-5"
       >
         <motion.h1 
@@ -81,37 +66,34 @@ const Hero = memo(() => {
         </motion.p>
       </motion.div>
 
-      <div className="w-full mx-auto flex justify-center items-center mt-10">
+      <div className="w-full mx-auto flex justify-center items-center">
         <motion.div
-          initial={{ opacity: 0, y: 300 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{ y: illustrationY }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
-          className="hidden sm:block"
+          className="hidden lg:block"
         >
           <Image
             src="/images/hero/hero-illustration.png"
             alt="hero"
-            width={500}
-            height={1200}
-            className="xl:w-auto xl:h-auto lg:w-[500px] w-[200px] object-contain"
+            width={1100}
+            height={1000}
+            className="xl:w-[1100] xl:h-[auto] lg:w-[500px] w-[200px] object-contain -mt-10"
             priority={true}
-            quality={90}
           />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{ y: illustrationY }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
-          className="block sm:hidden"
+          className="block lg:hidden"
         >
           <Image
             src="/images/hero/hero-illustration-mobile.png"
             alt="hero"
-            width={600}
-            height={1200}
-            className="z-50 w-[150px] object-contain"
+            width={500}
+            height={300}
+            className="z-50 h-full w-full object-contain md:mt-0"
             priority={true}
             quality={90}
           />
@@ -123,7 +105,7 @@ const Hero = memo(() => {
         initial={{ opacity: 0, y: 30, scale: 0.9 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
-        className="absolute bottom-0 -left-14 z-30 lg:left-[-60px] xl:left-[50px] 2xl:left-[200px] hidden xl:block"
+        className="absolute bottom-0 -left-30 2xl:left-20 hidden xl:block"
       >
         <Image
           src="/images/hero/bottom-left.png"
@@ -136,36 +118,18 @@ const Hero = memo(() => {
         />
       </motion.div>
 
-      {/* Bottom Right Illustration */}
+      {/* Right Illustration */}
       <motion.div 
-        initial={{ opacity: 0, y: 30, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
+        initial={{ opacity: 0, x: 30, scale: 0.9 }}
+        animate={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
-        className="absolute bottom-0 right-[150px] 2xl:right-[300px] hidden xl:block opacity-80"
-      >
-        <Image
-          src="/images/hero/bottom-right.png"
-          alt="Decorative illustration"
-          width={197}
-          height={417}
-          className="w-auto h-auto object-contain"
-          priority={false}
-          loading="lazy"
-        />
-      </motion.div>
-
-      {/* Right Bottom Illustration */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
-        className="absolute bottom-0 lg:-bottom-16 right-0 hidden xl:block -mr-8"
+        className="absolute bottom-0 lg:-bottom-16 right-0 hidden xl:block -mr-8 mb-30"
       >
         <Image
           src="/images/hero/right.png"
           alt="Decorative illustration"
-          width={197}
-          height={1228}
+          width={309}
+          height={545}
           className="w-auto h-auto object-contain"
           priority={false}
           loading="lazy"

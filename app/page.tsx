@@ -54,7 +54,7 @@ const ScrollProgress = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#8DA571] via-[#C6AEA3] to-[#2F2C28] origin-left z-50"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#8DA571] via-[#C6AEA3] to-[#2F2C28] origin-left z-50"
       style={{ scaleX }}
     />
   );

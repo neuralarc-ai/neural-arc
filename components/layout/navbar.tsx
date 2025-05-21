@@ -81,15 +81,18 @@ export default function Navbar() {
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Link href="/" className="block">
+            <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/icons/neural-paths-logo.svg"
                 alt="NeuralArc"
                 width={100}
                 height={100}
-                className="object-contain h-auto w-20"
+                className="object-contain h-auto lg:w-18 w-12"
                 priority
               />
+              <span className="text-[#1F1F1F] font-semibold text-[18px] lg:text-[26px]">
+                NeuralArc
+              </span>
             </Link>
           </motion.div>
 
