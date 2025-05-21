@@ -22,10 +22,10 @@ const Careers = () => {
             Bold thinkers, creators, and future teammates we want to hear from you. Let’s connect and explore how you could be part of our journey.
             </p>
             <a
-              href="mailto:careers@neuralarc.ai"
+              href="mailto:brilliantminds@neuralarc.ai"
               className="text-[#2F2C28] text-lg lg:text-[32px] font-semibold hover:text-[#2F2C28] hover:underline transition-all duration-300"
             >
-              careers@neuralarc.ai
+              brilliantminds@neuralarc.ai
             </a>
           </div>
           <div className="flex flex-row flex-shrink-0 items-center gap-6">

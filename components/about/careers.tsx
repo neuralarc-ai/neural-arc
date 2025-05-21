@@ -21,7 +21,7 @@ const Careers = () => {
             Introduce yourself
           </h2>
           <p className="text-lg lg:text-3xl text-center lg:text-left">
-            careers@neuralarc.ai
+            brilliantminds@neuralarc.ai
           </p>
         </div>
         <Link

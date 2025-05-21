@@ -87,7 +87,7 @@ export default function Navbar() {
                 alt="NeuralArc"
                 width={100}
                 height={100}
-                className="object-contain h-auto lg:w-18 w-12"
+                className="object-contain h-auto lg:w-16 w-12"
                 priority
               />
               <span className="text-[#1F1F1F] font-semibold text-[18px] lg:text-[26px]">

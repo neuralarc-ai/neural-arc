@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo} from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -71,7 +71,32 @@ const Hero = memo(() => {
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
-          className="hidden lg:block"
+          className="hidden lg:block relative"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate distance from center (normalized to -1 to 1)
+            const xDist = (x - centerX) / centerX;
+            const yDist = (y - centerY) / centerY;
+            
+            // Apply subtle movement (repel effect)
+            const moveX = xDist * -15; // Invert for repel effect
+            const moveY = yDist * -15; // Invert for repel effect
+            
+            e.currentTarget.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translate3d(0, 0, 0)';
+          }}
+          style={{
+            transition: 'transform 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67)',
+            transform: 'translate3d(0, 0, 0)',
+            willChange: 'transform',
+          }}
         >
           <Image
             src="/images/hero/hero-illustration.png"

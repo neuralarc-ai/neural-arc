@@ -11,7 +11,7 @@ const features = [
 
 const BusinessEngine = () => {
   return (
-    <section className="w-full bg-[#F9F9F9] py-24">
+    <section className="w-full py-24">
       <div className="max-w-[1441px] mx-auto px-4">
         {/* Centered Heading */}
         <h2 className="text-4xl lg:text-7xl font-semibold text-[#373737] mb-24 text-center">
@@ -24,8 +24,8 @@ const BusinessEngine = () => {
             <Image
               src="/images/about/business-engine.png"
               alt="Business Engine"
-              width={600}
-              height={600}
+              width={584}
+              height={560}
               className="w-full h-auto"
               priority
             />
