@@ -87,7 +87,7 @@ export default function Navbar() {
                 alt="NeuralArc"
                 width={100}
                 height={100}
-                className="object-contain h-auto lg:w-16 w-12"
+                className="object-contain h-auto lg:w-14 w-10"
                 priority
               />
               <span className="text-[#1F1F1F] font-semibold text-[18px] lg:text-[26px]">
@@ -601,7 +601,7 @@ export default function Navbar() {
                 duration: 0.3,
                 ease: [0.4, 0, 0.2, 1],
               }}
-              className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] mt-8"
+              className="overflow-hidden bg-white w-full px-8 py-6 mx-auto rounded-[16px] my-8"
             >
               {/* Main Grid */}
               <div className="grid grid-cols-4 gap-6 mb-6">

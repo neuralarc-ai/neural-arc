@@ -45,7 +45,7 @@ const Hero = memo(() => {
       </motion.div>
 
       <motion.div 
-        className="xl:mt-37 lg:mt-20 mt-5"
+        className="xl:mt-24 lg:mt-16 mt-5"
       >
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -101,9 +101,9 @@ const Hero = memo(() => {
           <Image
             src="/images/hero/hero-illustration.png"
             alt="hero"
-            width={1100}
-            height={1000}
-            className="xl:w-[1100] xl:h-[auto] lg:w-[500px] w-[200px] object-contain -mt-10"
+            width={752}
+            height={562}
+            className="xl:w-[752] xl:h-[auto] lg:w-[500px] w-[200px] object-contain mt-10"
             priority={true}
           />
         </motion.div>
@@ -118,9 +118,8 @@ const Hero = memo(() => {
             alt="hero"
             width={500}
             height={300}
-            className="z-50 h-full w-full object-contain md:mt-0"
+            className="z-50 h-full w-full object-contain my-5 px-5"
             priority={true}
-            quality={90}
           />
         </motion.div>
       </div>
