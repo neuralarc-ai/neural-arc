@@ -83,16 +83,13 @@ export default function Navbar() {
           >
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/icons/neural-paths-logo.svg"
+                src="/icons/neural-arc-logo.svg"
                 alt="NeuralArc"
-                width={100}
-                height={100}
-                className="object-contain h-auto lg:w-14 w-10"
+                width={220}
+                height={60}
+                className="object-contain h-auto lg:w-[200px] w-[100px]"
                 priority
               />
-              <span className="text-[#1F1F1F] font-semibold text-[18px] lg:text-[26px]">
-                NeuralArc
-              </span>
             </Link>
           </motion.div>
 

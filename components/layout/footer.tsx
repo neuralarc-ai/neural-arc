@@ -16,11 +16,10 @@ const Footer = () => {
                   <Image
                     src="/icons/neural-paths-footer.svg"
                     alt="NeuralArc"
-                    width={66}
-                    height={66}
-                    className="w-auto lg:h-12 h-8"
+                    width={220}
+                    height={60}
+                    className="w-[100px] lg:w-[200px] h-auto"
                   />
-                  <span className="text-white text-[30px] font-semibold">NeuralArc</span>
                 </div>
                 <div className="h-[1px] w-full 2xl:w-[1px] 2xl:h-8 bg-[#FFFFFF1A] 2xl:mx-2"></div>
                 <p className="text-[#64594E] text-lg">Where data meets neural intelligence</p>
